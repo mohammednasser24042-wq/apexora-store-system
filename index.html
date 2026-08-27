@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة المخزون والمبيعات - Apexora Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #059669;
+            --accent-hover: #047857;
+            --bg-dark: #0b1120;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 900;
+            font-size: 22px;
+            color: var(--primary);
+        }
+
+        .logo-area span {
+            color: var(--accent);
+        }
+
+        .btn-header {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .btn-header:hover {
+            background-color: #172554;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 60px 20px 80px 20px;
+            text-align: center;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            font-size: 14px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #cbd5e1;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .scroll-down {
+            display: block;
+            margin-top: 25px;
+            color: #94a3b8;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .specs-container {
+            max-width: 900px;
+            margin: -35px auto 40px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .spec-item {
+            padding: 20px;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .spec-item:last-child {
+            border-left: none;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .spec-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .gallery-container {
+            max-width: 1000px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .screenshot-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .mockup-box {
+            background: #1e293b;
+            padding: 10px;
+        }
+
+        .mockup-header-dots {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+
+        .mockup-img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            border: 1px solid #334155;
+        }
+
+        .screenshot-info {
+            padding: 25px;
+            text-align: right;
+        }
+
+        .screenshot-info h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .screenshot-info h3 i {
+            color: var(--accent);
+        }
+
+        .screenshot-info p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .content-section h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .content-section p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: var(--bg-dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer p span {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .specs-container {
+                grid-template-columns: 1fr;
+                margin: -20px 20px 40px 20px;
+            }
+            .spec-item {
+                border-left: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .spec-item:last-child {
+                border-bottom: none;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <i class="fa-solid fa-cube"></i> Apexora <span>Software</span>
+            </div>
+            <a href="https://wa.me/" target="_blank" class="btn-header">اطلب نظامك الخاص</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="breadcrumb">الرئيسية / معرض الأنظمة / قواعد بيانات Microsoft Access</div>
+        <div class="tags">قوية • سريعة • واجهة Dark Mode متميزة</div>
+        <h1>نظام Apexora الاحترافي لإدارة المتاجر والمخازن</h1>
+        <p>نظام متكامل مبني بهندسة برمجية متطورة باستخدام Microsoft Access وقواعد بيانات SQL لتوفير أقصى سرعة واستقرار في إدارة المبيعات والمخزون.</p>
+        <a href="https://wa.me/" target="_blank" class="btn-primary">تواصل لطلب النسخة</a>
+        <a href="#gallery" class="scroll-down">استعرض تفاصيل وشاشات البرنامج ↓</a>
+    </section>
+
+    <div class="specs-container">
+        <div class="spec-item">
+            <div class="spec-label">منصة البناء</div>
+            <div class="spec-value">Microsoft Access / VBA</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">المجال</div>
+            <div class="spec-value">الكاشير، المخازن، الحسابات</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">الواجهة</div>
+            <div class="spec-value">تصميم مخصص Dark Mode</div>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="section-subtitle">هندسة قواعد البيانات</div>
+        <h2>قوة وأمان Microsoft Access بين يديك</h2>
+        <p>تم تصميم هذا النظام ليعالج العمليات الحسابية بدقة متناهية، مع واجهات مستخدم مريحة للعين وفصل كامل بين الواجهات والجداول لضمان أعلى أداء واستقرار.</p>
+    </section>
+
+    <div class="gallery-container" id="gallery">
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="1000400470.jpg" alt="شاشة تسجيل الدخول" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-lock"></i> شاشة تسجيل الدخول وأمان النظام</h3>
+                <p>واجهة دخول احترافية مؤمنة بالكامل داخل بيئة أكسس، مع نظام صلاحيات للمستخدمين وحماية تامة للبيانات.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="1000402743.jpg" alt="نقطة البيع POS" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-cash-register"></i> شاشة نقطة البيع السريعة (POS)</h3>
+                <p>مصممة بأكواد VBA فائقة السرعة لدعم الباركود وعمليات البيع اللحظية مع خصومات وحسابات تلقائية.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="1000402749.jpg" alt="مركز المشتريات" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-truck-ramp-box"></i> مركز المشتريات والموردين</h3>
+                <p>تسجيل فواتير الشراء وحسابات الموردين وتحديث تكلفة المخزون فورياً بكل مرونة.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="1000402744.jpg" alt="مرتجع المبيعات" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-rotate-left"></i> نظام مرتجع المبيعات</h3>
+                <p>إدارة استرجاع الفواتير بكفاءة عالية، مع تسوية أرصدة المخزون والخزينة تلقائياً.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="1000402750.jpg" alt="مرتجع المشتريات" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-boxes-packing"></i> مرتجع المشتريات للموردين</h3>
+                <p>متابعة البضائع المرتجعة للموردين لضمان مطابقة الحسابات المالية بدقة.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="1000402747.jpg" alt="أرصدة المخزون" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-warehouse"></i> مراقبة أرصدة المخزون</h3>
+                <p>جداول استعلامات ذكية تعرض الأصناف المتوفرة، النواقص، والتنبيهات للحفاظ على حركة المخزون.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="1000402745.jpg" alt="إدارة الأصناف" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-tags"></i> إدارة الأصناف والأكواد والأسعار</h3>
+                <p>شاشة تحكم شاملة لإضافة وتعديل المنتجات، أسعار البيع، تتبع الأرباح، وطباعة الباركود.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="1000402742.jpg" alt="التقارير والأرباح" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-chart-pie"></i> لوحة التقارير وحسابات الأرباح</h3>
+                <p>تقارير مالية تحليلية مبنية على تقارير Access الاحترافية لتتبع صافي الأرباح وحركة الخزينة.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - تم التطوير بواسطة <span>Apexora Software</span></p>
+    </footer>
+
+</body>
+</html>
