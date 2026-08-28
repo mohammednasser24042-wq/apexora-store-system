@@ -3,83 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apexora Software | نظام الإدارة المتكامل</title>
-    <!-- خط Cairo -->
+    <title>Apexora Software | هندسة الأنظمة البرمجية وقواعد البيانات</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- مكتبة أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- ملف الـ CSS الأساسي -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- شريط التنقل العلوي (Navbar) -->
-    <header class="navbar">
-        <div class="logo">
-            <i class="fa-solid fa-cube"></i> Apexora Software
-        </div>
-        <nav class="nav-links">
-            <a href="#hero">الرئيسية</a>
-            <a href="#features">المميزات</a>
-            <a href="screenshots.html" target="_blank">معرض الشاشات (23 شاشة)</a>
-            <a href="#pricing">الباقات والأسعار</a>
-            <a href="#contact">اتصل بنا</a>
-        </nav>
-        <div class="nav-action">
-            <a href="#contact" class="btn-primary">اطلب نسختك الآن</a>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="logo.jpg" alt="Apexora Logo" class="logo-img">
+                Apexora <span>Software</span>
+            </a>
+            <div class="nav-right">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61589611132517&mibextid=ZbWKwL" target="_blank" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i> فيسبوك</a>
+                    <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" target="_blank" class="social-btn youtube"><i class="fa-brands fa-youtube"></i> يوتيوب</a>
+                    <a href="https://tinyurl.com/Apexorasystem" target="_blank" class="social-btn other-works"><i class="fas fa-layer-group"></i> أعمال أخرى</a>
+                </div>
+                <button onclick="openWhatsApp()" class="btn-header">اطلب نظامك المخصص</button>
+            </div>
         </div>
     </header>
 
-    <!-- قسم الواجهة الرئيسية (Hero Section) -->
-    <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <div class="badge">النظام الهندسي الأكثر احترافية لإدارة الأعمال</div>
-            <h1>تحكم كامل في مبيعاتك، مخازنك، وحساباتك بكل سهولة</h1>
-            <p>نظام APEXORA المتكامل مصمم خصيصاً للشركات والمتاجر لتوفير أقصى درجات الأمان، السرعة، والدقة في إصدار الفواتير ومتابعة الأرباح.</p>
-            <div class="hero-buttons">
-                <a href="screenshots.html" class="btn-primary"><i class="fa-solid fa-eye"></i> استعرض الـ 23 شاشة</a>
-                <a href="#contact" class="btn-outline"><i class="fa-solid fa-download"></i> تجربة مجانية</a>
+    <section class="hero">
+        <div class="breadcrumb">Apexora Software &gt; الأنظمة البرمجية المخصصة</div>
+        <div class="tags">🚀 هندسة البرمجيات وقواعد البيانات المتقدمة</div>
+        <h1>أنظمة برمجية مخصصة لإدارة وتطوير أعمالك التجارية والخدمية باحترافية تامة</h1>
+        <p>نحن لا نقدم برامج جاهزة ومقيدة، بل نصمم ونبني أنظمة قواعد بيانات متكاملة ومصممة خصيصاً لتناسب دورتك المستندية بدقة فائقة وبدون أي تعقيد.</p>
+        <button onclick="openWhatsApp()" class="btn-primary">تواصل معنا الآن لتصميم نظامك</button>
+        <div>
+            <a href="#gallery" class="scroll-down">استعرض نظام المعاينة <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <div class="specs-container">
+        <div class="spec-item">
+            <div class="spec-label">نوع الملكية</div>
+            <div class="spec-value">دائمة نهائية بدون اشتراكات</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">قواعد البيانات</div>
+            <div class="spec-value">محلية مشفرة وآمنة بالكامل</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">التخصيص</div>
+            <div class="spec-value">مطابق تماماً لنشاطك التجاري</div>
+        </div>
+    </div>
+    <section class="content-section">
+        <div class="section-subtitle">حلول هندسية متكاملة</div>
+        <h2>تحكم كامل في نشاطك التجاري بين يديك</h2>
+        <p>تم تصميم أنظمتنا لتوفير أقصى درجات السرعة والأمان، مع واجهات مستخدم ملساء تمنع الأخطاء البشرية وتمنحك تقارير دقيقة لحظياً لاتخاذ القرارات الصحيحة.</p>
+    </section>
+
+    <div class="gallery-container" id="gallery">
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <img src="1.jpg" alt="واجهة المبيعات ونقاط البيع" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-cash-register"></i> إدارة المبيعات ونقاط البيع (POS)</h3>
+                <p>واجهة مبيعات سريعة ومبسطة تدعم قارئ الباركود، الفواتير النقدية والأجلة، وإدارة المرتجعات وحساب الخصومات بشكل لحظي مع طباعة الفواتير الآلية.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <img src="2.jpg" alt="إدارة المخزون والمستودعات" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-boxes-stacked"></i> مراقبة المخزون والمستودعات</h3>
+                <p>تتبع دقيق لحركة الأصناف، تنبيهات النواقص وركود البضائع، وتحويلات المخازن بين الفروع مع تقارير الجرد الدورية والأرباح بدقة متناهية.</p>
+            </div>
+        </div>
+
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <img src="3.jpg" alt="الحسابات والخزينة" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-vault"></i> الحسابات العامة والخزينة والعملاء</h3>
+                <p>سجل متكامل لحسابات العملاء والموردين، حركة النقدية في الخزينة والبنك، المصروفات، وإصدار قوائم المركز المالي وأرباح الفترة بضغطة زر.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="testimonials-section">
+        <div class="section-subtitle">ثقة واحترافية</div>
+        <h2>ماذا يقول عملاؤنا عن أنظمة Apexora Software؟</h2>
+        <p style="color: var(--text-light); max-width: 700px; margin: 0 auto; font-size: 15px;">نفتخر بخدمة أصحاب الأنشطة التجارية والمشروعات وتلبية احتياجاتهم البرمجية بدقة تامة.</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div>
+                    <div class="client-info">
+                        <div class="client-avatar">م</div>
+                        <div class="client-details">
+                            <h4>محمود إبراهيم</h4>
+                            <span>صاحب معرض تجاري</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"بصراحة النظام ممتاز جداً وسريع، ومحرك نقاط البيع فرق معانا كتير في سرعة خدمة الزبائن وتسجيل المبيعات بدون أي أخطاء. شكراً للمهندس محمد على المتابعة"</p>
+                </div>
+                <div class="rating-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div>
+                    <div class="client-info">
+                        <div class="client-avatar">أ</div>
+                        <div class="client-details">
+                            <h4>أحمد عبد الحميد</h4>
+                            <span>إدارة مخازن وتوزيع</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"أفضل ما في الموضوع هو دقة تقارير المخازن وحسابات الموردين. النظام تم تصميمه وتعديله ليناسب طبيعة شغلنا بدقة تامة مقارنة بالبرامج الجاهزة المعقدة"</p>
+                </div>
+                <div class="rating-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div>
+                    <div class="client-info">
+                        <div class="client-avatar">ك</div>
+                        <div class="client-details">
+                            <h4>د. كريم الشريف</h4>
+                            <span>إدارة منشأة خدمية</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"خدمة احترافية وهندسة قواعد بيانات عالية الأمان، التحكم في الصلاحيات وعمل النسخ الاحتياطي بكل سهولة والأداء مستقر جداً."</p>
+                </div>
+                <div class="rating-stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم مميزات النظام المختصرة -->
-    <section id="features" class="content-section" style="padding: 60px 20px; background: var(--bg-alt, #f9fafb);">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <div class="section-subtitle">لماذا تختار Apexora؟</div>
-            <h2>مميزات استثنائية تدعم نمو مشروعك</h2>
+    <section class="why-section">
+        <div class="section-subtitle">لماذا نحن؟</div>
+        <h2>مميزات هندسة الأنظمة معنا</h2>
+        
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>مصمم خصيصاً لنشاطك</h3>
+                <p>نحن نبني النظام من الصفر أو نعدله ليطابق دورتك المستندية الفعلية 100% دون فرض شاشات لا تحتاجها.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>أمان وخصوصية تامة</h3>
+                <p>قواعد البيانات خاصة بك وحدك وتعمل محلياً على أجهزتك لضمان عدم تسريب أي بيانات تجارية هامة.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>دعم فني ومتابعة</h3>
+                <p>متابعة ودعم مستمر لضمان استقرار العمل وتطوير أي إضافات برمجية جديدة تحتاجها لاحقاً.</p>
+            </div>
         </div>
-        <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto;">
-            <div class="feature-card" style="background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <i class="fa-solid fa-bolt" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
-                <h3>سرعة فائقة</h3>
-                <p style="color: var(--text-light); margin-top: 10px;">أداء عالي جداً في معالجة الفواتير وحركة المخزون بدون أي بطء.</p>
-            </div>
-            <div class="feature-card" style="background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <i class="fa-solid fa-shield-halved" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
-                <h3>أمان تام للبيانات</h3>
-                <p style="color: var(--text-light); margin-top: 10px;">صلاحيات مستخدمين دقيقة ونسخ احتياطي محمي ضد الفقدان أو التلاعب.</p>
-            </div>
-            <div class="feature-card" style="background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <i class="fa-solid fa-chart-line" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
-                <h3>تقارير لاتخاذ القرار</h3>
-                <p style="color: var(--text-light); margin-top: 10px;">تقارير تفصيلية شاملة عن الأرباح، المبيعات، وموقف الخزينة لحظياً.</p>
+    </section>
+    <section class="cta-section">
+        <div class="cta-card">
+            <h2>هل لديك فكرة نظام ترغب في تنفيذها؟</h2>
+            <p>تابعنا على منصاتنا الرقمية وقناتنا على اليوتيوب أو تواصل معنا مباشرة عبر الواتساب لمناقشة تفاصيل مشروعك.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://www.facebook.com/profile.php?id=61589611132517&mibextid=ZbWKwL" target="_blank" class="cta-btn facebook">
+                    <i class="fa-brands fa-facebook-f"></i> صفحة الفيسبوك
+                </a>
+
+                <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" target="_blank" class="cta-btn youtube">
+                    <i class="fa-brands fa-youtube"></i> قناة اليوتيوب
+                </a>
+
+                <a href="https://tinyurl.com/Apexorasystem" target="_blank" class="cta-btn other-works">
+                    <i class="fas fa-layer-group"></i> أعمال أخرى لنا
+                </a>
+
+                <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A3%D9%88%20%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D8%AC%D8%AF%D9%8A%D8%AF%20%D9%88%D9%88%D8%AF%D9%8A%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%88%D8%A7%D9%84%D8%AA%D9%83%D9%84%D9%81%D8%A9." target="_blank" class="cta-btn whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- قسم التذييل (Footer) -->
-    <footer style="background: #111827; color: #fff; padding: 40px 20px; text-align: center;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <h3 style="margin-bottom: 10px;"><i class="fa-solid fa-cube"></i> Apexora Software</h3>
-            <p style="color: #9ca3af; margin-bottom: 20px;">جميع الحقوق محفوظة © 2026 - الحلول البرمجية المتقدمة لإدارة الأعمال.</p>
-            <div style="font-size: 1.2rem; display: flex; justify-content: center; gap: 15px;">
-                <a href="#" style="color: #fff;"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" style="color: #fff;"><i class="fa-brands fa-github"></i></a>
-                <a href="#" style="color: #fff;"><i class="fa-brands fa-linkedin"></i></a>
+    <section class="faq-section">
+        <div class="section-subtitle">إجابات استفساراتك</div>
+        <h2>الأسئلة الشائعة حول أنظمة Apexora Software</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>هل يتطلب النظام اشتراكاً شهرياً أو سنوياً؟</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>لا، امتلاكك للنظام هو امتلاك دائم ونهائي لمرة واحدة فقط. لا توجد أي اشتراكات شهرية أو سنوية، وقواعد البيانات تكون ملكاً كاملاً وتحت سيطرتك التامة.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>هل يمكن تعديل النظام ليناسب طبيعة نشاطي بدقة؟</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>بالتأكيد! نحن نصمم ونبني الأنظمة البرمجية خصيصاً لتتوافق مع دورتك المستندية واحتياجاتك الفعلية، سواء كنت تدير متجراً، مخزناً، منشأة خدمية، أو عيادة.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>كيف يتم حماية بياناتي وضمان عدم فقدانها؟</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>يحتوي النظام على مركز متكامل للنسخ الاحتياطي والاستعادة الفورية، بالإضافة إلى تشفير قواعد البيانات وصلاحيات مستخدمين محكمة تضمن أماناً كاملاً للبيانات ضد أي طارئ.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>كيف يمكنني التواصل لطلب نظام مخصص لنشاطي؟</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>يمكنك التواصل معنا مباشرة عبر زر الواتساب المتاح في الموقع أو عبر صفحاتنا الرسمية لمناقشة تفاصيل نشاطك ومتطلباتك البرمجية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">
+                <img src="logo.jpg" alt="Apexora Logo" class="logo-img">
+                Apexora <span>Software</span>
+            </a>
+            <p class="footer-desc">شريكك الموثوق لتطوير هندسة قواعد البيانات والأنظمة البرمجية المخصصة لإدارة الأنشطة التجارية والخدمية باحترافية وأمان تام.</p>
+            
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=61589611132517&mibextid=ZbWKwL" target="_blank" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i> فيسبوك</a>
+                <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" target="_blank" class="social-btn youtube"><i class="fa-brands fa-youtube"></i> يوتيوب</a>
+                <a href="https://tinyurl.com/Apexorasystem" target="_blank" class="social-btn other-works"><i class="fas fa-layer-group"></i> أعمال أخرى</a>
+            </div>
+
+            <div class="copyright">
+                جميع الحقوق محفوظة © 2026 <span>Apexora Software</span> | تصميم وهندسة البرمجيات
             </div>
         </div>
     </footer>
 
+    <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A3%D9%88%20%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D8%AC%D8%AF%D9%8A%D8%AF%20%D9%88%D9%88%D8%AF%D9%8A%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%88%D8%A7%D9%84%D8%AA%D9%83%D9%84%D9%81%D8%A9." target="_blank" class="whatsapp-float" title="تواصل معنا عبر واتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // دالة فتح الواتساب بالرقم والرسالة الافتراضية
+        function openWhatsApp() {
+            window.open('https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%A3%D9%88%20%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D8%AC%D8%AF%D9%8A%D8%AF%20%D9%88%D9%88%D8%AF%D9%8A%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%88%D8%A7%D9%84%D8%AA%D9%83%D9%84%D9%81%D8%A9.', '_blank');
+        }
+
+        // تفاعلية الأسئلة الشائعة (FAQ Accordion)
+        function toggleFaq(element) {
+            const parent = element.parentElement;
+            parent.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
