@@ -7,7 +7,7 @@
     --bg-body: #f8fafc;
     --card-bg: #ffffff;
     --text-main: #1e293b;
-    --text-light: #64748b;
+    --text-light: #334155; /* تعديل ليكون أغمق وأوضح بكثير للقراءة */
     --border-color: #cbd5e1;
     --radius-lg: 20px;
     --radius-md: 12px;
@@ -26,7 +26,8 @@ body {
     background-color: var(--bg-body); 
     color: var(--text-main); 
     line-height: 1.8; 
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    direction: rtl; /* ضمان اتجاه الصفحة بالكامل من اليمين لليسار */
 }
 
 header {
@@ -42,7 +43,7 @@ header {
 .nav-container { 
     max-width: 1280px; 
     margin: 0 auto; 
-    padding: 14px 24px; 
+    padding: 14px 20px; 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
@@ -184,7 +185,6 @@ header {
     max-width: 900px; 
     margin-left: auto; 
     margin-right: auto; 
-    letter-spacing: -0.5px; 
 }
 
 .hero p { 
@@ -193,38 +193,6 @@ header {
     color: #cbd5e1; 
     font-size: 17px; 
     line-height: 1.9; 
-}
-
-.btn-primary {
-    display: inline-block; 
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%); 
-    color: #ffffff;
-    padding: 15px 36px; 
-    border-radius: 14px; 
-    text-decoration: none; 
-    font-weight: 800; 
-    font-size: 17px; 
-    box-shadow: 0 8px 25px var(--accent-glow); 
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-    cursor: pointer; 
-    border: none;
-}
-.btn-primary:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4); 
-}
-
-.scroll-down { 
-    display: inline-block; 
-    margin-top: 35px; 
-    color: #94a3b8; 
-    font-size: 13px; 
-    text-decoration: none; 
-    transition: color 0.3s; 
-    font-weight: 600; 
-}
-.scroll-down:hover { 
-    color: #38bdf8; 
 }
 
 .specs-container {
@@ -245,10 +213,6 @@ header {
 .spec-item { 
     padding: 30px 20px; 
     border-left: 1px solid var(--border-color); 
-    transition: background 0.3s; 
-}
-.spec-item:hover { 
-    background: #f8fafc; 
 }
 .spec-item:last-child { 
     border-left: none; 
@@ -260,7 +224,6 @@ header {
     margin-bottom: 8px; 
     font-weight: 700; 
     text-transform: uppercase; 
-    letter-spacing: 0.5px; 
 }
 
 .spec-value { 
@@ -290,7 +253,6 @@ header {
     color: var(--primary); 
     margin-bottom: 18px; 
     font-weight: 900; 
-    letter-spacing: -0.5px; 
 }
 
 .content-section p { 
@@ -299,7 +261,7 @@ header {
     line-height: 1.9; 
 }
 
-/* تنسيقات معرض الصور (Gallery) */
+/* معرض الصور */
 .gallery-container { 
     max-width: 1050px; 
     margin: 0 auto 70px auto; 
@@ -313,19 +275,12 @@ header {
     box-shadow: var(--shadow-subtle); 
     margin-bottom: 45px; 
     overflow: hidden; 
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.screenshot-card:hover { 
-    box-shadow: var(--shadow-hover); 
-    transform: translateY(-5px); 
-    border-color: rgba(16, 185, 129, 0.4); 
 }
 
 .mockup-box { 
     background: #0f172a; 
     padding: 14px; 
     border-bottom: 1px solid var(--border-color); 
-    position: relative; 
 }
 
 .mockup-header-dots { 
@@ -351,194 +306,40 @@ header {
     display: block; 
     border: 1px solid rgba(255,255,255,0.1); 
     margin-bottom: 14px; 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
-}
-.mockup-img:last-child { 
-    margin-bottom: 0; 
 }
 
 .screenshot-info { 
-    padding: 30px 35px; 
+    padding: 30px 25px; /* تقليل الهوامش الجانبية لمنع تداخل الحروف على الموبايل */
     text-align: right; 
-    background: linear-gradient(to bottom, #ffffff, #fafafa); 
+    background: #ffffff; 
 }
 
 .screenshot-info h3 { 
-    font-size: 21px; 
+    font-size: 20px; 
     color: var(--primary); 
     margin-bottom: 12px; 
     font-weight: 800; 
     display: flex; 
     align-items: center; 
-    gap: 14px; 
-    letter-spacing: -0.3px; 
+    gap: 12px; 
 }
 
 .screenshot-info h3 i { 
     color: var(--accent); 
-    font-size: 20px; 
+    font-size: 18px; 
     background: rgba(16, 185, 129, 0.1); 
-    padding: 12px; 
+    padding: 10px; 
     border-radius: 12px; 
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1); 
 }
 
 .screenshot-info p { 
     font-size: 15px; 
     color: var(--text-light); 
     line-height: 1.9; 
+    word-break: break-word; /* منع قطع الكلمات وتداخلها */
 }
 
-/* تنسيقات قسم آراء العملاء (Testimonials) المضافة حديثاً */
-.testimonials-section {
-    padding: 80px 20px;
-    background: #111827;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    max-width: 1050px;
-    margin: 40px auto 0;
-}
-
-.testimonial-card {
-    background: #1f2937;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 30px;
-    border-radius: 16px;
-    text-align: right;
-    transition: transform 0.3s, border-color 0.3s;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    border-color: #25d366;
-}
-
-.client-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.client-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #374151;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: 700;
-    font-size: 18px;
-    margin-left: 15px;
-    border: 2px solid #25d366;
-}
-
-.client-details h4 {
-    color: #fff;
-    font-size: 16px;
-    margin-bottom: 3px;
-}
-
-.client-details span {
-    color: #9ca3af;
-    font-size: 13px;
-}
-
-.testimonial-text {
-    color: #d1d5db;
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-.rating-stars {
-    color: #f59e0b;
-    font-size: 14px;
-}
-
-/* تنسيقات الفوتر (Footer) */
-footer { 
-    background: #06090f; 
-    color: #94a3b8; 
-    text-align: center; 
-    padding: 50px 20px; 
-    font-size: 14px; 
-    border-top: 1px solid #1e293b; 
-}
-
-.footer-social { 
-    display: flex; 
-    justify-content: center; 
-    gap: 12px; 
-    margin-bottom: 25px; 
-}
-
-/* التجاوب مع الهواتف والأجهزة الذكية (Responsive) */
-@media (max-width: 768px) {
-    .nav-container { 
-        flex-direction: column; 
-        padding: 12px 15px; 
-        gap: 12px; 
-    }
-    .nav-right { 
-        width: 100%; 
-        justify-content: space-between; 
-        gap: 10px; 
-        flex-wrap: wrap; 
-    }
-    .social-icons { 
-        gap: 6px; 
-    }
-    .social-btn { 
-        padding: 6px 10px; 
-        font-size: 11px; 
-    }
-    .btn-header { 
-        font-size: 12px; 
-        padding: 8px 12px; 
-    }
-    .hero { 
-        padding: 55px 15px 75px 15px; 
-    }
-    .hero h1 { 
-        font-size: 26px; 
-    }
-    .hero p { 
-        font-size: 14px; 
-    }
-    .btn-primary { 
-        padding: 13px 22px; 
-        font-size: 15px; 
-        width: 100%; 
-        display: block; 
-    }
-    .specs-container { 
-        grid-template-columns: 1fr; 
-        margin: -30px 15px 40px 15px; 
-    }
-    .spec-item { 
-        border-left: none; 
-        border-bottom: 1px solid var(--border-color); 
-        padding: 18px 15px; 
-    }
-    .spec-item:last-child { 
-        border-bottom: none; 
-    }
-    .screenshot-info { 
-        padding: 22px 18px; 
-    }
-    .screenshot-info h3 { 
-        font-size: 18px; 
-    }
-}
-/* تنسيقات قسم لماذا تختارنا (Why Choose Us) */
+/* قسم لماذا تختارنا */
 .why-section {
     padding: 80px 20px;
     background: #f8fafc;
@@ -561,13 +362,9 @@ footer {
     border-radius: var(--radius-lg);
     text-align: right;
     box-shadow: var(--shadow-subtle);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.why-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-    border-color: rgba(16, 185, 129, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .why-icon {
@@ -594,11 +391,12 @@ footer {
     font-size: 14px;
     color: var(--text-light);
     line-height: 1.8;
+    word-break: break-word;
 }
 
-/* تنسيقات قسم الأسئلة الشائعة (FAQ) */
+/* قسم الأسئلة الشائعة (FAQ) مع حل تداخل الحروف */
 .faq-section {
-    padding: 80px 20px;
+    padding: 80px 15px; /* تقليل الهامش الخارجي للموبايل */
     background: #ffffff;
     border-top: 1px solid var(--border-color);
 }
@@ -606,6 +404,7 @@ footer {
 .faq-container {
     max-width: 850px;
     margin: 40px auto 0;
+    padding: 0 5px; /* إضافة مساحة أمان جانبية تحل مشكلة أول حرف */
 }
 
 .faq-item {
@@ -614,15 +413,10 @@ footer {
     border-radius: var(--radius-md);
     margin-bottom: 15px;
     overflow: hidden;
-    transition: border-color 0.3s;
-}
-
-.faq-item:hover {
-    border-color: var(--accent);
 }
 
 .faq-question {
-    padding: 20px 25px;
+    padding: 18px 20px; 
     font-size: 16px;
     font-weight: 800;
     color: var(--primary);
@@ -630,22 +424,25 @@ footer {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    user-select: none;
     text-align: right;
+    word-break: break-word;
 }
 
 .faq-question i {
     color: var(--accent);
     transition: transform 0.3s;
+    flex-shrink: 0; /* منع السهم من الضغط على النص */
+    margin-right: 10px;
 }
 
 .faq-answer {
-    padding: 0 25px 20px 25px;
+    padding: 0 20px 20px 20px; /* ضبط الحواشي الداخلية لعدم خروج الحروف */
     font-size: 15px;
     color: var(--text-light);
-    line-height: 1.8;
+    line-height: 1.9;
     text-align: right;
     display: none;
+    word-break: break-word; /* حل مشكلة تداخل الحروف وبداية السطور */
 }
 
 .faq-item.active .faq-answer {
@@ -654,4 +451,40 @@ footer {
 
 .faq-item.active .faq-question i {
     transform: rotate(180deg);
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .nav-container { 
+        flex-direction: column; 
+        padding: 12px 15px; 
+        gap: 12px; 
+    }
+    .nav-right { 
+        width: 100%; 
+        justify-content: space-between; 
+        gap: 10px; 
+        flex-wrap: wrap; 
+    }
+    .hero h1 { 
+        font-size: 26px; 
+    }
+    .specs-container { 
+        grid-template-columns: 1fr; 
+        margin: -30px 15px 40px 15px; 
+    }
+    .spec-item { 
+        border-left: none; 
+        border-bottom: 1px solid var(--border-color); 
+    }
+    .screenshot-info { 
+        padding: 20px 15px; /* مسافة أمان كافية للشاشات الصغيرة */
+    }
+    .faq-question {
+        padding: 15px;
+        font-size: 15px;
+    }
+    .faq-answer {
+        padding: 0 15px 15px 15px;
+    }
 }
