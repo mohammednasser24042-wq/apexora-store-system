@@ -538,3 +538,120 @@ footer {
         font-size: 18px; 
     }
 }
+/* تنسيقات قسم لماذا تختارنا (Why Choose Us) */
+.why-section {
+    padding: 80px 20px;
+    background: #f8fafc;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1050px;
+    margin: 40px auto 0;
+}
+
+.why-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 35px 25px;
+    border-radius: var(--radius-lg);
+    text-align: right;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.why-icon {
+    width: 55px;
+    height: 55px;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.why-card h3 {
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.why-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* تنسيقات قسم الأسئلة الشائعة (FAQ) */
+.faq-section {
+    padding: 80px 20px;
+    background: #ffffff;
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-container {
+    max-width: 850px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.faq-item:hover {
+    border-color: var(--accent);
+}
+
+.faq-question {
+    padding: 20px 25px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    text-align: right;
+}
+
+.faq-question i {
+    color: var(--accent);
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 25px 20px 25px;
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.8;
+    text-align: right;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
