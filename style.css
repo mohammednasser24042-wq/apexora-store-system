@@ -28,6 +28,7 @@ body {
     line-height: 1.8; 
     overflow-x: hidden;
     direction: rtl; 
+    padding-bottom: 90px; /* مساحة أمان كبيرة جداً أسفل الصفحة لمنع زر الواتساب من تغطية الفوتر أو الحقوق */
 }
 
 header {
@@ -59,7 +60,7 @@ header {
     color: #ffffff; 
     text-decoration: none; 
     white-space: nowrap; 
-    direction: ltr; /* لحل مشكلة انعكاس الكلمات الإنجليزية والعربية بجوار اللوجو */
+    direction: ltr; 
 }
 
 .logo-img { 
@@ -250,11 +251,14 @@ header {
     letter-spacing: 1.5px; 
 }
 
+/* حل مشكلة انعكاس العناوين المختلطة (عربي وإنجليزي) في عناوين الأقسام */
 .content-section h2 { 
     font-size: 32px; 
     color: var(--primary); 
     margin-bottom: 18px; 
     font-weight: 900; 
+    direction: rtl;
+    unicode-bidi: isolate;
 }
 
 .content-section p { 
@@ -455,7 +459,7 @@ header {
     transform: rotate(180deg);
 }
 
-/* التجاوب مع الشاشات الصغيرة وتصحيح التداخل */
+/* التجاوب مع الشاشات الصغيرة وتصحيح التداخل والقلب */
 @media (max-width: 768px) {
     .nav-container { 
         flex-direction: column; 
@@ -508,8 +512,8 @@ header {
         padding: 0 15px 15px 15px;
     }
 
-    /* إضافة مساحة أمان أسفل الصفحة لمنع زر الواتساب العائم من تغطية الحقوق أو النصوص الأخيرة */
+    /* تكبير مساحة الأمان السفلية خصيصاً للموبايل لضمان عدم تغطية زر الواتساب لأي حقوق أو نصوص */
     body {
-        padding-bottom: 70px;
+        padding-bottom: 120px;
     }
 }
