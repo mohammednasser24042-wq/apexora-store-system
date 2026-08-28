@@ -389,6 +389,80 @@ header {
     line-height: 1.9; 
 }
 
+/* تنسيقات قسم آراء العملاء (Testimonials) المضافة حديثاً */
+.testimonials-section {
+    padding: 80px 20px;
+    background: #111827;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1050px;
+    margin: 40px auto 0;
+}
+
+.testimonial-card {
+    background: #1f2937;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: right;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: #25d366;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 15px;
+    border: 2px solid #25d366;
+}
+
+.client-details h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.client-details span {
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.testimonial-text {
+    color: #d1d5db;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.rating-stars {
+    color: #f59e0b;
+    font-size: 14px;
+}
+
 /* تنسيقات الفوتر (Footer) */
 footer { 
     background: #06090f; 
