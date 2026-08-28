@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نظام إدارة المخزون والمبيعات - Apexora Software</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -19,7 +19,7 @@
             --radius-lg: 16px;
             --radius-md: 10px;
             --shadow-subtle: 0 10px 30px -5px rgba(15, 23, 42, 0.06);
-            --shadow-hover: 0 20px 40px -10px rgba(5, 150, 105, 0.12);
+            --shadow-hover: 0 20px 40px -10px rgba(5, 150, 105, 0.15);
         }
 
         * {
@@ -33,44 +33,47 @@
             background-color: #f8fafc;
             color: var(--text-main);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 30px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-weight: 900;
-            font-size: 24px;
-            color: var(--primary);
+            font-size: 22px;
+            color: #ffffff;
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .logo-img {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--accent);
-            box-shadow: 0 0 10px rgba(5, 150, 105, 0.2);
+            box-shadow: 0 0 12px rgba(5, 150, 105, 0.3);
         }
 
         .logo-area span {
@@ -80,61 +83,65 @@
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .social-icons {
             display: flex;
-            gap: 12px;
+            gap: 8px;
         }
 
         .social-icon {
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: #f1f5f9;
-            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .social-icon.facebook:hover {
             background: #1877f2;
             color: #fff;
             transform: translateY(-2px);
+            border-color: #1877f2;
         }
 
         .social-icon.youtube:hover {
             background: #ff0000;
             color: #fff;
             transform: translateY(-2px);
+            border-color: #ff0000;
         }
 
         .btn-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
             color: #ffffff;
-            padding: 10px 22px;
+            padding: 9px 18px;
             border-radius: var(--radius-md);
             text-decoration: none;
             font-weight: 700;
-            font-size: 14px;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+            font-size: 13px;
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .btn-header:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
         }
 
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
-            padding: 80px 20px 100px 20px;
+            padding: 70px 20px 90px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -144,52 +151,52 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(5, 150, 105, 0.15) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 30%, rgba(5, 150, 105, 0.18) 0%, transparent 65%);
             pointer-events: none;
         }
 
         .breadcrumb {
-            font-size: 14px;
+            font-size: 13px;
             color: #94a3b8;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             letter-spacing: 0.5px;
         }
 
         .tags {
-            font-size: 15px;
+            font-size: 14px;
             color: #38bdf8;
             margin-bottom: 20px;
             font-weight: 700;
             background: rgba(56, 189, 248, 0.1);
             display: inline-block;
-            padding: 6px 18px;
+            padding: 6px 16px;
             border-radius: 30px;
             border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 900;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #ffffff;
             line-height: 1.4;
-            max-width: 900px;
+            max-width: 850px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .hero p {
-            max-width: 750px;
-            margin: 0 auto 35px auto;
+            max-width: 720px;
+            margin: 0 auto 30px auto;
             color: #cbd5e1;
-            font-size: 17px;
+            font-size: 16px;
         }
 
         .btn-primary {
             display: inline-block;
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
             color: #ffffff;
-            padding: 14px 35px;
+            padding: 13px 32px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
@@ -205,9 +212,9 @@
 
         .scroll-down {
             display: inline-block;
-            margin-top: 35px;
+            margin-top: 30px;
             color: #94a3b8;
-            font-size: 14px;
+            font-size: 13px;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -218,7 +225,7 @@
 
         .specs-container {
             max-width: 1000px;
-            margin: -45px auto 50px auto;
+            margin: -40px auto 50px auto;
             background: #ffffff;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-subtle);
@@ -231,7 +238,7 @@
         }
 
         .spec-item {
-            padding: 30px 20px;
+            padding: 25px 20px;
             border-left: 1px solid var(--border-color);
         }
 
@@ -242,44 +249,43 @@
         .spec-label {
             font-size: 13px;
             color: var(--text-light);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 600;
         }
 
         .spec-value {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 800;
             color: var(--primary);
         }
 
         .content-section {
             max-width: 850px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 50px auto;
             padding: 0 20px;
             text-align: center;
         }
 
         .section-subtitle {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--accent);
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .content-section h2 {
-            font-size: 32px;
+            font-size: 30px;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 900;
         }
 
         .content-section p {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--text-light);
-            margin-bottom: 15px;
-            line-height: 1.9;
+            line-height: 1.8;
         }
 
         .gallery-container {
@@ -293,7 +299,7 @@
             border-radius: var(--radius-lg);
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-subtle);
-            margin-bottom: 45px;
+            margin-bottom: 40px;
             overflow: hidden;
             transition: all 0.4s ease;
         }
@@ -318,8 +324,8 @@
         }
 
         .dot {
-            width: 11px;
-            height: 11px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
         }
 
@@ -342,14 +348,14 @@
         }
 
         .screenshot-info {
-            padding: 30px;
+            padding: 25px 30px;
             text-align: right;
         }
 
         .screenshot-info h3 {
-            font-size: 22px;
+            font-size: 20px;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 800;
             display: flex;
             align-items: center;
@@ -358,14 +364,14 @@
 
         .screenshot-info h3 i {
             color: var(--accent);
-            font-size: 24px;
+            font-size: 20px;
             background: rgba(5, 150, 105, 0.1);
             padding: 10px;
             border-radius: 10px;
         }
 
         .screenshot-info p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-light);
             line-height: 1.8;
         }
@@ -374,33 +380,66 @@
             background: var(--bg-dark);
             color: #94a3b8;
             text-align: center;
-            padding: 50px 20px;
+            padding: 45px 20px;
             font-size: 14px;
             border-top: 1px solid #1e293b;
         }
 
         .footer-social {
-            max-width: 600px;
-            margin: 0 auto 25px auto;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
+        /* Responsive Improvements for Mobile */
         @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 12px 15px;
+                gap: 12px;
+            }
+            .nav-right {
+                width: 100%;
+                justify-content: space-between;
+                gap: 10px;
+            }
+            .btn-header {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+            .hero {
+                padding: 50px 15px 70px 15px;
+            }
+            .hero h1 {
+                font-size: 25px;
+            }
+            .hero p {
+                font-size: 14px;
+            }
+            .btn-primary {
+                padding: 12px 20px;
+                font-size: 14px;
+                width: 100%;
+                display: block;
+            }
             .specs-container {
                 grid-template-columns: 1fr;
-                margin: -20px 20px 40px 20px;
+                margin: -25px 15px 35px 15px;
             }
             .spec-item {
                 border-left: none;
                 border-bottom: 1px solid var(--border-color);
+                padding: 16px 12px;
             }
             .spec-item:last-child {
                 border-bottom: none;
             }
-            .hero h1 {
-                font-size: 28px;
+            .screenshot-info {
+                padding: 20px 15px;
+            }
+            .screenshot-info h3 {
+                font-size: 18px;
             }
         }
     </style>
@@ -415,10 +454,10 @@
             </a>
             <div class="nav-right">
                 <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank" class="social-icon facebook" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://youtube.com" target="_blank" class="social-icon youtube" title="يوتيوب"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/share/1Fb8YSNo6A/" target="_blank" class="social-icon facebook" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" target="_blank" class="social-icon youtube" title="يوتيوب"><i class="fa-brands fa-youtube"></i></a>
                 </div>
-                <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%85%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B0%D9%8A." target="_blank" class="btn-header">اطلب نظامك البرمجي الخاص</a>
+                <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A." target="_blank" class="btn-header">اطلب نظامك المخصص</a>
             </div>
         </div>
     </header>
@@ -428,7 +467,7 @@
         <div class="tags">أداء فائق • هندسة مخصصة • موثوقية استثنائية</div>
         <h1>أنظمة برمجية متكاملة مصممة خصيصاً لإدارة أعمالك باحترافية</h1>
         <p>نحن لا نطور نظاماً نمطياً واحداً، بل نصمم ونبني أي نظام إداري، محاسبي، أو خدمي متكامل باستخدام قواعد بيانات Microsoft Access وبيئة VBA لتلبية الاحتياجات الفريدة لنشاطك التجاري أو الخدمي بدقة متناهية.</p>
-        <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%85%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B0%D9%8A." target="_blank" class="btn-primary">اطلب تصميم نظامك المخصص الآن</a>
+        <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A." target="_blank" class="btn-primary">اطلب تصميم نظامك المخصص الآن</a>
         <br>
         <a href="#gallery" class="scroll-down">استعرض القدرات الهندسية ونماذج الأنظمة التنفيذية ↓</a>
     </section>
@@ -828,10 +867,10 @@
 
     <footer>
         <div class="footer-social">
-            <a href="https://facebook.com" target="_blank" class="social-icon facebook" style="background: #1e293b; color: #fff; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://youtube.com" target="_blank" class="social-icon youtube" style="background: #1e293b; color: #fff; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/1Fb8YSNo6A/" target="_blank" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" target="_blank" class="social-icon youtube"><i class="fa-brands fa-youtube"></i></a>
         </div>
-        <p>جميع الحقوق محفوظة © 2026 - تم هندسة وتطوير النظام بواسطة <span style="color: #fff; font-weight: 600;">Apexora Software</span> | نقدم حلول برمجية وأنظمة مخصصة لكافة الأنشطة والشركات.</p>
+        <p>جميع الحقوق محفوظة © 2026 - تم هندسة وتطوير النظام بواسطة <span style="color: #fff; font-weight: 700;">Apexora Software</span> | حلول وأنظمة برمجية مخصصة.</p>
     </footer>
 
 </body>
