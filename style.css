@@ -119,6 +119,15 @@ header {
     box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4); 
 }
 
+/* زر أعمال أخرى في الهيدر */
+.social-btn.other-works {
+    background: linear-gradient(135deg, #475569 0%, #334155 100%);
+}
+.social-btn.other-works:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(71, 85, 105, 0.4);
+}
+
 .btn-header {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%); 
     color: #ffffff; 
@@ -573,18 +582,79 @@ footer {
     z-index: 10;
 }
 
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 900;
+    font-size: 22px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 15px;
+    direction: ltr;
+}
+
+.footer-logo span {
+    color: var(--accent);
+}
+
+.footer-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    word-break: break-word;
+}
+
 .footer-social {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
-footer p {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #cbd5e1;
-    word-break: break-word;
+.copyright {
+    font-size: 13px;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.copyright span {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* أيقونة الواتساب العائمة */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background: #25d366;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
 }
 
 /* التجاوب مع الشاشات الصغيرة */
@@ -642,6 +712,14 @@ footer p {
 
     footer {
         padding: 40px 15px 140px 15px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        left: 20px;
     }
 
     body {
