@@ -28,7 +28,7 @@ body {
     line-height: 1.8; 
     overflow-x: hidden;
     direction: rtl; 
-    padding-bottom: 90px; /* مساحة أمان كبيرة جداً أسفل الصفحة لمنع زر الواتساب من تغطية الفوتر أو الحقوق */
+    padding-bottom: 90px;
 }
 
 header {
@@ -198,6 +198,34 @@ header {
     line-height: 1.9; 
 }
 
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 20px var(--accent-glow);
+    transition: transform 0.3s;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.scroll-down {
+    display: inline-block;
+    margin-top: 25px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+.scroll-down:hover {
+    color: #fff;
+}
+
 .specs-container {
     max-width: 1050px; 
     margin: -50px auto 60px auto; 
@@ -251,7 +279,6 @@ header {
     letter-spacing: 1.5px; 
 }
 
-/* حل مشكلة انعكاس العناوين المختلطة (عربي وإنجليزي) في عناوين الأقسام */
 .content-section h2 { 
     font-size: 32px; 
     color: var(--primary); 
@@ -345,10 +372,86 @@ header {
     word-break: break-word; 
 }
 
+/* قسم آراء العملاء (Testimonials) */
+.testimonials-section {
+    padding: 80px 20px;
+    background: #f8fafc;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1050px;
+    margin: 40px auto 0;
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    text-align: right;
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.client-avatar {
+    width: 45px;
+    height: 45px;
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent);
+    font-weight: 900;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.client-details h4 {
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.client-details span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.testimonial-text {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    word-break: break-word;
+}
+
+.rating-stars {
+    color: #f59e0b;
+    font-size: 14px;
+    display: flex;
+    gap: 3px;
+}
+
 /* قسم لماذا تختارنا */
 .why-section {
     padding: 80px 20px;
-    background: #f8fafc;
+    background: #ffffff;
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
@@ -362,7 +465,7 @@ header {
 }
 
 .why-card {
-    background: var(--card-bg);
+    background: #f8fafc;
     border: 1px solid var(--border-color);
     padding: 35px 25px;
     border-radius: var(--radius-lg);
@@ -403,7 +506,7 @@ header {
 /* قسم الأسئلة الشائعة (FAQ) */
 .faq-section {
     padding: 80px 15px; 
-    background: #ffffff;
+    background: #f8fafc;
     border-top: 1px solid var(--border-color);
 }
 
@@ -414,7 +517,7 @@ header {
 }
 
 .faq-item {
-    background: #f8fafc;
+    background: #ffffff;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     margin-bottom: 15px;
@@ -459,7 +562,32 @@ header {
     transform: rotate(180deg);
 }
 
-/* التجاوب مع الشاشات الصغيرة وتصحيح التداخل والقلب */
+/* تنسيق الفوتر */
+footer {
+    background: #090d16;
+    color: #94a3b8;
+    text-align: center;
+    padding: 50px 20px 120px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+footer p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    word-break: break-word;
+}
+
+/* التجاوب مع الشاشات الصغيرة */
 @media (max-width: 768px) {
     .nav-container { 
         flex-direction: column; 
@@ -512,7 +640,10 @@ header {
         padding: 0 15px 15px 15px;
     }
 
-    /* تكبير مساحة الأمان السفلية خصيصاً للموبايل لضمان عدم تغطية زر الواتساب لأي حقوق أو نصوص */
+    footer {
+        padding: 40px 15px 140px 15px;
+    }
+
     body {
         padding-bottom: 120px;
     }
