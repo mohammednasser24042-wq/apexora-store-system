@@ -369,7 +369,156 @@
             color: var(--text-light);
             line-height: 1.8;
         }
-        <!-- استكمال معرض الصور -->
+
+        footer {
+            background: var(--bg-dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 14px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-social {
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .specs-container {
+                grid-template-columns: 1fr;
+                margin: -20px 20px 40px 20px;
+            }
+            .spec-item {
+                border-left: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .spec-item:last-child {
+                border-bottom: none;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="logo.jpg" alt="Apexora Logo" class="logo-img">
+                Apexora <span>Software</span>
+            </a>
+            <div class="nav-right">
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" class="social-icon facebook" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" target="_blank" class="social-icon youtube" title="يوتيوب"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%85%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B0%D9%8A." target="_blank" class="btn-header">اطلب نظامك البرمجي الخاص</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="breadcrumb">الرئيسية / حلول البرمجيات المخصصة / هندسة قواعد البيانات المتطورة</div>
+        <div class="tags">أداء فائق • هندسة مخصصة • موثوقية استثنائية</div>
+        <h1>أنظمة برمجية متكاملة مصممة خصيصاً لإدارة أعمالك باحترافية</h1>
+        <p>نحن لا نطور نظاماً نمطياً واحداً، بل نصمم ونبني أي نظام إداري، محاسبي، أو خدمي متكامل باستخدام قواعد بيانات Microsoft Access وبيئة VBA لتلبية الاحتياجات الفريدة لنشاطك التجاري أو الخدمي بدقة متناهية.</p>
+        <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%85%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B0%D9%8A." target="_blank" class="btn-primary">اطلب تصميم نظامك المخصص الآن</a>
+        <br>
+        <a href="#gallery" class="scroll-down">استعرض القدرات الهندسية ونماذج الأنظمة التنفيذية ↓</a>
+    </section>
+
+    <div class="specs-container">
+        <div class="spec-item">
+            <div class="spec-label">هندسة التطوير</div>
+            <div class="spec-value">Microsoft Access / VBA</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">مجالات الأنظمة</div>
+            <div class="spec-value">متاجر، مخازن، عيادات، شركات</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">تصميم الواجهات</div>
+            <div class="spec-value">واجهات تفاعلية مخصصة Dark Mode</div>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="section-subtitle">حلول برمجية بلا حدود</div>
+        <h2>نحن نبتكر وندير أي نظام برمجي يتطلبه نشاطك</h2>
+        <p>سواء كنت تحتاج إلى نظام لإدارة المتاجر والمخازن، أو نظام مخصص للشركات الخدمية، المستشفيات، أو الأرشيف؛ فإننا نقوم بتحليل ورسم وهندسة النظام بالكامل ليطابق دورتك المستندية بدقة تامة مع أمان فائق واستقرار بلا حدود.</p>
+    </section>
+    <div class="gallery-container" id="gallery">
+
+        <!-- 1. الشاشة الرئيسية -->
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="dashboard.jpg" alt="الشاشة الرئيسية" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-house"></i> لوحة التحكم المركزية الذكية</h3>
+                <p>واجهة تشغيل رئيسية مصممة بعناية فائقة لعرض المؤشرات الحيوية، الإحصائيات اللحظية، وتوفير وصول فوري وآمن لكافة أقسام النظام البرمجي.</p>
+            </div>
+        </div>
+
+        <!-- 2. تسجيل الدخول -->
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="login.jpg" alt="تسجيل الدخول" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-lock"></i> منظومة المصادقة والأمان الرقمي</h3>
+                <p>بوابة دخول مشفرة ومؤمنة بالكامل تضمن حماية خصوصية البيانات ومنع الوصول غير المصرح به مع ربط مباشر بمستويات الصلاحيات.</p>
+            </div>
+        </div>
+
+        <!-- 3. تغيير كلمة المرور -->
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="change-password.jpg" alt="تغيير كلمة المرور" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-key"></i> إدارة بيانات الاعتماد والأمان الشخصي</h3>
+                <p>أداة متقدمة تتيح للمستخدمين تحديث كلمات المرور الخاصة بهم بسلاسة ووفق أعلى معايير تشفير وحماية سرية الحسابات الإدارية.</p>
+            </div>
+        </div>
+
+        <!-- 4. نقطة البيع POS -->
+        <div class="screenshot-card">
+            <div class="mockup-box">
+                <div class="mockup-header-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <img src="pos.jpg" alt="نقطة البيع POS" class="mockup-img">
+            </div>
+            <div class="screenshot-info">
+                <h3><i class="fa-solid fa-cash-register"></i> منظومة نقاط البيع الفورية (POS)</h3>
+                <p>محرك مبيعات فائق السرعة مبني بأكواد VBA متطورة لدعم أجهزة الماسح الضوئي (الباركود) وإنجاز المعاملات النقدية بدقة وسرعة مذهلة.</p>
+            </div>
+        </div>
+
         <!-- 5. المشتريات -->
         <div class="screenshot-card">
             <div class="mockup-box">
@@ -499,7 +648,6 @@
                 <p>نظام مالي محكم لمتابعة الفواتير المستحقة وتسجيل الدفعات النقدية والمصرفية للموردين مع التحديث الفوري للأرصدة.</p>
             </div>
         </div>
-
         <!-- 13. دفع مديونية العملاء -->
         <div class="screenshot-card">
             <div class="mockup-box">
@@ -678,8 +826,8 @@
 
     </div>
 
-    <footer style="background: var(--bg-dark); color: #94a3b8; text-align: center; padding: 50px 20px; font-size: 14px; border-top: 1px solid #1e293b;">
-        <div style="max-width: 600px; margin: 0 auto 25px auto; display: flex; justify-content: center; gap: 15px;">
+    <footer>
+        <div class="footer-social">
             <a href="https://facebook.com" target="_blank" class="social-icon facebook" style="background: #1e293b; color: #fff; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://youtube.com" target="_blank" class="social-icon youtube" style="background: #1e293b; color: #fff; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s;"><i class="fa-brands fa-youtube"></i></a>
         </div>
