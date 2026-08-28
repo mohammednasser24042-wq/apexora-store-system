@@ -104,6 +104,7 @@
             transition: all 0.3s ease;
             font-size: 15px;
             border: 1px solid rgba(255, 255, 255, 0.12);
+            cursor: pointer;
         }
 
         .social-icon.facebook:hover {
@@ -392,7 +393,6 @@
             margin-bottom: 20px;
         }
 
-        /* Responsive Improvements for Mobile */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -454,10 +454,13 @@
             </a>
             <div class="nav-right">
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/share/1Fb8YSNo6A/" target="_blank" class="social-icon facebook" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" target="_blank" class="social-icon youtube" title="يوتيوب"><i class="fa-brands fa-youtube"></i></a>
+                    <!-- كود ذكي لفتح تطبيق الفيسبوك أو المتصفح تلقائياً -->
+                    <a href="https://www.facebook.com/share/1Fb8YSNo6A/" onclick="openSmartApp(event, 'fb://profile/1Fb8YSNo6A', 'https://www.facebook.com/share/1Fb8YSNo6A/');" class="social-icon facebook" title="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                    
+                    <!-- كود ذكي لفتح تطبيق اليوتيوب أو المتصفح تلقائياً -->
+                    <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" onclick="openSmartApp(event, 'vnd.youtube://www.youtube.com/@apexorasoftware', 'https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D');" class="social-icon youtube" title="يوتيوب"><i class="fa-brands fa-youtube"></i></a>
                 </div>
-                <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A." target="_blank" class="btn-header">اطلب نظامك المخصص</a>
+                <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A." target="_blank" class="btn-header">اطلب نظامك المخصص</a>
             </div>
         </div>
     </header>
@@ -467,7 +470,7 @@
         <div class="tags">أداء فائق • هندسة مخصصة • موثوقية استثنائية</div>
         <h1>أنظمة برمجية متكاملة مصممة خصيصاً لإدارة أعمالك باحترافية</h1>
         <p>نحن لا نطور نظاماً نمطياً واحداً، بل نصمم ونبني أي نظام إداري، محاسبي، أو خدمي متكامل باستخدام قواعد بيانات Microsoft Access وبيئة VBA لتلبية الاحتياجات الفريدة لنشاطك التجاري أو الخدمي بدقة متناهية.</p>
-        <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A." target="_blank" class="btn-primary">اطلب تصميم نظامك المخصص الآن</a>
+        <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D9%86%D8%B8%D8%A7%D9%85%20%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%20%D9%85%D8%AE%D8%B5%D8%B5%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A." target="_blank" class="btn-primary">اطلب تصميم نظامك المخصص الآن</a>
         <br>
         <a href="#gallery" class="scroll-down">استعرض القدرات الهندسية ونماذج الأنظمة التنفيذية ↓</a>
     </section>
@@ -867,11 +870,34 @@
 
     <footer>
         <div class="footer-social">
-            <a href="https://www.facebook.com/share/1Fb8YSNo6A/" target="_blank" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" target="_blank" class="social-icon youtube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/1Fb8YSNo6A/" onclick="openSmartApp(event, 'fb://profile/1Fb8YSNo6A', 'https://www.facebook.com/share/1Fb8YSNo6A/');" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" onclick="openSmartApp(event, 'vnd.youtube://www.youtube.com/@apexorasoftware', 'https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D');" class="social-icon youtube"><i class="fa-brands fa-youtube"></i></a>
         </div>
         <p>جميع الحقوق محفوظة © 2026 - تم هندسة وتطوير النظام بواسطة <span style="color: #fff; font-weight: 700;">Apexora Software</span> | حلول وأنظمة برمجية مخصصة.</p>
     </footer>
+
+    <!-- دالة جافاسكريبت ذكية لفتح تطبيقات السوشيال ميديا أو المتصفح -->
+    <script>
+        function openSmartApp(event, appScheme, webUrl) {
+            event.preventDefault();
+            
+            // تحقق مبدئي للموبايل لتجربة فتح التطبيق المخصص
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // محاولة فتح التطبيق
+                window.location.href = appScheme;
+                
+                // في حال لم يكن التطبيق مثبتًا، يتم التحويل للمتصفح تلقائيًا بعد جزء من الثانية
+                setTimeout(function() {
+                    window.location.href = webUrl;
+                }, 500);
+            } else {
+                // لو الجهاز كمبيوتر يفتح الرابط العادي مباشرة في تبويب جديد
+                window.open(webUrl, '_blank');
+            }
+        }
+    </script>
 
 </body>
 </html>
