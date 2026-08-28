@@ -4,84 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نظام إدارة المخزون والمبيعات الاحترافي - Apexora Software</title>
+    <!-- خطوط جوجل -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #090d16;
-            --primary-light: #1e293b;
-            --accent: #10b981;
-            --accent-hover: #059669;
-            --accent-glow: rgba(16, 185, 129, 0.25);
-            --bg-body: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-light: #64748b;
-            --border-color: #cbd5e1;
-            --radius-lg: 20px;
-            --radius-md: 12px;
-            --shadow-subtle: 0 15px 35px -5px rgba(15, 23, 42, 0.07);
-            --shadow-hover: 0 25px 50px -12px rgba(16, 185, 129, 0.2);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.8; overflow-x: hidden; }
-        
-        header {
-            background: rgba(9, 13, 22, 0.92); backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08); position: sticky; top: 0; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .nav-container { max-width: 1280px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
-        .logo-area { display: flex; align-items: center; gap: 12px; font-weight: 900; font-size: 24px; color: #ffffff; text-decoration: none; white-space: nowrap; }
-        .logo-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); box-shadow: 0 0 15px var(--accent-glow); }
-        .logo-area span { color: var(--accent); }
-        .nav-right { display: flex; align-items: center; gap: 14px; }
-        .social-icons { display: flex; gap: 10px; }
-        .social-btn {
-            display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: var(--radius-md);
-            font-size: 13px; font-weight: 700; text-decoration: none; color: #ffffff; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 12px rgba(0,0,0,0.15); white-space: nowrap;
-        }
-        .social-btn.facebook { background: linear-gradient(135deg, #1877f2 0%, #0c5dc7 100%); }
-        .social-btn.facebook:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(24, 119, 242, 0.4); }
-        .social-btn.youtube { background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%); }
-        .social-btn.youtube:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4); }
-        .btn-header {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%); color: #ffffff; padding: 9px 18px;
-            border-radius: var(--radius-md); text-decoration: none; font-weight: 700; font-size: 13px; box-shadow: 0 4px 15px var(--accent-glow); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); white-space: nowrap; cursor: pointer; border: none;
-        }
-        .btn-header:hover { transform: translateY(-2px); box-shadow: 0 6px 20px var(--accent-glow); }
-        
-        .hero { background: linear-gradient(135deg, #090d16 0%, #111827 50%, #1e293b 100%); color: #ffffff; padding: 85px 20px 105px 20px; text-align: center; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -50px; left: 50%; transform: translateX(-50%); width: 800px; height: 350px; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%); pointer-events: none; }
-        .breadcrumb { font-size: 13px; color: #94a3b8; margin-bottom: 20px; letter-spacing: 0.5px; font-weight: 600; }
-        .tags { font-size: 14px; color: #38bdf8; margin-bottom: 22px; font-weight: 800; background: rgba(56, 189, 248, 0.1); display: inline-block; padding: 7px 20px; border-radius: 30px; border: 1px solid rgba(56, 189, 248, 0.25); box-shadow: 0 4px 20px rgba(56, 189, 248, 0.1); }
-        .hero h1 { font-size: 42px; font-weight: 900; margin-bottom: 22px; color: #ffffff; line-height: 1.35; max-width: 900px; margin-left: auto; margin-right: auto; letter-spacing: -0.5px; }
-        .hero p { max-width: 750px; margin: 0 auto 35px auto; color: #cbd5e1; font-size: 17px; line-height: 1.9; }
-        .btn-primary {
-            display: inline-block; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%); color: #ffffff;
-            padding: 15px 36px; border-radius: 14px; text-decoration: none; font-weight: 800; font-size: 17px; box-shadow: 0 8px 25px var(--accent-glow); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border: none;
-        }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4); }
-        .scroll-down { display: inline-block; margin-top: 35px; color: #94a3b8; font-size: 13px; text-decoration: none; transition: color 0.3s; font-weight: 600; }
-        .scroll-down:hover { color: #38bdf8; }
-        
-        .specs-container {
-            max-width: 1050px; margin: -50px auto 60px auto; background: var(--card-bg); border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-subtle); border: 1px solid var(--border-color); display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; position: relative; z-index: 10; overflow: hidden;
-        }
-        .spec-item { padding: 30px 20px; border-left: 1px solid var(--border-color); transition: background 0.3s; }
-        .spec-item:hover { background: #f8fafc; }
-        .spec-item:last-child { border-left: none; }
-        .spec-label { font-size: 13px; color: var(--text-light); margin-bottom: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .spec-value { font-size: 16px; font-weight: 900; color: var(--primary); }
-        
-        .content-section { max-width: 900px; margin: 0 auto 60px auto; padding: 0 20px; text-align: center; }
-        .section-subtitle { font-size: 13px; color: var(--accent); font-weight: 900; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1.5px; }
-        .content-section h2 { font-size: 32px; color: var(--primary); margin-bottom: 18px; font-weight: 900; letter-spacing: -0.5px; }
-        .content-section p { font-size: 16px; color: var(--text-light); line-height: 1.9; }
-    </style>
+    <!-- ملف التنسيقات الخارجي -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- الهيدر والقائمة العلوية -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo-area">
@@ -98,6 +30,7 @@
         </div>
     </header>
 
+    <!-- قسم الـ Hero الرئيسي -->
     <section class="hero">
         <div class="breadcrumb">الرئيسية / حلول البرمجيات المخصصة / هندسة قواعد البيانات المتطورة</div>
         <div class="tags">أداء فائق • هندسة مخصصة • موثوقية استثنائية</div>
@@ -108,6 +41,7 @@
         <a href="#gallery" class="scroll-down">استعرض القدرات الهندسية ونماذج الأنظمة التنفيذية ↓</a>
     </section>
 
+    <!-- مواصفات النظام (Specs) -->
     <div class="specs-container">
         <div class="spec-item">
             <div class="spec-label">هندسة التطوير</div>
@@ -123,40 +57,21 @@
         </div>
     </div>
 
+    <!-- نبذة تعريفية -->
     <section class="content-section">
         <div class="section-subtitle">حلول برمجية بلا حدود</div>
         <h2>نحن نبتكر وندير أي نظام برمجي يتطلبه نشاطك</h2>
         <p>سواء كنت تحتاج إلى نظام لإدارة المتاجر والمخازن، أو نظام مخصص للشركات الخدمية، المستشفيات، أو الأرشيف؛ فإننا نقوم بتحليل ورسم وهندسة النظام بالكامل ليطابق دورتك المستندية بدقة تامة مع أمان فائق واستقرار بلا حدود.</p>
     </section>
+
+    <!-- معرض صور الشاشات (Gallery) -->
     <div class="gallery-container" id="gallery">
-        <style>
-            .gallery-container { max-width: 1050px; margin: 0 auto 70px auto; padding: 0 20px; }
-            .screenshot-card {
-                background: var(--card-bg); border-radius: var(--radius-lg); border: 1px solid var(--border-color);
-                box-shadow: var(--shadow-subtle); margin-bottom: 45px; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            .screenshot-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-5px); border-color: rgba(16, 185, 129, 0.4); }
-            .mockup-box { background: #0f172a; padding: 14px; border-bottom: 1px solid var(--border-color); position: relative; }
-            .mockup-header-dots { display: flex; gap: 8px; margin-bottom: 12px; padding-right: 6px; }
-            .dot { width: 11px; height: 11px; border-radius: 50%; }
-            .dot-red { background: #ef4444; } .dot-yellow { background: #f59e0b; } .dot-green { background: #10b981; }
-            .mockup-img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-            .mockup-img:last-child { margin-bottom: 0; }
-            .screenshot-info { padding: 30px 35px; text-align: right; background: linear-gradient(to bottom, #ffffff, #fafafa); }
-            .screenshot-info h3 { font-size: 21px; color: var(--primary); margin-bottom: 12px; font-weight: 800; display: flex; align-items: center; gap: 14px; letter-spacing: -0.3px; }
-            .screenshot-info h3 i { color: var(--accent); font-size: 20px; background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 12px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1); }
-            .screenshot-info p { font-size: 15px; color: var(--text-light); line-height: 1.9; }
-            @media (max-width: 768px) {
-                .screenshot-info { padding: 22px 18px; }
-                .screenshot-info h3 { font-size: 18px; }
-            }
-        </style>
 
         <!-- 1. لوحة التحكم -->
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="dashboard.jpg" alt="الشاشة الرئيسية" class="mockup-img">
+                <img src="dashboard.jpg" alt="الشاشة الرئيسية" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-house"></i> لوحة التحكم المركزية الذكية</h3>
@@ -168,7 +83,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="login.jpg" alt="تسجيل الدخول" class="mockup-img">
+                <img src="login.jpg" alt="تسجيل الدخول" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-lock"></i> منظومة المصادقة والأمان الرقمي</h3>
@@ -180,7 +95,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="change-password.jpg" alt="تغيير كلمة المرور" class="mockup-img">
+                <img src="change-password.jpg" alt="تغيير كلمة المرور" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-key"></i> إدارة بيانات الاعتماد والأمان الشخصي</h3>
@@ -192,7 +107,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="pos.jpg" alt="نقطة البيع POS" class="mockup-img">
+                <img src="pos.jpg" alt="نقطة البيع POS" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-cash-register"></i> منظومة نقاط البيع الفورية (POS)</h3>
@@ -204,7 +119,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="purchases.jpg" alt="المشتريات" class="mockup-img">
+                <img src="purchases.jpg" alt="المشتريات" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-truck-ramp-box"></i> مركز إدارة التوريدات والمشتريات</h3>
@@ -216,7 +131,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="sales-return.jpg" alt="مرتجع المبيعات" class="mockup-img">
+                <img src="sales-return.jpg" alt="مرتجع المبيعات" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-rotate-left"></i> معالجة مرتجعات المبيعات والعملاء</h3>
@@ -228,7 +143,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="purchase-return.jpg" alt="مرتجع المشتريات" class="mockup-img">
+                <img src="purchase-return.jpg" alt="مرتجع المشتريات" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-boxes-packing"></i> تسوية مرتجعات الموردين</h3>
@@ -240,9 +155,9 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="inventory-1.jpg" alt="أرصدة المخزون - 1" class="mockup-img">
-                <img src="inventory-2.jpg" alt="أرصدة المخزون - 2" class="mockup-img">
-                <img src="inventory-3.jpg" alt="أرصدة المخزون - 3" class="mockup-img">
+                <img src="inventory-1.jpg" alt="أرصدة المخزون - 1" class="mockup-img" loading="lazy">
+                <img src="inventory-2.jpg" alt="أرصدة المخزون - 2" class="mockup-img" loading="lazy">
+                <img src="inventory-3.jpg" alt="أرصدة المخزون - 3" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-warehouse"></i> مراقبة أرصدة المخازن وحركات الأصناف</h3>
@@ -254,7 +169,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="items.jpg" alt="إدارة الأصناف" class="mockup-img">
+                <img src="items.jpg" alt="إدارة الأصناف" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-tags"></i> قاعدة بيانات المنتجات والأصناف</h3>
@@ -266,7 +181,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="customers.jpg" alt="العملاء" class="mockup-img">
+                <img src="customers.jpg" alt="العملاء" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-users"></i> إدارة علاقات العملاء (CRM)</h3>
@@ -278,7 +193,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="suppliers.jpg" alt="الموردين" class="mockup-img">
+                <img src="suppliers.jpg" alt="الموردين" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-truck-field"></i> حسابات وشئون الموردين</h3>
@@ -290,7 +205,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="pay-suppliers.jpg" alt="دفع مديونية الموردين" class="mockup-img">
+                <img src="pay-suppliers.jpg" alt="دفع مديونية الموردين" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-file-invoice-dollar"></i> تسوية وسداد مستحقات الموردين</h3>
@@ -301,7 +216,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="pay-customers.jpg" alt="دفع مديونية العملاء" class="mockup-img">
+                <img src="pay-customers.jpg" alt="دفع مديونية العملاء" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-hand-holding-dollar"></i> تحصيل مديونات وذمم العملاء</h3>
@@ -313,7 +228,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="expenses.jpg" alt="المصروفات" class="mockup-img">
+                <img src="expenses.jpg" alt="المصروفات" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-wallet"></i> رقابة المصروفات والنفقات التشغيلية</h3>
@@ -325,7 +240,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="transfers.jpg" alt="التحويلات المالية" class="mockup-img">
+                <img src="transfers.jpg" alt="التحويلات المالية" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-right-left"></i> إدارة الخزائن والتحويلات المالية</h3>
@@ -337,7 +252,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="labels.jpg" alt="طباعة الملصقات" class="mockup-img">
+                <img src="labels.jpg" alt="طباعة الملصقات" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-barcode"></i> مركز طباعة الباركود والملصقات</h3>
@@ -349,7 +264,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="damaged-goods.jpg" alt="التالف والهالك" class="mockup-img">
+                <img src="damaged-goods.jpg" alt="التالف والهالك" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-triangle-exclamation"></i> إدارة وتتبع المنتجات التالفة والهالكة</h3>
@@ -361,7 +276,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="profits.jpg" alt="الأرباح والتقارير" class="mockup-img">
+                <img src="profits.jpg" alt="الأرباح والتقارير" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-chart-pie"></i> لوحة تحليل الأرباح والتقارير المالية</h3>
@@ -373,7 +288,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="users.jpg" alt="إدارة المستخدمين" class="mockup-img">
+                <img src="users.jpg" alt="إدارة المستخدمين" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-user-shield"></i> نظام الصلاحيات وإدارة المستخدمين</h3>
@@ -385,7 +300,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="factory-reset.jpg" alt="نظام تهيئة البيانات الشامل" class="mockup-img">
+                <img src="factory-reset.jpg" alt="نظام تهيئة البيانات الشامل" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-triangle-exclamation"></i> نظام إعادة التهيئة الشامل (ضبط المصنع)</h3>
@@ -397,7 +312,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="backup.jpg" alt="إدارة النسخ الاحتياطي" class="mockup-img">
+                <img src="backup.jpg" alt="إدارة النسخ الاحتياطي" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-database"></i> مركز النسخ الاحتياطي وحماية البيانات</h3>
@@ -409,7 +324,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="recovery.jpg" alt="استعادة النسخة الاحتياطية" class="mockup-img">
+                <img src="recovery.jpg" alt="استعادة النسخة الاحتياطية" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-clock-rotate-left"></i> منظومة الاستعادة الآمنة (Recovery System)</h3>
@@ -421,7 +336,7 @@
         <div class="screenshot-card">
             <div class="mockup-box">
                 <div class="mockup-header-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
-                <img src="shift-summary.jpg" alt="ملخص الوردية والدرج" class="mockup-img">
+                <img src="shift-summary.jpg" alt="ملخص الوردية والدرج" class="mockup-img" loading="lazy">
             </div>
             <div class="screenshot-info">
                 <h3><i class="fa-solid fa-cash-register"></i> تقرير إغلاق الوردية والدرج النقدي</h3>
@@ -431,25 +346,8 @@
 
     </div>
 
+    <!-- الفوتر -->
     <footer>
-        <style>
-            footer { background: #06090f; color: #94a3b8; text-align: center; padding: 50px 20px; font-size: 14px; border-top: 1px solid #1e293b; }
-            .footer-social { display: flex; justify-content: center; gap: 12px; margin-bottom: 25px; }
-            @media (max-width: 768px) {
-                .nav-container { flex-direction: column; padding: 12px 15px; gap: 12px; }
-                .nav-right { width: 100%; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-                .social-icons { gap: 6px; }
-                .social-btn { padding: 6px 10px; font-size: 11px; }
-                .btn-header { font-size: 12px; padding: 8px 12px; }
-                .hero { padding: 55px 15px 75px 15px; }
-                .hero h1 { font-size: 26px; }
-                .hero p { font-size: 14px; }
-                .btn-primary { padding: 13px 22px; font-size: 15px; width: 100%; display: block; }
-                .specs-container { grid-template-columns: 1fr; margin: -30px 15px 40px 15px; }
-                .spec-item { border-left: none; border-bottom: 1px solid var(--border-color); padding: 18px 15px; }
-                .spec-item:last-child { border-bottom: none; }
-            }
-        </style>
         <div class="footer-social">
             <a href="https://www.facebook.com/profile.php?id=61589611132517&mibextid=ZbWKwL" target="_blank" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i> فيسبوك</a>
             <a href="https://youtube.com/@apexorasoftware?si=yGbs2Orjtx5jg70D" target="_blank" class="social-btn youtube"><i class="fa-brands fa-youtube"></i> يوتيوب</a>
@@ -457,7 +355,16 @@
         <p>جميع الحقوق محفوظة © 2026 - تم هندسة وتطوير النظام بواسطة <span style="color: #fff; font-weight: 800;">Apexora Software</span> | حلول وأنظمة برمجية مخصصة.</p>
     </footer>
 
-    <!-- دالة جافا سكريبت آمنة ومضمونة 100% لمنع الأكواد الغريبة -->
+    <!-- زر الواتساب العائم -->
+    <a href="https://api.whatsapp.com/send?phone=201100107585&text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20تصميم%20نظام%20برمجي%20مخصص." 
+       target="_blank" 
+       style="position: fixed; bottom: 25px; left: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 8px 20px rgba(37,211,102,0.4); z-index: 9999; transition: transform 0.3s;"
+       onmouseover="this.style.transform='scale(1.1)'" 
+       onmouseout="this.style.transform='scale(1)'">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- دالة جافا سكريبت لفتح الواتساب -->
     <script>
         function openWhatsApp() {
             var phoneNumber = "201100107585";
