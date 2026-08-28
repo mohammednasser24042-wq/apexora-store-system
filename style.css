@@ -119,7 +119,6 @@ header {
     box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4); 
 }
 
-/* زر أعمال أخرى في الهيدر */
 .social-btn.other-works {
     background: linear-gradient(135deg, #475569 0%, #334155 100%);
 }
@@ -512,6 +511,98 @@ header {
     word-break: break-word;
 }
 
+/* قسم الدعوة للتواصل الجديد (CTA Section) المماثل للصورة */
+.cta-section {
+    padding: 80px 20px;
+    background: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #090d16 0%, #111827 50%, #1e293b 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 50px 30px;
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+}
+
+.cta-card h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.cta-card p {
+    font-size: 15px;
+    color: #94a3b8;
+    max-width: 500px;
+    margin: 0 auto 35px auto;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 24px;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+}
+
+.cta-btn.facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #0c5dc7 100%);
+}
+.cta-btn.facebook:hover {
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+}
+
+.cta-btn.youtube {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+}
+.cta-btn.youtube:hover {
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.cta-btn.other-works {
+    background: linear-gradient(135deg, #475569 0%, #334155 100%);
+}
+.cta-btn.other-works:hover {
+    box-shadow: 0 6px 20px rgba(71, 85, 105, 0.4);
+}
+
+.cta-btn.whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+.cta-btn.whatsapp:hover {
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
 /* قسم الأسئلة الشائعة (FAQ) */
 .faq-section {
     padding: 80px 15px; 
@@ -708,6 +799,19 @@ footer {
     
     .faq-answer {
         padding: 0 15px 15px 15px;
+    }
+
+    .cta-card {
+        padding: 35px 20px;
+    }
+    
+    .cta-card h2 {
+        font-size: 22px;
+    }
+    
+    .cta-btn {
+        font-size: 15px;
+        padding: 12px 20px;
     }
 
     footer {
