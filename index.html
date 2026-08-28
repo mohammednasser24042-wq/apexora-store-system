@@ -457,13 +457,12 @@
         <p>جميع الحقوق محفوظة © 2026 - تم هندسة وتطوير النظام بواسطة <span style="color: #fff; font-weight: 800;">Apexora Software</span> | حلول وأنظمة برمجية مخصصة.</p>
     </footer>
 
-    <!-- دالة جافا سكريبت لتوليد رابط الواتساب بترميز دقيق يمنع الرموز الغريبة نهائياً -->
+    <!-- دالة جافا سكريبت آمنة ومضمونة 100% لمنع الأكواد الغريبة -->
     <script>
         function openWhatsApp() {
             var phoneNumber = "201100107585";
             var message = "السلام عليكم، أرغب في الاستفسار عن تصميم نظام برمجي مخصص لنشاطي التجاري.";
-            var encodedMessage = encodeURIComponent(message);
-            var whatsappURL = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodedMessage;
+            var whatsappURL = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
             window.open(whatsappURL, '_blank');
         }
     </script>
