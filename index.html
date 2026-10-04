@@ -21,7 +21,6 @@
                 <span id="brandName" class="brand-title">Apexora <span class="highlight">Software</span></span>
             </div>
             
-            <!-- Desktop Nav Links -->
             <nav class="nav-links">
                 <a href="index.html" class="active">الرئيسية</a>
                 <a href="#features">المميزات</a>
@@ -30,7 +29,6 @@
                 <a href="#" class="btn-cta-nav whatsapp-link">احصل على نسختك</a>
             </nav>
 
-            <!-- Mobile Menu Toggle Button -->
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -168,11 +166,11 @@
         <div class="container">
             <div class="section-title">
                 <h2>معرض شاشات النظام (34 واجهة تفصيلية)</h2>
-                <p>تعرف عن قرب على الواجهات الاحترافية المصممة بعناية لراحة المستخدم</p>
+                <p>تعرف عن قرب على الواجهات الاحترافية المصممة بعناية لراحة المستخدم (اضغط على أي صورة لتكبيرها)</p>
             </div>
             
             <div id="homePreviewGrid" class="home-preview-grid">
-                <!-- سيتم تعبئتها ديناميكياً بأبرز الشاشات -->
+                <!-- تعبئة ديناميكية -->
             </div>
 
             <div class="center-btn-box" style="text-align: center; margin-top: 50px;">
@@ -225,13 +223,22 @@
         </div>
     </section>
 
+    <!-- Image Lightbox Modal (نافذة عرض وتكبير الصور) -->
+    <div class="image-lightbox-modal" id="imageLightbox">
+        <div class="lightbox-content-wrapper">
+            <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
+            <img id="lightboxImg" src="" alt="Zoomed Screenshot">
+            <div class="lightbox-caption" id="lightboxCaption">عنوان الصورة</div>
+        </div>
+    </div>
+
     <!-- Floating WhatsApp Button -->
     <a href="#" class="floating-whatsapp whatsapp-link" title="تواصل عبر الواتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Footer Section -->
-    <footer class="main-footer">
+    <main-footer class="main-footer">
         <div class="container footer-content">
             <div class="footer-info">
                 <h3>Apexora Software</h3>
@@ -253,13 +260,13 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Apexora Software. جميع الحقوق محفوظة للمطور محمد.</p>
         </div>
-    </footer>
+    </main-footer>
 
-    <!-- Data JS & Home Script -->
+    <!-- Data JS & Home Script with Lightbox Support -->
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // تفعيل قائمة الموبايل الجانبية (Mobile Drawer)
+            // قائمة الموبايل الجانبية
             const menuToggle = document.getElementById('menuToggle');
             const closeDrawer = document.getElementById('closeDrawer');
             const mobileDrawer = document.getElementById('mobileDrawer');
@@ -274,7 +281,6 @@
             if(closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
             if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
 
-            // إغلاق القائمة عند الضغط على أي رابط بداخلها
             document.querySelectorAll('.drawer-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileDrawer.classList.remove('open');
@@ -282,7 +288,7 @@
                 });
             });
 
-            // توليد روابط الواتساب برمجياً بترميز آمن 100% لتجنب الرموز الغريبة
+            // روابط الواتساب الآمنة
             const phone = "201100107585";
             const message = "السلام عليكم، أرغب في الاستفسار عن أنظمة Apexora المتكاملة لإدارة الأعمال وطلب تفاصيل أكثر";
             const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -301,8 +307,9 @@
                         const card = document.createElement('div');
                         card.className = 'screenshot-card';
                         card.innerHTML = `
-                            <div class="img-wrapper">
+                            <div class="img-wrapper" onclick="openLightbox('${item.fileName}', '${item.title}')">
                                 <img src="${item.fileName}" alt="${item.title}" loading="lazy">
+                                <div class="zoom-overlay-icon"><i class="fas fa-search-plus"></i></div>
                             </div>
                             <div class="screenshot-info">
                                 <span class="tag-category">${item.category.toUpperCase()}</span>
@@ -314,6 +321,38 @@
                     });
                 }
             }
+
+            // Lightbox Logic (برمجية تكبير الصور)
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            window.openLightbox = function(imgSrc, captionText) {
+                if(lightbox && lightboxImg) {
+                    lightboxImg.src = imgSrc;
+                    lightboxCaption.textContent = captionText || "شاشة من النظام";
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // منع خلفية الصفحة من السحب
+                }
+            };
+
+            function closeLightboxFunc() {
+                if(lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            if(lightboxClose) lightboxClose.addEventListener('click', closeLightboxFunc);
+            if(lightbox) {
+                lightbox.addEventListener('click', (e) => {
+                    if(e.target === lightbox) closeLightboxFunc();
+                });
+            }
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'Escape') closeLightboxFunc();
+            });
         });
     </script>
 </body>
