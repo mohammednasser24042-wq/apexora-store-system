@@ -62,7 +62,7 @@
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>أمان صارم وصلاحيات دقيقة</h3>
-                    <p>نظام تحكم كامل في صلاحيات المستخدمين لمنع التلاعب وحماية البيانات الحساسة.</p>
+                    <p>نظام تحكم كامل في صلاحيات المستخدمين لمنع التلاعب والحماية البيانات الحساسة.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
@@ -82,7 +82,7 @@
     <section id="screenshots-section" class="screenshots-section">
         <div class="container">
             <div class="section-title">
-                <h2>معرض شاشات النظام (34 واجهة تفصيلية)</h2>
+                <h2>معرض شاشات النظام (33 واجهة تفصيلية)</h2>
                 <p>تعرف عن قرب على الواجهات الاحترافية المصممة بعناية فائقة لراحة المستخدم</p>
             </div>
             
@@ -139,7 +139,6 @@
                 document.getElementById('brandLogo').src = systemData.brand.logo;
                 document.getElementById('brandName').innerText = systemData.brand.name;
                 document.getElementById('footerBrandName').innerText = systemData.brand.name;
-                document.getElementById('heroTagline').innerText = systemData.brand.tagline;
 
                 const grid = document.getElementById('screenshotsGrid');
 
@@ -156,9 +155,9 @@
                         card.className = `screenshot-card ${item.category}`;
                         card.innerHTML = `
                             <div class="img-wrapper">
-                                <img src="assets/images/${item.fileName}" alt="${item.title}" loading="lazy">
+                                <img src="${item.fileName}" alt="${item.title}" loading="lazy">
                                 <div class="img-overlay">
-                                    <button class="zoom-btn" data-img="assets/images/${item.fileName}" data-title="${item.title}" data-desc="${item.description}">
+                                    <button class="zoom-btn" data-img="${item.fileName}" data-title="${item.title}" data-desc="${item.description}">
                                         <i class="fas fa-search-plus"></i> تكبير الشاشة
                                     </button>
                                 </div>
