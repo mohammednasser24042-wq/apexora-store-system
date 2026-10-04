@@ -1,206 +1,171 @@
 const systemData = {
     brand: {
         name: "Apexora Software",
-        logo: "logo.jpg"
+        tagline: "أنظمة إدارة الأعمال المتقدمة لحلول دقيقة واحترافية",
+        logo: "logo.png" // تأكد من اسم شعار العرض إذا وجد، أو اتركه حسب ملفك
     },
     screenshots: [
         {
-            fileName: "dashboard.jpg",
+            fileName: "dashboard.png",
             title: "لوحة التحكم الرئيسية",
-            description: "شاشة رئيسية تعرض مؤشرات الأداء، إجمالي المبيعات، والأرباح اللحظية.",
-            category: "sales"
+            category: "sales",
+            description: "شاشة رئيسية تعرض مؤشرات الأداء، إجمالي المبيعات، والأرباح اللحظية."
         },
         {
-            fileName: "pos.jpg",
+            fileName: "pos-screen.png",
             title: "واجهة نقاط البيع (POS)",
-            description: "شاشة الكاشير السريعة لإتمام عمليات البيع وطباعة الفواتير بضغطة زر.",
-            category: "sales"
+            category: "sales",
+            description: "شاشة الكاشير السريعة لإتمام عمليات البيع وطباعة الفواتير بضغطة زر."
         },
         {
-            fileName: "invoice-purchase.jpg",
-            title: "فواتير المشتريات",
-            description: "إدارة واردات البضائع وحسابات الموردين بدقة فائقة.",
-            category: "inventory"
-        },
-        {
-            fileName: "invoice-sales.jpg",
+            fileName: "sales-invoices.png",
             title: "فواتير المبيعات",
-            description: "إصدار ومتابعة فواتير العملاء مع إمكانية طباعتها وتعديلها.",
-            category: "sales"
+            category: "sales",
+            description: "إصدار ومتابعة فواتير العملاء مع إمكانية طباعتها وتعديلها."
         },
         {
-            fileName: "invoices-filter.jpg",
+            fileName: "sales-filter.png",
             title: "فلترة وبحث الفواتير",
-            description: "البحث المتقدم وتصفية الفواتير حسب التاريخ والعميل وحالة الدفع.",
-            category: "sales"
+            category: "sales",
+            description: "البحث المتقدم وتصفية الفواتير حسب التاريخ والعميل وحالة الدفع."
         },
         {
-            fileName: "inventory-1.jpg",
-            title: "إدارة المخازن والأصناف (1)",
-            description: "عرض وترتيب المنتجات وتحديد الكميات والأعمار التخزينية.",
-            category: "inventory"
-        },
-        {
-            fileName: "inventory-2.jpg",
-            title: "إدارة المخازن والأصناف (2)",
-            description: "متابعة حركة الأصناف داخل المخزن بدقة وتنبيهات النواقص.",
-            category: "inventory"
-        },
-        {
-            fileName: "inventory-3.jpg",
-            title: "إدارة المخازن والأصناف (3)",
-            description: "تفاصيل إضافية لمستويات المخزون والوحدات البديلة للأصناف.",
-            category: "inventory"
-        },
-        {
-            fileName: "inventory-stocktake.jpg",
-            title: "جرد المخازن",
-            description: "شاشة مخصصة لجرد وتسوية المخزون ومطابقة الأرصدة الفعلية والدفترية.",
-            category: "inventory"
-        },
-        {
-            fileName: "items.jpg",
-            title: "إدارة الأصناف والمنتجات",
-            description: "إضافة وتعديل الأصناف، الوحدات، والأسعار داخل النظام.",
-            category: "inventory"
-        },
-        {
-            fileName: "customers.jpg",
-            title: "إدارة العملاء",
-            description: "دليل العملاء، أرصدتهم، وتاريخ معاملاتهم السابقة.",
-            category: "accounts"
-        },
-        {
-            fileName: "suppliers.jpg",
-            title: "إدارة الموردين",
-            description: "بيانات الموردين، أرصدة الحسابات، وحركات الدفع والقبض.",
-            category: "accounts"
-        },
-        {
-            fileName: "pay-customers.jpg",
-            title: "سداد دفعات العملاء",
-            description: "تسجيل سندات القبض والدفعات النقدية من العملاء.",
-            category: "accounts"
-        },
-        {
-            fileName: "pay-suppliers.jpg",
-            title: "سداد مستحقات الموردين",
-            description: "إدارة المدفوعات النقدية والتحويلات للموردين.",
-            category: "accounts"
-        },
-        {
-            fileName: "expenses.jpg",
-            title: "إدارة المصروفات",
-            description: "تسجيل ومتابعة المصروفات اليومية والنثرية للنشاط التجاري.",
-            category: "accounts"
-        },
-        {
-            fileName: "profits.jpg",
-            title: "تقارير الأرباح المالية",
-            description: "حسابات الأرباح والخسائر وتحليل العائد المادي بدقة.",
-            category: "reports"
-        },
-        {
-            fileName: "reports-summary.jpg",
-            title: "الملخص الشامل للتقارير",
-            description: "لوحة تقارير إدارية متكاملة لمديري الشركات والمتاجر.",
-            category: "reports"
-        },
-        {
-            fileName: "purchases.jpg",
-            title: "حركة المشتريات العامة",
-            description: "تقارير ومتابعة عمليات الشراء وإجماليات التكاليف.",
-            category: "inventory"
-        },
-        {
-            fileName: "purchase-return.jpg",
-            title: "مرتجع المشتريات",
-            description: "إثبات وتوثيق البضائع المرتجعة للموردين.",
-            category: "inventory"
-        },
-        {
-            fileName: "sales-return.jpg",
+            fileName: "sales-return.png",
             title: "مرتجع المبيعات",
-            description: "إدارة مرتجعات العملاء وتعديل الأرصدة المالية والمخزنية تلقائياً.",
-            category: "sales"
+            category: "sales",
+            description: "إدارة مرتجعات العملاء وتعديل الأرصدة المالية والمخزنية تلقائياً."
         },
         {
-            fileName: "damaged-goods.jpg",
-            title: "إدارة التالف والمهدور",
-            description: "تسجيل البضائع التالفة وتحديد أسباب الهدر ومسؤوليتها.",
-            category: "inventory"
-        },
-        {
-            fileName: "transfers.jpg",
-            title: "التحويلات بين المخازن",
-            description: "إدارة حركة نقل البضائع والأصناف بين الفروع والمستودعات.",
-            category: "inventory"
-        },
-        {
-            fileName: "labels.jpg",
-            title: "تصميم وطباعة الباركود والملصقات",
-            description: "طباعة باركود الأصناف والأسعار لتسهيل عمليات البيع والجرد.",
-            category: "inventory"
-        },
-        {
-            fileName: "activity-log.jpg",
-            title: "سجل النشاطات والأحداث",
-            description: "متابعة حركة المستخدمين وعمليات التعديل والحذف في النظام لأغراض الأمان.",
-            category: "admin"
-        },
-        {
-            fileName: "users.jpg",
-            title: "إدارة المستخدمين والصلاحيات",
-            description: "صلاحيات الوصول والتحكم الكامل بصلاحيات الموظفين داخل النظام.",
-            category: "admin"
-        },
-        {
-            fileName: "change-password.jpg",
-            title: "تغيير كلمة المرور",
-            description: "إدارة وتحديث بيانات الاعتماد وحسابات المستخدمين.",
-            category: "admin"
-        },
-        {
-            fileName: "backup.jpg",
-            title: "النسخ الاحتياطي لقاعدة البيانات",
-            description: "أداة لإنشاء واستعادة النسخ الاحتياطية لضمان أمان البيانات.",
-            category: "admin"
-        },
-        {
-            fileName: "recovery.jpg",
-            title: "استعادة البيانات",
-            description: "استرجاع النسخ الاحتياطية القديمة في حالات الطوارئ.",
-            category: "admin"
-        },
-        {
-            fileName: "factory-reset.jpg",
-            title: "إعادة ضبط المصنع",
-            description: "تصفير البيانات التجريبية وبدء التشغيل الفعلي للنظام.",
-            category: "admin"
-        },
-        {
-            fileName: "system-settings.jpg",
-            title: "إعدادات النظام العامة",
-            description: "تخصيص بيانات المنشأة، العملة، وشروط الفواتير.",
-            category: "admin"
-        },
-        {
-            fileName: "shift-summary.jpg",
+            fileName: "shift-summary.png",
             title: "ملخص الوردية (الخزنة)",
-            description: "إغلاق الوردية ومطابقة النقدية الفعلية مع المبيعات المسجلة.",
-            category: "sales"
+            category: "sales",
+            description: "إغلاق الوردية ومطابقة النقدية الفعلية مع المبيعات المسجلة."
         },
         {
-            fileName: "login.jpg",
-            title: "شاشة تسجيل الدخول",
-            description: "بوابة الأمان والتحقق من هوية المستخدم وصلاحياته عند بدء العمل.",
-            category: "admin"
+            fileName: "inventory-1.png",
+            title: "إدارة المخازن والأصناف (1)",
+            category: "inventory",
+            description: "عرض وترتيب المنتجات وتحديد الكميات والأعمار التخزينية."
         },
         {
-            fileName: "additional-view.jpg",
-            title: "واجهة إضافية متقدمة",
-            description: "شاشة تفصيلية إضافية لإدارة وتخصيص العمليات الخاصة بنظام Apexora.",
-            category: "sales"
+            fileName: "inventory-2.png",
+            title: "إدارة المخازن والأصناف (2)",
+            category: "inventory",
+            description: "متابعة حركة الأصناف داخل المخزن بدقة وتنبيهات النواقص."
+        },
+        {
+            fileName: "inventory-3.png",
+            title: "إدارة المخازن والأصناف (3)",
+            category: "inventory",
+            description: "تفاصيل إضافية لمستويات المخزون ووحدات البديلة للأصناف."
+        },
+        {
+            fileName: "inventory-damage.png",
+            title: "إدارة التالف والمهدور",
+            category: "inventory",
+            description: "تسجيل البضائع التالفة وتحديد أسباب الهدر ومسؤوليتها."
+        },
+        {
+            fileName: "purchase-returns.png",
+            title: "مرتجع المشتريات",
+            category: "inventory",
+            description: "إثبات وتوثيق البضائع المرتجعة للموردين."
+        },
+        {
+            fileName: "purchases-invoices.png",
+            title: "فواتير المشتريات",
+            category: "inventory",
+            description: "إدارة واردات البضائع وحسابات الموردين بدقة فائقة."
+        },
+        {
+            fileName: "inventory-count.png",
+            title: "جرد المخازن",
+            category: "inventory",
+            description: "شاشة مخصصة لجرد وتسوية المخزون ومطابقة الأرصدة الفعلية والدفترية."
+        },
+        {
+            fileName: "customers.png",
+            title: "إدارة العملاء",
+            category: "accounts",
+            description: "دليل العملاء، أرصدتهم، والتاريخ معاملاتها السابقة."
+        },
+        {
+            fileName: "suppliers.png",
+            title: "إدارة الموردين",
+            category: "accounts",
+            description: "بيانات الموردين، أرصدة الحسابات وحركات الدفع والقبض."
+        },
+        {
+            fileName: "customer-payments.png",
+            title: "سداد دفعات العملاء",
+            category: "accounts",
+            description: "تسجيل سندات القبض والدفعات النقدية من العملاء."
+        },
+        {
+            fileName: "supplier-payments.png",
+            title: "سداد مستحقات الموردين",
+            category: "accounts",
+            description: "إدارة المدفوعات النقدية والتحويلات للموردين."
+        },
+        {
+            fileName: "financial-reports.png",
+            title: "تقارير الأرباح المالية",
+            category: "reports",
+            description: "حسابات الأرباح والخسائر وتحليل العائد المادي بدقة."
+        },
+        {
+            fileName: "comprehensive-reports.png",
+            title: "الملخص الشامل للتقارير",
+            category: "reports",
+            description: "لوحة تقارير إدارية متكاملة لمديري الشركات والمتاجر."
+        },
+        {
+            fileName: "system-settings.png",
+            title: "إعدادات النظام العامة",
+            category: "admin",
+            description: "تخصيص بيانات المنشأة، العملة، وشروط الفواتير ومقاسات الورق."
+        },
+        {
+            fileName: "sales-invoice-a4.png",
+            title: "معاينة وطباعة الفاتورة (A4)",
+            category: "sales",
+            description: "عرض تفصيلي للفاتورة بتنسيق A4 مع دعم المرتجعات والبيانات الضريبية."
+        },
+        {
+            fileName: "users-management.png",
+            title: "إدارة المستخدمين والصلاحيات",
+            category: "admin",
+            description: "صلاحيات الوصول والتحكم الكامل بصلاحيات الموظفين داخل النظام."
+        },
+        {
+            fileName: "change-password.png",
+            title: "تغير كلمة المرور",
+            category: "admin",
+            description: "إدارة وتحديث بيانات الاعتماد وحسابات المستخدمين."
+        },
+        {
+            fileName: "activity-log.png",
+            title: "سجل النشاطات والأحداث",
+            category: "admin",
+            description: "متابعة حركة المستخدمين وعمليات التعديل والحذف في النظام لأغراض الأمان."
+        },
+        {
+            fileName: "factory-reset.png",
+            title: "إعادة ضبط المصنع",
+            category: "admin",
+            description: "تصفير البيانات التجريبية البدء التشغيل الفعل للنظام."
+        },
+        {
+            fileName: "data-restore.png",
+            title: "استعادة البيانات",
+            category: "admin",
+            description: "استرجاع النسخ الاحتياطية القديمة في حالات الطوارئ."
+        },
+        {
+            fileName: "backup-management.png",
+            title: "إدارة النسخ الاحتياطي لقاعدة البيانات",
+            category: "admin",
+            description: "أداة لإنشاء واستعادة النسخ الاحتياطية لضمان أمان البيانات."
         }
     ]
 };
