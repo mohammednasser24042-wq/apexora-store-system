@@ -1,119 +1,12 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الشاشات والواجهات | Apexora Software</title>
-    <!-- Google Fonts - Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Header & Navigation -->
-    <header class="main-header">
-        <div class="container nav-container">
-            <div class="logo-box">
-                <img id="brandLogo" src="" alt="Apexora Logo" class="logo-img">
-                <span id="brandName" class="brand-title">Apexora</span>
-            </div>
-            <nav class="nav-links">
-                <a href="index.html">الرئيسية</a>
-                <a href="index.html#features">المميزات</a>
-                <a href="screenshots.html" class="active">معرض الشاشات</a>
-                <a href="index.html#about">عن النظام</a>
-                <a href="index.html#contact" class="btn-cta-nav">احصل على نسختك</a>
-            </nav>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
-    <!-- Page Header Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>معرض واجهات نظام Apexora</h1>
-            <p>تصفح جميع شاشات النظام التفصيلية (واجهات مصممة بأعلى معايير تجربة المستخدم UX/UI)</p>
-        </div>
-    </section>
-
-    <!-- Screenshots Section -->
-    <section class="screenshots-section page-view">
-        <div class="container">
-            
-            <!-- Search & Filter Controls -->
-            <div class="controls-wrapper">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="ابحث في اسم أو وصف الشاشة...">
-                </div>
-                
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">الكل</button>
-                    <button class="filter-btn" data-filter="sales">المبيعات وPOS</button>
-                    <button class="filter-btn" data-filter="inventory">المخازن والأصناف</button>
-                    <button class="filter-btn" data-filter="accounts">الحسابات والماليات</button>
-                    <button class="filter-btn" data-filter="reports">التقارير</button>
-                    <button class="filter-btn" data-filter="admin">الإدارة والأمان</button>
-                    <button class="filter-btn" data-filter="medical">النظام الطبي</button>
-                </div>
-            </div>
-
-            <!-- Grid container populated dynamically from data.js -->
-            <div id="screenshotsGrid" class="screenshots-grid">
-                <!-- سيتم تعبئة الصور ديناميكياً بواسطة الجافاسكريبت -->
-            </div>
-
-            <!-- Empty Search State -->
-            <div id="noResults" class="no-results" style="display: none;">
-                <i class="fas fa-folder-open"></i>
-                <h3>عذراً، لم نجد نتائج مطابقة لبحثك</h3>
-                <p>جرب البحث بكلمات أخرى أو تصفح جميع التصنيفات.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-info">
-                <h3 id="footerBrandName">Apexora Software</h3>
-                <p>الأنظمة الأفضل لإدارة الأعمال التجارية، الطبية، والمتاجر باحترافية تامة.</p>
-            </div>
-            <div class="footer-links">
-                <h4>روابط سريعة</h4>
-                <a href="index.html">الرئيسية</a>
-                <a href="index.html#features">المميزات</a>
-                <a href="screenshots.html">الشاشات</a>
-                <a href="index.html#contact">التواصل</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Apexora Software. جميع الحقوق محفوظة للمطور محمد.</p>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal for Image Preview -->
-    <div id="lightboxModal" class="lightbox-modal">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightboxImg" src="" alt="Zoomed Image">
-        <div id="lightboxCaption" class="lightbox-caption"></div>
-    </div>
-
-    <!-- Load Data JS First, then Page Script -->
+<!-- Load Data JS First, then Page Script -->
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             if (typeof systemData !== 'undefined') {
                 // ربط بيانات الهوية
-                document.getElementById('brandLogo').src = systemData.brand.logo;
-                document.getElementById('brandName').innerText = systemData.brand.name;
-                document.getElementById('footerBrandName').innerText = systemData.brand.name;
+                if(document.getElementById('brandLogo')) document.getElementById('brandLogo').src = systemData.brand.logo;
+                if(document.getElementById('brandName')) document.getElementById('brandName').innerText = systemData.brand.name;
+                if(document.getElementById('footerBrandName')) document.getElementById('footerBrandName').innerText = systemData.brand.name;
 
                 const grid = document.getElementById('screenshotsGrid');
                 const searchInput = document.getElementById('searchInput');
@@ -122,6 +15,7 @@
 
                 // دالة عرض الشاشات مع دعم الفلترة والبحث المباشر
                 function renderScreenshots(filter = 'all', searchQuery = '') {
+                    if(!grid) return;
                     grid.innerHTML = '';
                     
                     let items = systemData.screenshots;
@@ -142,22 +36,20 @@
 
                     // إظهار تنبيه إذا لم توجد نتائج
                     if (items.length === 0) {
-                        noResults.style.display = 'block';
+                        if(noResults) noResults.style.display = 'block';
                         return;
                     } else {
-                        noResults.style.display = 'none';
+                        if(noResults) noResults.style.display = 'none';
                     }
 
                     items.forEach(item => {
                         const card = document.createElement('div');
                         card.className = `screenshot-card ${item.category}`;
                         card.innerHTML = `
-                            <div class="img-wrapper">
+                            <div class="img-wrapper" onclick="openScreenshotLightbox('${item.fileName}', '${item.title}', '${item.description}')">
                                 <img src="${item.fileName}" alt="${item.title}" loading="lazy">
-                                <div class="img-overlay">
-                                    <button class="zoom-btn" data-img="${item.fileName}" data-title="${item.title}" data-desc="${item.description}">
-                                        <i class="fas fa-search-plus"></i> تكبير الشاشة
-                                    </button>
+                                <div class="zoom-overlay-icon">
+                                    <i class="fas fa-search-plus"></i>
                                 </div>
                             </div>
                             <div class="screenshot-info">
@@ -167,23 +59,6 @@
                             </div>
                         `;
                         grid.appendChild(card);
-                    });
-
-                    // تفعيل زر التكبير (Lightbox) لكل الكروت الحالية
-                    document.querySelectorAll('.zoom-btn').forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            const imgSrc = e.currentTarget.getAttribute('data-img');
-                            const imgTitle = e.currentTarget.getAttribute('data-title');
-                            const imgDesc = e.currentTarget.getAttribute('data-desc');
-                            
-                            const modal = document.getElementById('lightboxModal');
-                            const modalImg = document.getElementById('lightboxImg');
-                            const modalCaption = document.getElementById('lightboxCaption');
-
-                            modal.style.display = "flex";
-                            modalImg.src = imgSrc;
-                            modalCaption.innerHTML = `<strong>${imgTitle}</strong><br>${imgDesc}`;
-                        });
                     });
                 }
 
@@ -196,39 +71,63 @@
                         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                         e.target.classList.add('active');
                         currentFilter = e.target.getAttribute('data-filter');
-                        renderScreenshots(currentFilter, searchInput.value);
+                        renderScreenshots(currentFilter, searchInput ? searchInput.value : '');
                     });
                 });
 
                 // أحداث شريط البحث الفوري
-                searchInput.addEventListener('input', (e) => {
-                    renderScreenshots(currentFilter, e.target.value);
-                });
+                if(searchInput) {
+                    searchInput.addEventListener('input', (e) => {
+                        renderScreenshots(currentFilter, e.target.value);
+                    });
+                }
             }
 
-            // إدارة إغلاق نافذة العرض الكبيرة (Lightbox)
+            // إدارة نافذة العرض الكبيرة (Lightbox Modal) الشاملة لجميع الـ 34 شاشة
             const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const modalCaption = document.getElementById('lightboxCaption');
             const closeBtn = document.querySelector('.lightbox-close');
-            if(closeBtn) {
-                closeBtn.addEventListener('click', () => {
+
+            window.openScreenshotLightbox = function(imgSrc, imgTitle, imgDesc) {
+                if(modal && modalImg) {
+                    modal.style.display = "flex";
+                    modalImg.src = imgSrc;
+                    if(modalCaption) {
+                        modalCaption.innerHTML = `<strong>${imgTitle}</strong><br><span style="font-size:0.9rem; color:#9ca3af;">${imgDesc}</span>`;
+                    }
+                    document.body.style.overflow = 'hidden'; // منع سحب الصفحة الخلفية
+                }
+            };
+
+            function closeLightboxFunc() {
+                if(modal) {
                     modal.style.display = "none";
-                });
+                    document.body.style.overflow = 'auto';
+                }
             }
+
+            if(closeBtn) {
+                closeBtn.addEventListener('click', closeLightboxFunc);
+            }
+            
             window.addEventListener('click', (e) => {
                 if (e.target === modal) {
-                    modal.style.display = "none";
+                    closeLightboxFunc();
                 }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'Escape') closeLightboxFunc();
             });
 
             // قائمة الجوال (Mobile Menu Toggle)
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
-            if(menuToggle) {
+            if(menuToggle && navLinks) {
                 menuToggle.addEventListener('click', () => {
                     navLinks.classList.toggle('active');
                 });
             }
         });
     </script>
-</body>
-</html>
