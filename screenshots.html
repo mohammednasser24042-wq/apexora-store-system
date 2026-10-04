@@ -3,319 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الشاشات | Apexora Software</title>
-    <!-- خط Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- مكتبة أيقونات FontAwesome -->
+    <title>معرض الشاشات والواجهات | Apexora Software</title>
+    <!-- Google Fonts - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- ملف الـ CSS الأساسي -->
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- القسم التعريفي -->
-    <section class="content-section" style="padding: 40px 20px; text-align: center;">
-        <div class="section-subtitle">حلول هندسية متكاملة</div>
-        <h2>استعراض واجهات وأنظمة الـ 23 شاشة الكاملة</h2>
-        <p style="color: var(--text-light); max-width: 700px; margin: 10px auto 0;">تم تصميم وصياغة الشاشات بعناية فائقة وتتابع منطقي لتغطية كافة العمليات المستندية، بدءاً من المبيعات والمخازن وحتى الحسابات الختامية والتقارير المتقدمة.</p>
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo-box">
+                <img id="brandLogo" src="" alt="Apexora Logo" class="logo-img">
+                <span id="brandName" class="brand-title">Apexora</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#features">المميزات</a>
+                <a href="screenshots.html" class="active">معرض الشاشات</a>
+                <a href="index.html#about">عن النظام</a>
+                <a href="index.html#contact" class="btn-cta-nav">احصل على نسختك</a>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>معرض واجهات نظام Apexora</h1>
+            <p>تصفح جميع شاشات النظام التفصيلية (34 واجهة مصممة بأعلى معايير تجربة المستخدم UX/UI)</p>
+        </div>
     </section>
 
-    <!-- معرض الشاشات والـ 23 واجهة مرتبة تحت بعضها -->
-    <div class="gallery-container" id="gallery">
-        
-        <!-- شاشة 1 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
+    <!-- Screenshots Section -->
+    <section class="screenshots-section page-view">
+        <div class="container">
+            
+            <!-- Search & Filter Controls -->
+            <div class="controls-wrapper">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="ابحث في اسم أو وصف الشاشة...">
                 </div>
-                <img src="1.jpg" alt="واجهة المبيعات ونقاط البيع" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-cash-register"></i> 1. إدارة المبيعات ونقاط البيع (POS)</h3>
-                <p>واجهة مبيعات سريعة ومبسطة تدعم قارئ الباركود، الفواتير النقدية والأجلة، وإدارة المرتجعات وحساب الخصومات بشكل لحظي مع طباعة الفواتير الآلية.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 2 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="sales">المبيعات وPOS</button>
+                    <button class="filter-btn" data-filter="inventory">المخازن والأصناف</button>
+                    <button class="filter-btn" data-filter="accounts">الحسابات والماليات</button>
+                    <button class="filter-btn" data-filter="reports">التقارير</button>
+                    <button class="filter-btn" data-filter="admin">الإدارة والأمان</button>
+                    <button class="filter-btn" data-filter="medical">النظام الطبي</button>
                 </div>
-                <img src="2.jpg" alt="إدارة المخزون والمستودعات" class="mockup-img">
             </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-boxes-stacked"></i> 2. مراقبة المخزون والمستودعات</h3>
-                <p>تتبع دقيق لحركة الأصناف، تنبيهات النواقص وركود البضائع، وتحويلات المخازن بين الفروع مع تقارير الجرد الدورية والأرباح بدقة متناهية.</p>
+
+            <!-- Grid container populated dynamically from data.js -->
+            <div id="screenshotsGrid" class="screenshots-grid">
+                <!-- سيتم تعبئة الصور ديناميكياً بواسطة الجافاسكريبت -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-folder-open"></i>
+                <h3>عذراً، لم نجد نتائج مطابقة لبحثك</h3>
+                <p>جرب البحث بكلمات أخرى أو تصفح جميع التصنيفات.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3 id="footerBrandName">Apexora Software</h3>
+                <p>الأنظمة الأفضل لإدارة الأعمال التجارية، الطبية، والمتاجر باحترافية تامة.</p>
+            </div>
+            <div class="footer-links">
+                <h4>روابط سريعة</h4>
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#features">المميزات</a>
+                <a href="screenshots.html">الشاشات</a>
+                <a href="index.html#contact">التواصل</a>
             </div>
         </div>
-
-        <!-- شاشة 3 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                </div>
-                <img src="3.jpg" alt="الحسابات والخزينة" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-vault"></i> 3. الحسابات العامة والخزينة والعملاء</h3>
-                <p>سجل متكامل لحسابات العملاء والموردين، حركة النقدية في الخزينة والبنك، المصروفات، وإصدار قوائم المركز المالي وأرباح الفترة بضغطة زر.</p>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Apexora Software. جميع الحقوق محفوظة للمطور محمد.</p>
         </div>
+    </footer>
 
-        <!-- شاشة 4 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                </div>
-                <img src="4.jpg" alt="إدارة الصلاحيات والنسخ الاحتياطي" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-shield-screen"></i> 4. الصلاحيات والأمان والنسخ الاحتياطي</h3>
-                <p>نظام تحكم كامل في صلاحيات المستخدمين والموظفين، مع مركز متطور لعمل النسخ الاحتياطي وحماية قواعد البيانات من أي فقدان أو عبث.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 5 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="5.jpg" alt="شاشة 5" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 5. شاشة العملاء وحساباتهم</h3>
-                <p>متابعة أرصدة العملاء، الدفعات، وكشف الحساب المفصل.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 6 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="6.jpg" alt="شاشة 6" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 6. شاشة الموردين وحساباتهم</h3>
-                <p>تسجيل المشتريات، الديون المستحقة، ومدفوعات الموردين.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 7 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="7.jpg" alt="شاشة 7" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 7. إدارة المخزون والأصناف</h3>
-                <p>إضافة وتعديل الأصناف، الوحدات، وأسعار الشراء والبيع.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 8 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="8.jpg" alt="شاشة 8" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 8. تنبيهات النواقص وركود البضائع</h3>
-                <p>مراقبة حدود التنبيه للاستدراك السريع للبضائع والمنتجات.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 9 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="9.jpg" alt="شاشة 9" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 9. حركة المخزن والتحويلات</h3>
-                <p>إدارة التالف، الهالك، والتحويلات بين المخازن والفروع بدقة.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 10 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="10.jpg" alt="شاشة 10" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 10. شاشة الخزينة والنقدية</h3>
-                <p>متابعة النقدية الداخلة والخارجة وإغلاق الوردية اليومية.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 11 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="11.jpg" alt="شاشة 11" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 11. تسجيل المصروفات والإيرادات</h3>
-                <p>إثبات كافة المصروفات التشغيلية والنثرية وتصنيفها.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 12 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="12.jpg" alt="شاشة 12" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 12. تقارير المبيعات التفصيلية</h3>
-                <p>تقارير شاملة حسب الفترة، الكاشير، الصنف، أو العميل.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 13 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="13.jpg" alt="شاشة 13" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 13. تقارير الأرباح والخسائر</h3>
-                <p>حساب صافي الأرباح بدقة متناهية لكل فترة زمنية.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 14 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="14.jpg" alt="شاشة 14" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 14. جرد المخازن والتقييم المالي</h3>
-                <p>معرفة القيمة المالية الإجمالية للبضاعة الموجودة بالمخازن.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 15 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="15.jpg" alt="شاشة 15" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 15. إدارة الشيكات وأوراق القبض</h3>
-                <p>متابعة مواعيد استحقاق الشيكات البنكية وحالتها.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 16 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="16.jpg" alt="شاشة 16" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 16. إعدادات الطباعة والفواتير</h3>
-                <p>تخصيص شكل وطباعة الفواتير وأحجام الورق الحراري.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 17 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="17.jpg" alt="شاشة 17" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 17. إدارة المستخدمين والصلاحيات</h3>
-                <p>منح أو منع صلاحيات الإضافة، التعديل، والحذف للموظفين.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 18 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="18.jpg" alt="شاشة 18" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 18. مركز النسخ الاحتياطي والأمان</h3>
-                <p>إنشاء واستعادة النسخ الاحتياطية لحماية البيانات من الفقدان.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 19 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="19.jpg" alt="شاشة 19" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 19. سجل العمليات والرقابة (Logs)</h3>
-                <p>متابعة الحركات التي تمت على النظام ووقت تنفيذها بدقة.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 20 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="20.jpg" alt="شاشة 20" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 20. إعدادات النشاط والبيانات العامة</h3>
-                <p>ضبط اسم الشركة، شعارها، وعناوين التواصل بالفواتير.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 21 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="21.jpg" alt="شاشة 21" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 21. شاشة البحث السريع والفلترة</h3>
-                <p>أدوات بحث متقدمة للوصول الفوري للعملاء والأصناف.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 22 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="22.jpg" alt="شاشة 22" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 22. تقارير حركة الموظفين والكاشير</h3>
-                <p>تقييم أداء الكاشير والمبيعات الخاصة بكل موظف.</p>
-            </div>
-        </div>
-
-        <!-- شاشة 23 -->
-        <div class="screenshot-card">
-            <div class="mockup-box">
-                <div class="mockup-header-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div>
-                <img src="23.jpg" alt="شاشة 23" class="mockup-img">
-            </div>
-            <div class="screenshot-info">
-                <h3><i class="fa-solid fa-desktop"></i> 23. مركز التحديثات والدعم الفني</h3>
-                <p>أدوات مساعدة النظام ومتابعة حالة الترخيص والتفعيل.</p>
-            </div>
-        </div>
-
+    <!-- Lightbox Modal for Image Preview -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="Zoomed Image">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
     </div>
 
+    <!-- Load Data JS First, then Page Script -->
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof systemData !== 'undefined') {
+                // ربط بيانات الهوية
+                document.getElementById('brandLogo').src = systemData.brand.logo;
+                document.getElementById('brandName').innerText = systemData.brand.name;
+                document.getElementById('footerBrandName').innerText = systemData.brand.name;
+
+                const grid = document.getElementById('screenshotsGrid');
+                const searchInput = document.getElementById('searchInput');
+                const noResults = document.getElementById('noResults');
+                let currentFilter = 'all';
+
+                // دالة عرض الشاشات مع دعم الفلترة والبحث المباشر
+                function renderScreenshots(filter = 'all', searchQuery = '') {
+                    grid.innerHTML = '';
+                    
+                    let items = systemData.screenshots;
+
+                    // تطبيق فلتر التصنيف
+                    if (filter !== 'all') {
+                        items = items.filter(item => item.category === filter);
+                    }
+
+                    // تطبيق البحث النصي
+                    if (searchQuery.trim() !== '') {
+                        const query = searchQuery.toLowerCase();
+                        items = items.filter(item => 
+                            item.title.toLowerCase().includes(query) || 
+                            item.description.toLowerCase().includes(query)
+                        );
+                    }
+
+                    // إظهار تنبيه إذا لم توجد نتائج
+                    if (items.length === 0) {
+                        noResults.style.display = 'block';
+                        return;
+                    } else {
+                        noResults.style.display = 'none';
+                    }
+
+                    items.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = `screenshot-card ${item.category}`;
+                        card.innerHTML = `
+                            <div class="img-wrapper">
+                                <img src="assets/images/${item.fileName}" alt="${item.title}" loading="lazy">
+                                <div class="img-overlay">
+                                    <button class="zoom-btn" data-img="assets/images/${item.fileName}" data-title="${item.title}" data-desc="${item.description}">
+                                        <i class="fas fa-search-plus"></i> تكبير الشاشة
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="screenshot-info">
+                                <span class="tag-category">${item.category.toUpperCase()}</span>
+                                <h3>${item.title}</h3>
+                                <p>${item.description}</p>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+
+                    // تفعيل زر التكبير (Lightbox) لكل الكروت الحالية
+                    document.querySelectorAll('.zoom-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            const imgSrc = e.currentTarget.getAttribute('data-img');
+                            const imgTitle = e.currentTarget.getAttribute('data-title');
+                            const imgDesc = e.currentTarget.getAttribute('data-desc');
+                            
+                            const modal = document.getElementById('lightboxModal');
+                            const modalImg = document.getElementById('lightboxImg');
+                            const modalCaption = document.getElementById('lightboxCaption');
+
+                            modal.style.display = "flex";
+                            modalImg.src = imgSrc;
+                            modalCaption.innerHTML = `<strong>${imgTitle}</strong><br>${imgDesc}`;
+                        });
+                    });
+                }
+
+                // عرض جميع الشاشات أول مرة
+                renderScreenshots('all');
+
+                // أحداث أزرار الفلترة
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        currentFilter = e.target.getAttribute('data-filter');
+                        renderScreenshots(currentFilter, searchInput.value);
+                    });
+                });
+
+                // أحداث شريط البحث الفوري
+                searchInput.addEventListener('input', (e) => {
+                    renderScreenshots(currentFilter, e.target.value);
+                });
+            }
+
+            // إدارة إغلاق نافذة العرض الكبيرة (Lightbox)
+            const modal = document.getElementById('lightboxModal');
+            const closeBtn = document.querySelector('.lightbox-close');
+            if(closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    modal.style.display = "none";
+                });
+            }
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            // قائمة الجوال (Mobile Menu Toggle)
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if(menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
