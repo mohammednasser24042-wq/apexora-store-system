@@ -40,7 +40,7 @@
                 <i class="fas fa-award"></i> الإصدار الأحدث 2026 - احترافية بلا حدود
             </div>
             <h1>أنظمة إدارة الأعمال المتقدمة لحلول دقيقة واحترافية</h1>
-            <p>منست نظام أپيكسورا لسرعة صناعة قرارك، إدارة المخازن، حسابات العملاء، ومبيعات POS بأعلى معايير الأمان، السرعة، والاعتمادية.</p>
+            <p>منظومة أپيكسورا المتكاملة لسرعة صناعة قرارك، إدارة المخازن، حسابات العملاء، ومبيعات POS بأعلى معايير الأمان، السرعة، والاعتمادية.</p>
             
             <div class="hero-buttons">
                 <a href="screenshots.html" class="btn btn-primary">
@@ -50,10 +50,17 @@
                     <i class="fab fa-whatsapp"></i> تواصل مع المطور
                 </a>
             </div>
+
+            <!-- Social Media Top Bar links -->
+            <div class="hero-social-links">
+                <a href="https://facebook.com" target="_blank" title="صفحة الفيسبوك"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com" target="_blank" title="قناة اليوتيوب"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/" target="_blank" title="واتساب الأعمال"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
     </section>
 
-    <!-- Stats Counter Section (New) -->
+    <!-- Stats Counter Section -->
     <section class="stats-section">
         <div class="container stats-grid">
             <div class="stat-box">
@@ -112,7 +119,7 @@
         </div>
     </section>
 
-    <!-- Live Preview Showcase Section (New) -->
+    <!-- Live Preview Showcase Section -->
     <section class="preview-showcase">
         <div class="container">
             <div class="section-title">
@@ -159,18 +166,37 @@
         <div class="container contact-box">
             <h2>جاهز لنقل أعمالك لمستوى احترافي جديد؟</h2>
             <p>تواصل مباشرة مع المطور للحصول على نسختك الخاصة والاستفسار عن كافة تفاصيل النظام.</p>
-            <a href="https://wa.me/" target="_blank" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> تواصل عبر واتساب الأعمال
-            </a>
+            
+            <div class="contact-social-buttons">
+                <a href="https://wa.me/" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> واتساب الأعمال
+                </a>
+                <a href="https://facebook.com" target="_blank" class="btn btn-facebook">
+                    <i class="fab fa-facebook-f"></i> صفحة الفيسبوك
+                </a>
+                <a href="https://youtube.com" target="_blank" class="btn btn-youtube">
+                    <i class="fab fa-youtube"></i> قناة اليوتيوب
+                </a>
+            </div>
         </div>
     </section>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/" target="_blank" class="floating-whatsapp" title="تواصل عبر الواتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Footer Section -->
-    <main-footer class="main-footer">
+    <footer class="main-footer">
         <div class="container footer-content">
             <div class="footer-info">
                 <h3>Apexora Software</h3>
                 <p>الأنظمة الأفضل لإدارة الأعمال التجارية، الطبية، والمتاجر باحترافية تامة.</p>
+                <div class="footer-social">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
             <div class="footer-links">
                 <h4>روابط سريعة</h4>
@@ -183,14 +209,13 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Apexora Software. جميع الحقوق محفوظة للمطور محمد.</p>
         </div>
-    </main-footer>
+    </footer>
 
     <!-- Data JS & Home Script -->
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             if (typeof systemData !== 'undefined') {
-                // جلب أول 4 شاشات وعرضها في الصفحة الرئيسية كمعاينة سريعة
                 const previewGrid = document.getElementById('homePreviewGrid');
                 if (previewGrid && systemData.screenshots) {
                     const topScreenshots = systemData.screenshots.slice(0, 4);
