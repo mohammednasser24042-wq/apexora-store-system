@@ -25,7 +25,7 @@
                 <a href="#features">المميزات</a>
                 <a href="screenshots.html">معرض الشاشات (<span id="totalCount">34</span>)</a>
                 <a href="#about">عن النظام</a>
-                <a href="https://wa.me/201100107585?text=Hello%20Apexora,%20I%20would%20like%20to%20inquire%20about%20the%20system%20and%20get%20more%20details" target="_blank" class="btn-cta-nav">احصل على نسختك</a>
+                <a href="#" class="btn-cta-nav whatsapp-link">احصل على نسختك</a>
             </nav>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -46,7 +46,7 @@
                 <a href="screenshots.html" class="btn btn-primary">
                     <i class="fas fa-images"></i> استعرض 34 شاشة تفصيلية
                 </a>
-                <a href="https://wa.me/201100107585?text=Hello%20Apexora,%20I%20would%20like%20to%20inquire%20about%20the%20system%20and%20get%20more%20details" target="_blank" class="btn btn-outline">
+                <a href="#" class="btn btn-outline whatsapp-link">
                     <i class="fab fa-whatsapp"></i> تواصل مع المطور
                 </a>
             </div>
@@ -55,7 +55,7 @@
             <div class="hero-social-links">
                 <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank" title="صفحة الفيسبوك"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://youtube.com/@apexorasoftware?si=hBPKz1TIZWM-3ypt" target="_blank" title="قناة اليوتيوب"><i class="fab fa-youtube"></i></a>
-                <a href="https://wa.me/201100107585?text=Hello%20Apexora,%20I%20would%20like%20to%20inquire%20about%20the%20system%20and%20get%20more%20details" target="_blank" title="واتساب الأعمال"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="whatsapp-link" title="واتساب الأعمال"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </section>
@@ -168,7 +168,7 @@
             <p>تواصل مباشرة مع المطور للحصول على نسختك الخاصة والاستفسار عن كافة تفاصيل النظام.</p>
             
             <div class="contact-social-buttons">
-                <a href="https://wa.me/201100107585?text=Hello%20Apexora,%20I%20would%20like%20to%20inquire%20about%20the%20system%20and%20get%20more%20details" target="_blank" class="btn btn-whatsapp">
+                <a href="#" class="btn btn-whatsapp whatsapp-link">
                     <i class="fab fa-whatsapp"></i> واتساب الأعمال
                 </a>
                 <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank" class="btn btn-facebook">
@@ -182,7 +182,7 @@
     </section>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/201100107585?text=Hello%20Apexora,%20I%20would%20like%20to%20inquire%20about%20the%20system%20and%20get%20more%20details" target="_blank" class="floating-whatsapp" title="تواصل عبر الواتساب">
+    <a href="#" class="floating-whatsapp whatsapp-link" title="تواصل عبر الواتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -195,7 +195,7 @@
                 <div class="footer-social">
                     <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://youtube.com/@apexorasoftware?si=hBPKz1TIZWM-3ypt" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://wa.me/201100107585?text=Hello%20Apexora,%20I%20would%20like%20to%20inquire%20about%20the%20system%20and%20get%20more%20details" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -215,6 +215,17 @@
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // توليد روابط الواتساب برمجياً لضمان سلامة النص العربي وعدم حدوث أي تشفير خاطئ
+            const phone = "201100107585";
+            const message = "السلام عليكم، أرغب في الاستفسار عن أنظمة Apexora المتكاملة لإدارة الأعمال وطلب تفاصيل أكثر";
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+            document.querySelectorAll('.whatsapp-link').forEach(el => {
+                el.setAttribute('href', whatsappUrl);
+                el.setAttribute('target', '_blank');
+            });
+
+            // تعبئة الشاشات في الهوم
             if (typeof systemData !== 'undefined') {
                 const previewGrid = document.getElementById('homePreviewGrid');
                 if (previewGrid && systemData.screenshots) {
