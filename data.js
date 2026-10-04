@@ -174,7 +174,7 @@ const systemData = {
             description: "بوابة الأمان والتحقق من هوية المستخدم وصلاحياته عند بدء العمل."
         },
         {
-            fileName: "users-management.jpg",
+            fileName: "users.jpg",
             title: "إدارة المستخدمين والصلاحيات",
             category: "admin",
             description: "تخصيص مستويات الوصول والصلاحيات الكاملة لكل موظف داخل النظام بدقة."
