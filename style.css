@@ -590,3 +590,124 @@ ul {
         flex-direction: column;
     }
 }
+/* Stats Section Styling */
+.stats-section {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    padding: 50px 0;
+    margin-top: -30px;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+.stat-box i {
+    font-size: 2.5rem;
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+.stat-box h3 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+.stat-box p {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+/* Home Preview Grid */
+.home-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* About Section Styling */
+.about-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+.about-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.about-text h2 {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+.about-text p {
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+.about-list {
+    list-style: none;
+}
+.about-list li {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #1e293b;
+}
+.about-list li i {
+    color: #10b981;
+    margin-left: 10px;
+}
+.highlight-box {
+    background: #fff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+.highlight-box i {
+    font-size: 3rem;
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+/* Contact CTA Section */
+.contact-section {
+    padding: 70px 0;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    text-align: center;
+    color: #fff;
+}
+.contact-box h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+.contact-box p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+}
