@@ -20,6 +20,8 @@
                 <img id="brandLogo" src="logo.jpg" alt="Apexora Logo" class="logo-img">
                 <span id="brandName" class="brand-title">Apexora <span class="highlight">Software</span></span>
             </div>
+            
+            <!-- Desktop Nav Links -->
             <nav class="nav-links">
                 <a href="index.html" class="active">الرئيسية</a>
                 <a href="#features">المميزات</a>
@@ -27,11 +29,34 @@
                 <a href="#about">عن النظام</a>
                 <a href="#" class="btn-cta-nav whatsapp-link">احصل على نسختك</a>
             </nav>
-            <div class="menu-toggle">
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Drawer Sidebar -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <div class="logo-box">
+                <img src="logo.jpg" alt="Logo" class="logo-img">
+                <span class="brand-title">Apexora</span>
+            </div>
+            <div class="close-drawer" id="closeDrawer">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="drawer-links">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="#features"><i class="fas fa-star"></i> المميزات</a>
+            <a href="screenshots.html"><i class="fas fa-images"></i> معرض الشاشات (34)</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> عن النظام</a>
+            <a href="#" class="whatsapp-link mobile-cta-btn"><i class="fab fa-whatsapp"></i> احصل على نسختك الآن</a>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -46,7 +71,7 @@
                 
                 <div class="hero-buttons">
                     <a href="screenshots.html" class="btn btn-primary">
-                        <i class="fas fa-images"></i> استعرض 34 شاشة تفصيلية <i class="fas fa-arrow-left"></i>
+                        <i class="fas fa-images"></i> استعرض 34 شاشة <i class="fas fa-arrow-left"></i>
                     </a>
                     <a href="#" class="btn btn-outline whatsapp-link">
                         <i class="fab fa-whatsapp"></i> تواصل مع المطور
@@ -234,6 +259,29 @@
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // تفعيل قائمة الموبايل الجانبية (Mobile Drawer)
+            const menuToggle = document.getElementById('menuToggle');
+            const closeDrawer = document.getElementById('closeDrawer');
+            const mobileDrawer = document.getElementById('mobileDrawer');
+            const drawerOverlay = document.getElementById('drawerOverlay');
+
+            function toggleDrawer() {
+                mobileDrawer.classList.toggle('open');
+                drawerOverlay.classList.toggle('active');
+            }
+
+            if(menuToggle) menuToggle.addEventListener('click', toggleDrawer);
+            if(closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
+            if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+
+            // إغلاق القائمة عند الضغط على أي رابط بداخلها
+            document.querySelectorAll('.drawer-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileDrawer.classList.remove('open');
+                    drawerOverlay.classList.remove('active');
+                });
+            });
+
             // توليد روابط الواتساب برمجياً بترميز آمن 100% لتجنب الرموز الغريبة
             const phone = "201100107585";
             const message = "السلام عليكم، أرغب في الاستفسار عن أنظمة Apexora المتكاملة لإدارة الأعمال وطلب تفاصيل أكثر";
