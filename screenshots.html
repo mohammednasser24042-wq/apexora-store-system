@@ -1,4 +1,106 @@
-<!-- Load Data JS First, then Page Script -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الشاشات - Apexora Enterprise Suite</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo-box">
+                <img id="brandLogo" src="" alt="Logo" class="logo-img">
+                <span id="brandName" class="brand-title">Apexora</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="screenshots.html" class="active">معرض الشاشات</a>
+                <a href="index.html#features">المميزات</a>
+                <a href="index.html#about">عن النظام</a>
+                <a href="index.html#contact" class="btn-cta-nav">اتصل بنا</a>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main style="padding-top: 120px; min-height: 80vh;">
+        <div class="container">
+            <div class="section-title">
+                <h2>معرض شاشات النظام</h2>
+                <p>استعرض واجهات الاستخدام الخاصة بالنظام وتعرف على التفاصيل الكاملة لكل شاشة</p>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">
+                <!-- Filter Buttons -->
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn btn-primary filter-btn active" data-filter="all" style="padding: 8px 16px; font-size: 0.9rem;">الكل</button>
+                    <button class="btn btn-outline filter-btn" data-filter="pos" style="padding: 8px 16px; font-size: 0.9rem;">المبيعات وPOS</button>
+                    <button class="btn btn-outline filter-btn" data-filter="inventory" style="padding: 8px 16px; font-size: 0.9rem;">المخازن</button>
+                    <button class="btn btn-outline filter-btn" data-filter="accounts" style="padding: 8px 16px; font-size: 0.9rem;">الحسابات</button>
+                </div>
+
+                <!-- Search Input -->
+                <div style="position: relative; min-width: 280px;">
+                    <input type="text" id="searchInput" placeholder="ابحث في الشاشات..." style="width: 100%; padding: 10px 15px 10px 40px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-family: 'Cairo', sans-serif; outline: none;">
+                    <i class="fas fa-search" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" style="display: none; text-align: center; padding: 50px; color: var(--text-muted); font-size: 1.1rem;">
+                <i class="fas fa-folder-open" style="font-size: 3rem; margin-bottom: 15px; display: block; color: var(--accent-color);"></i>
+                عذراً، لم نتمكن من العثور على نتائج تطابق بحثك.
+            </div>
+
+            <!-- Screenshots Grid -->
+            <div id="screenshotsGrid" class="home-preview-grid" style="margin-bottom: 60px;">
+                <!-- Data injected dynamically via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 id="footerBrandName">Apexora</h3>
+                    <p>النظام المتكامل لإدارة الأعمال والمبيعات بكفاءة عالية واحترافية تامة.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="screenshots.html">معرض الشاشات</a>
+                    <a href="index.html#contact">تواصل معنا</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Image Preview (متوافق مع الـ CSS الخاص بك) -->
+    <div id="lightboxModal" class="image-lightbox-modal">
+        <div class="lightbox-content-wrapper">
+            <span class="lightbox-close"><i class="fas fa-times"></i></span>
+            <img id="lightboxImg" src="" alt="Zoomed Image">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Load Data JS First, then Page Script -->
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -83,7 +185,7 @@
                 }
             }
 
-            // إدارة نافذة العرض الكبيرة (Lightbox Modal) الشاملة لجميع الـ 34 شاشة
+            // إدارة نافذة العرض الكبيرة (Lightbox Modal) المتوافقة مع الكلاسات النشطة في الـ CSS
             const modal = document.getElementById('lightboxModal');
             const modalImg = document.getElementById('lightboxImg');
             const modalCaption = document.getElementById('lightboxCaption');
@@ -91,10 +193,10 @@
 
             window.openScreenshotLightbox = function(imgSrc, imgTitle, imgDesc) {
                 if(modal && modalImg) {
-                    modal.style.display = "flex";
+                    modal.classList.add('active'); // تفعيل المودال باستخدام ملف الـ CSS لديك
                     modalImg.src = imgSrc;
                     if(modalCaption) {
-                        modalCaption.innerHTML = `<strong>${imgTitle}</strong><br><span style="font-size:0.9rem; color:#9ca3af;">${imgDesc}</span>`;
+                        modalCaption.innerHTML = `<strong>${imgTitle}</strong><br><span style="font-size:0.85rem; color:var(--text-muted); font-weight:normal;">${imgDesc}</span>`;
                     }
                     document.body.style.overflow = 'hidden'; // منع سحب الصفحة الخلفية
                 }
@@ -102,7 +204,7 @@
 
             function closeLightboxFunc() {
                 if(modal) {
-                    modal.style.display = "none";
+                    modal.classList.remove('active'); // إخفاء المودال
                     document.body.style.overflow = 'auto';
                 }
             }
@@ -131,3 +233,5 @@
             }
         });
     </script>
+</body>
+</html>
