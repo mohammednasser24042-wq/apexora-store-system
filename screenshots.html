@@ -37,7 +37,7 @@
     <section class="page-hero">
         <div class="container">
             <h1>معرض واجهات نظام Apexora</h1>
-            <p>تصفح جميع شاشات النظام التفصيلية (34 واجهة مصممة بأعلى معايير تجربة المستخدم UX/UI)</p>
+            <p>تصفح جميع شاشات النظام التفصيلية (واجهات مصممة بأعلى معايير تجربة المستخدم UX/UI)</p>
         </div>
     </section>
 
@@ -153,9 +153,9 @@
                         card.className = `screenshot-card ${item.category}`;
                         card.innerHTML = `
                             <div class="img-wrapper">
-                                <img src="assets/images/${item.fileName}" alt="${item.title}" loading="lazy">
+                                <img src="${item.fileName}" alt="${item.title}" loading="lazy">
                                 <div class="img-overlay">
-                                    <button class="zoom-btn" data-img="assets/images/${item.fileName}" data-title="${item.title}" data-desc="${item.description}">
+                                    <button class="zoom-btn" data-img="${item.fileName}" data-title="${item.title}" data-desc="${item.description}">
                                         <i class="fas fa-search-plus"></i> تكبير الشاشة
                                     </button>
                                 </div>
