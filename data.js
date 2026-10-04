@@ -29,7 +29,7 @@ const systemData = {
             category: "sales"
         },
         {
-            fileName: "invoice-filter.jpg",
+            fileName: "invoices-filter.jpg",
             title: "فلترة وبحث الفواتير",
             description: "البحث المتقدم وتصفية الفواتير حسب التاريخ والعميل وحالة الدفع.",
             category: "sales"
@@ -59,6 +59,12 @@ const systemData = {
             category: "inventory"
         },
         {
+            fileName: "items.jpg",
+            title: "إدارة الأصناف والمنتجات",
+            description: "إضافة وتعديل الأصناف، الوحدات، والأسعار داخل النظام.",
+            category: "inventory"
+        },
+        {
             fileName: "customers.jpg",
             title: "إدارة العملاء",
             description: "دليل العملاء، أرصدتهم، وتاريخ معاملاتهم السابقة.",
@@ -83,7 +89,13 @@ const systemData = {
             category: "accounts"
         },
         {
-            fileName: "profit.jpg",
+            fileName: "expenses.jpg",
+            title: "إدارة المصروفات",
+            description: "تسجيل ومتابعة المصروفات اليومية والنثرية للنشاط التجاري.",
+            category: "accounts"
+        },
+        {
+            fileName: "profits.jpg",
             title: "تقارير الأرباح المالية",
             description: "حسابات الأرباح والخسائر وتحليل العائد المادي بدقة.",
             category: "reports"
@@ -95,21 +107,57 @@ const systemData = {
             category: "reports"
         },
         {
+            fileName: "purchases.jpg",
+            title: "حركة المشتريات العامة",
+            description: "تقارير ومتابعة عمليات الشراء وإجماليات التكاليف.",
+            category: "inventory"
+        },
+        {
+            fileName: "purchase-return.jpg",
+            title: "مرتجع المشتريات",
+            description: "إثبات وتوثيق البضائع المرتجعة للموردين.",
+            category: "inventory"
+        },
+        {
+            fileName: "sales-return.jpg",
+            title: "مرتجع المبيعات",
+            description: "إدارة مرتجعات العملاء وتعديل الأرصدة المالية والمخزنية تلقائياً.",
+            category: "sales"
+        },
+        {
+            fileName: "damaged-goods.jpg",
+            title: "إدارة التالف والمهدور",
+            description: "تسجيل البضائع التالفة وتحديد أسباب الهدر ومسؤوليتها.",
+            category: "inventory"
+        },
+        {
+            fileName: "transfers.jpg",
+            title: "التحويلات بين المخازن",
+            description: "إدارة حركة نقل البضائع والأصناف بين الفروع والمستودعات.",
+            category: "inventory"
+        },
+        {
+            fileName: "labels.jpg",
+            title: "تصميم وطباعة الباركود والملصقات",
+            description: "طباعة باركود الأصناف والأسعار لتسهيل عمليات البيع والجرد.",
+            category: "inventory"
+        },
+        {
             fileName: "activity-log.jpg",
             title: "سجل النشاطات والأحداث",
             description: "متابعة حركة المستخدمين وعمليات التعديل والحذف في النظام لأغراض الأمان.",
             category: "admin"
         },
         {
-            fileName: "change-password.jpg",
-            title: "تغيير كلمة المرور",
-            description: "إدارة وتحديث بيانات الاعتماد وحسابات المستخدمين.",
-            category: "admin"
-        },
-        {
             fileName: "users.jpg",
             title: "إدارة المستخدمين والصلاحيات",
             description: "صلاحيات الوصول والتحكم الكامل بصلاحيات الموظفين داخل النظام.",
+            category: "admin"
+        },
+        {
+            fileName: "change-password.jpg",
+            title: "تغيير كلمة المرور",
+            description: "إدارة وتحديث بيانات الاعتماد وحسابات المستخدمين.",
             category: "admin"
         },
         {
@@ -137,46 +185,22 @@ const systemData = {
             category: "admin"
         },
         {
-            fileName: "labrik.jpg",
-            title: "إدارة معمل الأسنان (Apexora Lab)",
-            description: "تتبع طلبات التركيبات والأطقم الصناعية للعيادات والمعامل الطبية.",
-            category: "medical"
-        },
-        {
-            fileName: "damaged-goods.jpg",
-            title: "إدارة التالف والمهدور",
-            description: "تسجيل البضائع التالفة وتحديد أسباب الهدر ومسؤوليتها.",
-            category: "inventory"
-        },
-        {
-            fileName: "purchase-return.jpg",
-            title: "مرتجع المشتريات",
-            description: "إثبات وتوثيق البضائع المرتجعة للموردين.",
-            category: "inventory"
-        },
-        {
-            fileName: "sales-return.jpg",
-            title: "مرتجع المبيعات",
-            description: "إدارة مرتجعات العملاء وتعديل الأرصدة المالية والمخزنية تلقائياً.",
-            category: "sales"
-        },
-        {
             fileName: "shift-summary.jpg",
             title: "ملخص الوردية (الخزنة)",
             description: "إغلاق الوردية ومطابقة النقدية الفعلية مع المبيعات المسجلة.",
             category: "sales"
         },
         {
+            fileName: "login.jpg",
+            title: "شاشة تسجيل الدخول",
+            description: "بوابة الأمان والتحقق من هوية المستخدم وصلاحياته عند بدء العمل.",
+            category: "admin"
+        },
+        {
             fileName: "additional-view.jpg",
             title: "واجهة إضافية متقدمة",
             description: "شاشة تفصيلية إضافية لإدارة وتخصيص العمليات الخاصة بنظام Apexora.",
             category: "sales"
-        },
-        {
-            fileName: "invoice-sales.jpg", // تكرار مرن أو واجهة فاتورة إضافية مساعدة
-            title: "تفاصيل الحركات المالية",
-            description: "متابعة دقيقة لكل سندات القبض والصرف وحركة الخزينة اليومية.",
-            category: "accounts"
         }
     ]
 };
