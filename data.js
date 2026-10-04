@@ -186,12 +186,6 @@ const systemData = {
             description: "إدارة وتحديث بيانات الاعتماد وحسابات المستخدمين بأمان تام."
         },
         {
-            fileName: "activity-log.jpg",
-            title: "سجل النشاطات والأحداث",
-            category: "admin",
-            description: "متابعة حركة المستخدمين وعمليات التعديل والحذف في النظام لأغراض الأمان والرقابة."
-        },
-        {
             fileName: "backup.jpg",
             title: "النسخ الاحتياطي لقاعدة البيانات",
             category: "admin",
@@ -208,6 +202,12 @@ const systemData = {
             title: "إعادة ضبط المصنع",
             category: "admin",
             description: "أداة إدارية لتصفير البيانات التجريبية والبدء الفعلي في التشغيل الحقيقي للنظام."
+        },
+        {
+            fileName: "transfers.jpg",
+            title: "التحويلات المخزنية",
+            category: "inventory",
+            description: "إدارة نقل البضائع والأصناف بين المستودعات والفروع المختلفة بدقة."
         }
     ]
 };
