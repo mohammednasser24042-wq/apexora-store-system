@@ -17,7 +17,7 @@
     <header class="main-header">
         <div class="container nav-container">
             <div class="logo-box">
-                <img id="brandLogo" src="logo.jpg" alt="Logo" class="logo-img">
+                <img id="brandLogo" src="logo.jpg" alt="Logo" class="logo-img" onerror="this.src='logo.jpg'">
                 <div>
                     <span id="brandName" class="brand-title">Apexora <span class="highlight">Software</span></span>
                     <span class="brand-subtitle">برنامج إدارة المبيعات ونقاط البيع</span>
@@ -33,7 +33,7 @@
                     <a href="#faqSection">الأسئلة الشائعة</a>
                 </nav>
 
-                <!-- Theme Toggle Button Always Visible -->
+                <!-- Theme Toggle Button -->
                 <button class="theme-toggle-btn" id="themeToggleBtn" title="تغيير المظهر (داكن / أبيض)">
                     <i class="fas fa-moon" id="themeIcon"></i>
                 </button>
@@ -215,7 +215,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             if (typeof systemData === 'undefined') return;
 
-            // Mobile Drawer Logic
+            // Mobile Drawer
             const menuToggle = document.getElementById('menuToggle');
             const closeDrawer = document.getElementById('closeDrawer');
             const mobileDrawer = document.getElementById('mobileDrawer');
