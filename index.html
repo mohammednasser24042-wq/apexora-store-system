@@ -28,6 +28,7 @@
                 <nav class="nav-links">
                     <a href="index.html" class="active">الرئيسية</a>
                     <a href="screenshots.html">معرض الشاشات (34)</a>
+                    <a href="#otherProjects">أعمالنا الأخرى</a>
                     <a href="screenshots.html#aboutDeveloper">عن المطور</a>
                     <a href="screenshots.html#networkDocs">الربط الشبكي LAN</a>
                     <a href="screenshots.html#faqSection">الأسئلة الشائعة</a>
@@ -57,6 +58,7 @@
         <div class="drawer-links">
             <a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
             <a href="screenshots.html"><i class="fas fa-images"></i> معرض الشاشات (34)</a>
+            <a href="#otherProjects"><i class="fas fa-briefcase"></i> أعمالنا ومنتجاتنا الأخرى</a>
             <a href="screenshots.html#aboutDeveloper"><i class="fas fa-user-check"></i> عن المطور</a>
             <a href="screenshots.html#networkDocs"><i class="fas fa-network-wired"></i> الربط الشبكي LAN</a>
             <a href="screenshots.html#faqSection"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a>
@@ -67,6 +69,7 @@
         <div class="drawer-social-links">
             <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://youtube.com/@apexorasoftware?si=hBPKz1TIZWM-3ypt" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://khamsat.com/user/mn1818" target="_blank" title="حساب خمسات"><i class="fas fa-store"></i></a>
             <a href="https://wa.me/201100107585" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
@@ -93,15 +96,13 @@
     </section>
 
     <!-- Featured Screenshots Section -->
-    <main class="container" style="padding-bottom: 80px;">
+    <main class="container" style="padding-bottom: 60px;">
         <div style="text-align: center; margin-bottom: 35px;">
             <h2 style="font-size: 2rem; color: var(--text-color); font-weight: 900; margin-bottom: 8px;">أبرز واجهات المنظومة</h2>
             <p style="color: var(--text-muted); font-weight: 600;">عينة سريعة من شاشات النظام التفصيلية (اضغط على أي صورة لتكبيرها والمعاينة)</p>
         </div>
 
-        <div id="homeScreenshotsGrid" class="screenshots-grid">
-            <!-- Injected via JS -->
-        </div>
+        <div id="homeScreenshotsGrid" class="screenshots-grid"></div>
 
         <div style="text-align: center; margin-top: 35px;">
             <a href="screenshots.html" class="btn-cta-nav" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; font-size: 1.05rem;">
@@ -109,6 +110,57 @@
             </a>
         </div>
     </main>
+
+    <!-- Other Projects & Portfolio Section (أعمالنا ومنتجاتنا الأخرى) -->
+    <section class="other-projects-section" id="otherProjects" style="padding: 70px 0; background: var(--card-bg); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 45px;">
+                <div class="badge-pill"><i class="fas fa-rocket"></i> حلول إضافية متخصصة</div>
+                <h2 style="font-size: 2.1rem; color: var(--text-color); font-weight: 900; margin-bottom: 10px;">أعمالنا ومنتجاتنا البرمجية الأخرى</h2>
+                <p style="color: var(--text-muted); font-weight: 600;">اكتشف أنظمتنا المتخصصة للقطاعات الطبية والخدمية الأخرى المصممة بأعلى كفاءة</p>
+            </div>
+
+            <div class="other-projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                
+                <!-- Project 1: Nursing System -->
+                <div class="project-card" style="background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; display: flex; flex-direction: column; transition: 0.3s;">
+                    <div style="width: 50px; height: 50px; background: rgba(59, 130, 246, 0.12); color: var(--accent-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px;">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                    <h3 style="color: var(--text-color); font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">نظام تمريض العيادات</h3>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px; flex-grow: 1;">إدارة ملفات المرضى، المتابعات التمريضية، والجرعات داخل العيادة والمراكز الطبية المتخصصة.</p>
+                    <a href="https://tinyurl.com/apexora-nursing" target="_blank" class="btn-card-action" style="text-align: center; display: block; padding: 10px; border: 1px solid var(--accent-color); color: var(--accent-color); border-radius: 8px; font-weight: 800;">
+                        <i class="fas fa-external-link-alt"></i> استعراض النظام
+                    </a>
+                </div>
+
+                <!-- Project 2: Radiation Monitoring -->
+                <div class="project-card" style="background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; display: flex; flex-direction: column; transition: 0.3s;">
+                    <div style="width: 50px; height: 50px; background: rgba(16, 185, 129, 0.12); color: #10b981; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px;">
+                        <i class="fas fa-radiation"></i>
+                    </div>
+                    <h3 style="color: var(--text-color); font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">نظام الرصد الإشعاعي</h3>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px; flex-grow: 1;">منظومة متقدمة لمراقبة ورصد مستويات الإشعاع ومعايير الأمان والسلامة المهنية بدقة.</p>
+                    <a href="https://surl.li/yjefub" target="_blank" class="btn-card-action" style="text-align: center; display: block; padding: 10px; border: 1px solid #10b981; color: #10b981; border-radius: 8px; font-weight: 800;">
+                        <i class="fas fa-external-link-alt"></i> استعراض النظام
+                    </a>
+                </div>
+
+                <!-- Project 3: Dental Lab -->
+                <div class="project-card" style="background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; display: flex; flex-direction: column; transition: 0.3s;">
+                    <div style="width: 50px; height: 50px; background: rgba(245, 158, 11, 0.12); color: #f59e0b; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px;">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 style="color: var(--text-color); font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;">نظام إدارة معامل الأسنان (Apexora Lab)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px; flex-grow: 1;">إدارة طلبات الأطباء، صور الحالات، مراحل التصنيع، وحسابات المديونيات لمعامل الأسنان.</p>
+                    <a href="https://mohammednasser24042-wq.github.io/apexora-lab-landing/" target="_blank" class="btn-card-action" style="text-align: center; display: block; padding: 10px; border: 1px solid #f59e0b; color: #f59e0b; border-radius: 8px; font-weight: 800;">
+                        <i class="fas fa-external-link-alt"></i> استعراض النظام
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/201100107585" target="_blank" class="floating-whatsapp" title="تواصل عبر الواتساب">
@@ -119,6 +171,11 @@
     <footer class="main-footer">
         <div class="container">
             <p>© 2026 Apexora Software - جميع الحقوق محفوظة للمطور Mohamed Abdelnasser</p>
+            <div style="margin-top: 10px;">
+                <a href="https://khamsat.com/user/mn1818" target="_blank" style="color: var(--accent-color); font-weight: 700; font-size: 0.88rem;">
+                    <i class="fas fa-store"></i> زيارة حساب خمسات الرسمي
+                </a>
+            </div>
         </div>
     </footer>
 
