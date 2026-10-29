@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استكشف شاشات ووحدات برنامج Apexora Enterprise 2026</title>
+    <title>معرض الشاشات والتوثيق | Apexora Enterprise 2026</title>
     <!-- Google Fonts Cairo -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <!-- Main Header with Theme Switcher -->
+    <!-- Main Header -->
     <header class="main-header">
         <div class="container nav-container">
             <div class="logo-box">
@@ -23,23 +23,56 @@
                     <span class="brand-subtitle">برنامج إدارة المبيعات ونقاط البيع</span>
                 </div>
             </div>
-            <nav class="nav-links">
-                <a href="index.html">الرئيسية</a>
-                <a href="screenshots.html" class="active">معرض الشاشات والتوثيق</a>
-                <a href="#networkDocs">الربط الشبكي</a>
-                <a href="#faqSection">الأسئلة الشائعة</a>
-                
-                <!-- Theme Toggle Button -->
+            
+            <div class="header-right-actions">
+                <nav class="nav-links">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="screenshots.html" class="active">معرض الشاشات</a>
+                    <a href="#aboutDeveloper">عن المطور</a>
+                    <a href="#networkDocs">الربط الشبكي</a>
+                    <a href="#faqSection">الأسئلة الشائعة</a>
+                </nav>
+
+                <!-- Theme Toggle Button Always Visible -->
                 <button class="theme-toggle-btn" id="themeToggleBtn" title="تغيير المظهر (داكن / أبيض)">
                     <i class="fas fa-moon" id="themeIcon"></i>
                 </button>
 
-                <a href="https://wa.me/201100107585" target="_blank" class="btn-cta-nav"><i class="fab fa-whatsapp"></i> تواصل مع المطور</a>
-            </nav>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Top Hero Header -->
+    <!-- Mobile Drawer Sidebar -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <div class="logo-box">
+                <img src="logo.jpg" alt="Logo" class="logo-img">
+                <span class="brand-title">Apexora</span>
+            </div>
+            <div class="close-drawer" id="closeDrawer"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="drawer-links">
+            <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="screenshots.html" class="active"><i class="fas fa-images"></i> معرض الشاشات (34)</a>
+            <a href="#aboutDeveloper"><i class="fas fa-user-check"></i> عن المطور</a>
+            <a href="#networkDocs"><i class="fas fa-network-wired"></i> الربط الشبكي LAN</a>
+            <a href="#faqSection"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a>
+            <a href="https://wa.me/201100107585" target="_blank" style="background: #25d366; color: #fff; margin-top: 10px; justify-content: center;">
+                <i class="fab fa-whatsapp"></i> تواصل عبر الواتساب
+            </a>
+        </div>
+        <div class="drawer-social-links">
+            <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtube.com/@apexorasoftware?si=hBPKz1TIZWM-3ypt" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/201100107585" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <!-- Hero Header -->
     <section class="portal-hero-header">
         <div class="container">
             <div class="badge-pill">
@@ -50,55 +83,39 @@
         </div>
     </section>
 
-    <!-- Interactive Live Stats Counter Bar -->
+    <!-- Stats Bar -->
     <section class="container">
         <div class="stats-counter-bar">
             <div class="stat-pill-card">
                 <div class="stat-pill-icon"><i class="fas fa-desktop"></i></div>
-                <div class="stat-pill-info">
-                    <h4>34+</h4>
-                    <p>واجهة تفصيلية</p>
-                </div>
+                <div class="stat-pill-info"><h4>34+</h4><p>واجهة تفصيلية</p></div>
             </div>
             <div class="stat-pill-card">
                 <div class="stat-pill-icon"><i class="fas fa-network-wired"></i></div>
-                <div class="stat-pill-info">
-                    <h4>LAN Ready</h4>
-                    <p>ربط شبكي متكامل</p>
-                </div>
+                <div class="stat-pill-info"><h4>LAN Ready</h4><p>ربط شبكي متكامل</p></div>
             </div>
             <div class="stat-pill-card">
                 <div class="stat-pill-icon"><i class="fas fa-shield-halved"></i></div>
-                <div class="stat-pill-info">
-                    <h4>Split DB</h4>
-                    <p>فصل قاعدة البيانات</p>
-                </div>
+                <div class="stat-pill-info"><h4>Split DB</h4><p>فصل قاعدة البيانات</p></div>
             </div>
             <div class="stat-pill-card">
                 <div class="stat-pill-icon"><i class="fas fa-bolt"></i></div>
-                <div class="stat-pill-info">
-                    <h4>100%</h4>
-                    <p>استجابة فورية</p>
-                </div>
+                <div class="stat-pill-info"><h4>100%</h4><p>استجابة فورية</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Portal -->
+    <!-- Main Section -->
     <main class="container">
-        <!-- View Mode & Filter Controls -->
+        <!-- Controls -->
         <div class="controls-card">
             <div class="view-mode-selector">
-                <button class="view-mode-btn active" id="btnSmartMode">
-                    <i class="fas fa-desktop"></i> المعاينة التوضيحية الذكية
-                </button>
-                <button class="view-mode-btn" id="btnRawMode">
-                    <i class="fas fa-image"></i> معاينة ملفات الصور الأصلية
-                </button>
+                <button class="view-mode-btn active" id="btnSmartMode"><i class="fas fa-desktop"></i> المعاينة التوضيحية الذكية</button>
+                <button class="view-mode-btn" id="btnRawMode"><i class="fas fa-image"></i> معاينة ملفات الصور الأصلية</button>
             </div>
 
             <div class="filters-row">
-                <div class="category-pills" id="categoryContainer">
+                <div class="category-pills">
                     <button class="filter-btn active" data-filter="all">جميع الشاشات (<span id="totalCount">34</span>)</button>
                     <button class="filter-btn" data-filter="sales">نقاط البيع والمبيعات</button>
                     <button class="filter-btn" data-filter="inventory">المخازن والأصناف</button>
@@ -106,7 +123,6 @@
                     <button class="filter-btn" data-filter="reports">التقارير والإحصائيات</button>
                     <button class="filter-btn" data-filter="admin">الإدارة والأمان</button>
                 </div>
-
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="ابحث في الشاشات والوظائف...">
                     <i class="fas fa-search"></i>
@@ -115,11 +131,39 @@
         </div>
 
         <!-- Screenshots Grid -->
-        <div id="screenshotsGrid" class="screenshots-grid">
-            <!-- Dynamic Injection -->
-        </div>
+        <div id="screenshotsGrid" class="screenshots-grid"></div>
 
-        <!-- Documentation: Network & Split Database Guide -->
+        <!-- Developer Profile Section (عن المطور) -->
+        <section class="developer-section" id="aboutDeveloper">
+            <div class="developer-card">
+                <div class="developer-img-box">
+                    <img src="developer.jpg" alt="محمد عبد الناصر" class="developer-img" onerror="this.src='logo.jpg'">
+                </div>
+                <div class="developer-info">
+                    <h2>محمد عبد الناصر عبد المنعم سيد</h2>
+                    <div class="developer-english-name">Mohamed Abdelnasser Abdelmonem Sayed</div>
+                    
+                    <div class="developer-degree">
+                        🎓 حاصل على بكالوريوس العلوم الصحية (تخصص الإدارة الصحية وتقنيات المعلومات الإدارية)
+                    </div>
+
+                    <div class="qualifications-list">
+                        <span class="qual-badge"><i class="fas fa-certificate"></i> حاصل على شهادة القيادة الدولية (ICDL)</span>
+                        <span class="qual-badge"><i class="fas fa-code"></i> مطور ومؤسس أنظمة Apexora Enterprise Suite</span>
+                        <span class="qual-badge"><i class="fas fa-database"></i> خبير مهندس قواعد البيانات (Access & SQL)</span>
+                        <span class="qual-badge"><i class="fas fa-laptop-code"></i> مطور تطبيقات الديسكتوب والـ ERP Systems</span>
+                    </div>
+
+                    <div class="developer-socials">
+                        <a href="https://wa.me/201100107585" target="_blank" title="واتساب الأعمال"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@apexorasoftware?si=hBPKz1TIZWM-3ypt" target="_blank" title="قناة اليوتيوب"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Network Docs -->
         <section class="docs-section" id="networkDocs">
             <div class="network-box">
                 <div class="network-header">
@@ -144,7 +188,7 @@
         </section>
     </main>
 
-    <!-- Floating WhatsApp Link -->
+    <!-- Floating WhatsApp -->
     <a href="https://wa.me/201100107585" target="_blank" class="floating-whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -152,11 +196,11 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
-            <p>© 2026 Apexora Software - جميع الحقوق محفوظة للمطور محمد ناصر</p>
+            <p>© 2026 Apexora Software - جميع الحقوق محفوظة للمطور Mohamed Abdelnasser</p>
         </div>
     </footer>
 
-    <!-- Lightbox Modal Window -->
+    <!-- Lightbox Modal -->
     <div id="lightboxModal" class="image-lightbox-modal">
         <div class="lightbox-content-wrapper">
             <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
@@ -165,17 +209,38 @@
         </div>
     </div>
 
-    <!-- Data JS & Portal Logic -->
+    <!-- Data JS & Script Logic -->
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             if (typeof systemData === 'undefined') return;
 
-            // --- Theme Switcher Logic ---
+            // Mobile Drawer Logic
+            const menuToggle = document.getElementById('menuToggle');
+            const closeDrawer = document.getElementById('closeDrawer');
+            const mobileDrawer = document.getElementById('mobileDrawer');
+            const drawerOverlay = document.getElementById('drawerOverlay');
+
+            function toggleDrawer() {
+                mobileDrawer.classList.toggle('open');
+                drawerOverlay.classList.toggle('active');
+            }
+
+            if(menuToggle) menuToggle.addEventListener('click', toggleDrawer);
+            if(closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
+            if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+
+            document.querySelectorAll('.drawer-links a').forEach(l => {
+                l.addEventListener('click', () => {
+                    mobileDrawer.classList.remove('open');
+                    drawerOverlay.classList.remove('active');
+                });
+            });
+
+            // Theme Switcher Logic
             const themeToggleBtn = document.getElementById('themeToggleBtn');
             const themeIcon = document.getElementById('themeIcon');
             
-            // Restore Theme from localStorage
             const savedTheme = localStorage.getItem('apexora_theme') || 'dark';
             document.documentElement.setAttribute('data-theme', savedTheme);
             updateThemeIcon(savedTheme);
@@ -192,14 +257,10 @@
 
             function updateThemeIcon(theme) {
                 if (!themeIcon) return;
-                if (theme === 'dark') {
-                    themeIcon.className = 'fas fa-moon';
-                } else {
-                    themeIcon.className = 'fas fa-sun';
-                }
+                themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
             }
 
-            // --- Screenshots Render Logic ---
+            // Screenshots Render Logic
             const grid = document.getElementById('screenshotsGrid');
             const searchInput = document.getElementById('searchInput');
             const btnSmartMode = document.getElementById('btnSmartMode');
@@ -253,9 +314,7 @@
                     card.innerHTML = `
                         <div class="img-wrapper" onclick="openLightbox('${item.fileName}', '${item.title}', '${item.description}')">
                             <img src="${item.fileName}" alt="${item.title}" loading="lazy">
-                            <div class="zoom-overlay-icon">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
+                            <div class="zoom-overlay-icon"><i class="fas fa-search-plus"></i></div>
                         </div>
                         <div class="card-content">
                             <span class="card-category-tag">${item.categoryLabel || item.category.toUpperCase()}</span>
@@ -271,7 +330,6 @@
                 });
             }
 
-            // Mode Switching
             if (btnSmartMode && btnRawMode) {
                 btnSmartMode.addEventListener('click', () => {
                     btnSmartMode.classList.add('active');
@@ -288,7 +346,6 @@
                 });
             }
 
-            // Category Filters
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -333,8 +390,7 @@
 
                 document.querySelectorAll('.faq-question').forEach(q => {
                     q.addEventListener('click', () => {
-                        const parent = q.parentElement;
-                        parent.classList.toggle('active');
+                        q.parentElement.classList.toggle('active');
                     });
                 });
             }
