@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الشاشات - Apexora Enterprise Suite</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>استكشف شاشات ووحدات برنامج Apexora Enterprise 2026</title>
     <!-- Google Fonts Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Main Header -->
     <header class="main-header">
         <div class="container nav-container">
             <div class="logo-box">
-                <img id="brandLogo" src="" alt="Logo" class="logo-img">
-                <span id="brandName" class="brand-title">Apexora</span>
+                <img id="brandLogo" src="logo.jpg" alt="Logo" class="logo-img">
+                <div>
+                    <span id="brandName" class="brand-title">Apexora <span class="highlight">Software</span></span>
+                    <span class="brand-subtitle">برنامج إدارة المبيعات ونقاط البيع</span>
+                </div>
             </div>
             <nav class="nav-links">
                 <a href="index.html">الرئيسية</a>
-                <a href="screenshots.html" class="active">معرض الشاشات</a>
-                <a href="index.html#features">المميزات</a>
-                <a href="index.html#about">عن النظام</a>
-                <a href="index.html#contact" class="btn-cta-nav">اتصل بنا</a>
+                <a href="screenshots.html" class="active">معرض الشاشات والتوثيق</a>
+                <a href="#networkDocs">الربط الشبكي</a>
+                <a href="#faqSection">الأسئلة الشائعة</a>
+                <a href="https://wa.me/201100107585" target="_blank" class="btn-cta-nav"><i class="fab fa-whatsapp"></i> تواصل مع المطور</a>
             </nav>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -32,205 +36,287 @@
         </div>
     </header>
 
-    <!-- Main Content Section -->
-    <main style="padding-top: 120px; min-height: 80vh;">
+    <!-- Top Hero Header -->
+    <section class="portal-hero-header">
         <div class="container">
-            <div class="section-title">
-                <h2>معرض شاشات النظام</h2>
-                <p>استعرض واجهات الاستخدام الخاصة بالنظام وتعرف على التفاصيل الكاملة لكل شاشة</p>
+            <div class="badge-pill">
+                <i class="fas fa-layer-group"></i> الدليل التوثيقي والمرئي الشامل
+            </div>
+            <h1>استكشف شاشات ووحدات برنامج Apexora</h1>
+            <p>انقر على أي شاشة لمشاهدة شرحها التفصيلي خطوة بخطوة، مع الحقول، الاختصارات، ونصائح الاستخدام للسوبرماركت ومحلات التجميل والسباكة.</p>
+        </div>
+    </section>
+
+    <!-- Main Content Portal -->
+    <main class="container">
+        <!-- View Mode & Filter Controls -->
+        <div class="controls-card">
+            <!-- Mode Selector Buttons -->
+            <div class="view-mode-selector">
+                <button class="view-mode-btn active" id="btnSmartMode">
+                    <i class="fas fa-desktop"></i> المعاينة التوضيحية الذكية
+                </button>
+                <button class="view-mode-btn" id="btnRawMode">
+                    <i class="fas fa-image"></i> معاينة ملفات الصور الأصلية
+                </button>
             </div>
 
-            <!-- Search & Filter Controls -->
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px;">
-                <!-- Filter Buttons -->
-                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <button class="btn btn-primary filter-btn active" data-filter="all" style="padding: 8px 16px; font-size: 0.9rem;">الكل</button>
-                    <button class="btn btn-outline filter-btn" data-filter="pos" style="padding: 8px 16px; font-size: 0.9rem;">المبيعات وPOS</button>
-                    <button class="btn btn-outline filter-btn" data-filter="inventory" style="padding: 8px 16px; font-size: 0.9rem;">المخازن</button>
-                    <button class="btn btn-outline filter-btn" data-filter="accounts" style="padding: 8px 16px; font-size: 0.9rem;">الحسابات</button>
+            <!-- Categories & Search Filters -->
+            <div class="filters-row">
+                <div class="category-pills" id="categoryContainer">
+                    <button class="filter-btn active" data-filter="all">جميع الشاشات (<span id="totalCount">34</span>)</button>
+                    <button class="filter-btn" data-filter="sales">نقاط البيع والمبيعات</button>
+                    <button class="filter-btn" data-filter="inventory">المخازن والأصناف</button>
+                    <button class="filter-btn" data-filter="accounts">الحسابات والعملاء</button>
+                    <button class="filter-btn" data-filter="reports">التقارير والإحصائيات</button>
+                    <button class="filter-btn" data-filter="admin">الإدارة والأمان</button>
                 </div>
 
-                <!-- Search Input -->
-                <div style="position: relative; min-width: 280px;">
-                    <input type="text" id="searchInput" placeholder="ابحث في الشاشات..." style="width: 100%; padding: 10px 15px 10px 40px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-family: 'Cairo', sans-serif; outline: none;">
-                    <i class="fas fa-search" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="ابحث في الشاشات والوظائف...">
+                    <i class="fas fa-search"></i>
                 </div>
-            </div>
-
-            <!-- No Results Message -->
-            <div id="noResults" style="display: none; text-align: center; padding: 50px; color: var(--text-muted); font-size: 1.1rem;">
-                <i class="fas fa-folder-open" style="font-size: 3rem; margin-bottom: 15px; display: block; color: var(--accent-color);"></i>
-                عذراً، لم نتمكن من العثور على نتائج تطابق بحثك.
-            </div>
-
-            <!-- Screenshots Grid -->
-            <div id="screenshotsGrid" class="home-preview-grid" style="margin-bottom: 60px;">
-                <!-- Data injected dynamically via JavaScript -->
             </div>
         </div>
+
+        <!-- Screenshots Grid Container -->
+        <div id="screenshotsGrid" class="screenshots-grid">
+            <!-- Data injected dynamically via JS -->
+        </div>
+
+        <!-- Documentation: Network & Split Database Guide -->
+        <section class="docs-section" id="networkDocs">
+            <div class="network-box">
+                <div class="network-header">
+                    <div class="network-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div>
+                        <h3 id="networkTitle" style="color: #fff; font-size: 1.2rem;">توصيل الشبكة والربط المركزي</h3>
+                        <p id="networkArch" style="color: var(--accent-color); font-size: 0.88rem; font-weight: 700;"></p>
+                    </div>
+                </div>
+                <p id="networkDesc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;"></p>
+                
+                <div id="networkSteps" class="steps-list">
+                    <!-- Steps injected dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faqSection">
+            <div class="docs-title">
+                <h2>الأسئلة الشائعة والدعم الفني</h2>
+                <p style="color: var(--text-muted);">إجابات تفصيلية لأهم التساؤلات الفنية حول حماية البيانات والأمان</p>
+            </div>
+
+            <div id="faqGrid" class="faq-grid">
+                <!-- FAQs injected dynamically -->
+            </div>
+        </section>
     </main>
+
+    <!-- Floating WhatsApp Link -->
+    <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20Apexora" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3 id="footerBrandName">Apexora</h3>
-                    <p>النظام المتكامل لإدارة الأعمال والمبيعات بكفاءة عالية واحترافية تامة.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>روابط سريعة</h4>
-                    <a href="index.html">الرئيسية</a>
-                    <a href="screenshots.html">معرض الشاشات</a>
-                    <a href="index.html#contact">تواصل معنا</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة &copy; 2026</p>
-            </div>
+            <p>© 2026 Apexora Software - جميع الحقوق محفوظة للمطور</p>
         </div>
     </footer>
 
-    <!-- Lightbox Modal for Image Preview (متوافق مع الـ CSS الخاص بك) -->
+    <!-- Lightbox Modal Window -->
     <div id="lightboxModal" class="image-lightbox-modal">
         <div class="lightbox-content-wrapper">
-            <span class="lightbox-close"><i class="fas fa-times"></i></span>
-            <img id="lightboxImg" src="" alt="Zoomed Image">
+            <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
+            <img id="lightboxImg" src="" alt="Screenshot">
             <div id="lightboxCaption" class="lightbox-caption"></div>
         </div>
     </div>
 
-    <!-- Load Data JS First, then Page Script -->
+    <!-- Data JS & Portal Logic -->
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            if (typeof systemData !== 'undefined') {
-                // ربط بيانات الهوية
-                if(document.getElementById('brandLogo')) document.getElementById('brandLogo').src = systemData.brand.logo;
-                if(document.getElementById('brandName')) document.getElementById('brandName').innerText = systemData.brand.name;
-                if(document.getElementById('footerBrandName')) document.getElementById('footerBrandName').innerText = systemData.brand.name;
+            if (typeof systemData === 'undefined') return;
 
-                const grid = document.getElementById('screenshotsGrid');
-                const searchInput = document.getElementById('searchInput');
-                const noResults = document.getElementById('noResults');
-                let currentFilter = 'all';
+            const grid = document.getElementById('screenshotsGrid');
+            const searchInput = document.getElementById('searchInput');
+            const btnSmartMode = document.getElementById('btnSmartMode');
+            const btnRawMode = document.getElementById('btnRawMode');
+            
+            let currentFilter = 'all';
+            let currentViewMode = 'smart'; // 'smart' or 'raw'
 
-                // دالة عرض الشاشات مع دعم الفلترة والبحث المباشر
-                function renderScreenshots(filter = 'all', searchQuery = '') {
-                    if(!grid) return;
-                    grid.innerHTML = '';
-                    
-                    let items = systemData.screenshots;
+            // Render Screenshots
+            function renderScreenshots() {
+                if (!grid) return;
+                grid.innerHTML = '';
 
-                    // تطبيق فلتر التصنيف
-                    if (filter !== 'all') {
-                        items = items.filter(item => item.category === filter);
-                    }
+                let items = systemData.screenshots;
+                const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
 
-                    // تطبيق البحث النصي
-                    if (searchQuery.trim() !== '') {
-                        const query = searchQuery.toLowerCase();
-                        items = items.filter(item => 
-                            item.title.toLowerCase().includes(query) || 
-                            item.description.toLowerCase().includes(query)
-                        );
-                    }
-
-                    // إظهار تنبيه إذا لم توجد نتائج
-                    if (items.length === 0) {
-                        if(noResults) noResults.style.display = 'block';
-                        return;
-                    } else {
-                        if(noResults) noResults.style.display = 'none';
-                    }
-
-                    items.forEach(item => {
-                        const card = document.createElement('div');
-                        card.className = `screenshot-card ${item.category}`;
-                        card.innerHTML = `
-                            <div class="img-wrapper" onclick="openScreenshotLightbox('${item.fileName}', '${item.title}', '${item.description}')">
-                                <img src="${item.fileName}" alt="${item.title}" loading="lazy">
-                                <div class="zoom-overlay-icon">
-                                    <i class="fas fa-search-plus"></i>
-                                </div>
-                            </div>
-                            <div class="screenshot-info">
-                                <span class="tag-category">${item.category.toUpperCase()}</span>
-                                <h3>${item.title}</h3>
-                                <p>${item.description}</p>
-                            </div>
-                        `;
-                        grid.appendChild(card);
-                    });
+                // Filter by Category
+                if (currentFilter !== 'all') {
+                    items = items.filter(item => item.category === currentFilter);
                 }
 
-                // عرض جميع الشاشات أول مرة
-                renderScreenshots('all');
+                // Filter by Search Query
+                if (query !== '') {
+                    items = items.filter(item => 
+                        item.title.toLowerCase().includes(query) || 
+                        item.description.toLowerCase().includes(query) ||
+                        (item.inputs && item.inputs.some(inp => inp.toLowerCase().includes(query)))
+                    );
+                }
 
-                // أحداث أزرار الفلترة
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                        e.target.classList.add('active');
-                        currentFilter = e.target.getAttribute('data-filter');
-                        renderScreenshots(currentFilter, searchInput ? searchInput.value : '');
-                    });
+                if (items.length === 0) {
+                    grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: var(--text-muted);">عذراً، لم يتم العثور على أي شاشات تطابق البحث.</div>`;
+                    return;
+                }
+
+                items.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'screenshot-card';
+
+                    let smartDetailsHTML = '';
+                    if (currentViewMode === 'smart') {
+                        const inputsHTML = item.inputs ? item.inputs.map(inp => `<span class="input-tag">${inp}</span>`).join('') : '';
+                        const tipHTML = item.tip ? `<div class="activity-tip">${item.tip}</div>` : '';
+
+                        smartDetailsHTML = `
+                            <div class="smart-details">
+                                <h4><i class="fas fa-list-check"></i> المدخلات الرئيسية:</h4>
+                                <div class="inputs-tags">${inputsHTML}</div>
+                                ${tipHTML}
+                            </div>
+                        `;
+                    }
+
+                    card.innerHTML = `
+                        <div class="img-wrapper" onclick="openLightbox('${item.fileName}', '${item.title}', '${item.description}')">
+                            <img src="${item.fileName}" alt="${item.title}" loading="lazy">
+                            <div class="zoom-overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category-tag">${item.categoryLabel || item.category.toUpperCase()}</span>
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            ${smartDetailsHTML}
+                            <button class="btn-card-action" onclick="openLightbox('${item.fileName}', '${item.title}', '${item.description}')">
+                                <i class="fas fa-expand"></i> عرض تفاصيل الشاشه والشرك الكامل
+                            </button>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            // Mode Switching Events
+            if (btnSmartMode && btnRawMode) {
+                btnSmartMode.addEventListener('click', () => {
+                    btnSmartMode.classList.add('active');
+                    btnRawMode.classList.remove('active');
+                    currentViewMode = 'smart';
+                    renderScreenshots();
                 });
 
-                // أحداث شريط البحث الفوري
-                if(searchInput) {
-                    searchInput.addEventListener('input', (e) => {
-                        renderScreenshots(currentFilter, e.target.value);
-                    });
+                btnRawMode.addEventListener('click', () => {
+                    btnRawMode.classList.add('active');
+                    btnSmartMode.classList.remove('active');
+                    currentViewMode = 'raw';
+                    renderScreenshots();
+                });
+            }
+
+            // Category Filter Events
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    currentFilter = e.target.getAttribute('data-filter');
+                    renderScreenshots();
+                });
+            });
+
+            // Search Event
+            if (searchInput) {
+                searchInput.addEventListener('input', renderScreenshots);
+            }
+
+            // Render Network Documentation
+            if (systemData.networkGuide) {
+                const net = systemData.networkGuide;
+                if(document.getElementById('networkTitle')) document.getElementById('networkTitle').innerText = net.title;
+                if(document.getElementById('networkArch')) document.getElementById('networkArch').innerText = net.architecture;
+                if(document.getElementById('networkDesc')) document.getElementById('networkDesc').innerText = net.description;
+
+                const stepsContainer = document.getElementById('networkSteps');
+                if (stepsContainer && net.steps) {
+                    stepsContainer.innerHTML = net.steps.map(s => `
+                        <div class="step-item">
+                            <span class="step-number">${s.id}</span>
+                            <span style="color: var(--text-color); font-size: 0.92rem;">${s.text}</span>
+                        </div>
+                    `).join('');
                 }
             }
 
-            // إدارة نافذة العرض الكبيرة (Lightbox Modal) المتوافقة مع الكلاسات النشطة في الـ CSS
+            // Render FAQs
+            const faqGrid = document.getElementById('faqGrid');
+            if (faqGrid && systemData.faqs) {
+                faqGrid.innerHTML = systemData.faqs.map(f => `
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>${f.q}</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">${f.a}</div>
+                    </div>
+                `).join('');
+
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.addEventListener('click', () => {
+                        const parent = q.parentElement;
+                        parent.classList.toggle('active');
+                    });
+                });
+            }
+
+            // Modal Logic
             const modal = document.getElementById('lightboxModal');
             const modalImg = document.getElementById('lightboxImg');
             const modalCaption = document.getElementById('lightboxCaption');
-            const closeBtn = document.querySelector('.lightbox-close');
+            const closeBtn = document.getElementById('lightboxClose');
 
-            window.openScreenshotLightbox = function(imgSrc, imgTitle, imgDesc) {
-                if(modal && modalImg) {
-                    modal.classList.add('active'); // تفعيل المودال باستخدام ملف الـ CSS لديك
-                    modalImg.src = imgSrc;
-                    if(modalCaption) {
-                        modalCaption.innerHTML = `<strong>${imgTitle}</strong><br><span style="font-size:0.85rem; color:var(--text-muted); font-weight:normal;">${imgDesc}</span>`;
-                    }
-                    document.body.style.overflow = 'hidden'; // منع سحب الصفحة الخلفية
+            window.openLightbox = function(src, title, desc) {
+                if (modal && modalImg) {
+                    modalImg.src = src;
+                    modalCaption.innerHTML = `<h3 style="margin-bottom:5px; color:#fff;">${title}</h3><p style="color:var(--text-muted); font-size:0.9rem;">${desc}</p>`;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 }
             };
 
-            function closeLightboxFunc() {
-                if(modal) {
-                    modal.classList.remove('active'); // إخفاء المودال
+            function closeModal() {
+                if (modal) {
+                    modal.classList.remove('active');
                     document.body.style.overflow = 'auto';
                 }
             }
 
-            if(closeBtn) {
-                closeBtn.addEventListener('click', closeLightboxFunc);
-            }
-            
-            window.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeLightboxFunc();
-                }
-            });
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-            document.addEventListener('keydown', (e) => {
-                if(e.key === 'Escape') closeLightboxFunc();
-            });
-
-            // قائمة الجوال (Mobile Menu Toggle)
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if(menuToggle && navLinks) {
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                });
-            }
+            // Initial Render
+            renderScreenshots();
         });
     </script>
 </body>
