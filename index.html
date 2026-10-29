@@ -3,356 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apexora Software | الأنظمة المتكاملة لإدارة الأعمال</title>
-    <!-- Google Fonts - Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <title>Apexora Software | برنامج إدارة المبيعات ونقاط البيع</title>
+    <!-- Google Fonts Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main CSS -->
+    <!-- Style CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Navigation Header -->
     <header class="main-header">
         <div class="container nav-container">
             <div class="logo-box">
-                <img id="brandLogo" src="logo.jpg" alt="Apexora Logo" class="logo-img">
-                <span id="brandName" class="brand-title">Apexora <span class="highlight">Software</span></span>
+                <img src="logo.jpg" alt="Logo" class="logo-img">
+                <div>
+                    <span class="brand-title">Apexora <span class="highlight">Software</span></span>
+                    <span class="brand-subtitle">أنظمة إدارة الأعمال المتقدمة 2026</span>
+                </div>
             </div>
-            
             <nav class="nav-links">
                 <a href="index.html" class="active">الرئيسية</a>
-                <a href="#features">المميزات</a>
-                <a href="screenshots.html">معرض الشاشات (<span id="totalCount">34</span>)</a>
-                <a href="#about">عن النظام</a>
-                <a href="#" class="btn-cta-nav whatsapp-link">احصل على نسختك</a>
+                <a href="screenshots.html">معرض الشاشات (34)</a>
+                <a href="screenshots.html#networkDocs">الربط الشبكي LAN</a>
+                <a href="screenshots.html#faqSection">الأسئلة الشائعة</a>
+                <a href="https://wa.me/201100107585" target="_blank" class="btn-cta-nav"><i class="fab fa-whatsapp"></i> تواصل معنا</a>
             </nav>
-
-            <div class="menu-toggle" id="menuToggle">
+            <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Drawer Sidebar -->
-    <div class="mobile-drawer" id="mobileDrawer">
-        <div class="drawer-header">
-            <div class="logo-box">
-                <img src="logo.jpg" alt="Logo" class="logo-img">
-                <span class="brand-title">Apexora</span>
-            </div>
-            <div class="close-drawer" id="closeDrawer">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        <div class="drawer-links">
-            <a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
-            <a href="#features"><i class="fas fa-star"></i> المميزات</a>
-            <a href="screenshots.html"><i class="fas fa-images"></i> معرض الشاشات (34)</a>
-            <a href="#about"><i class="fas fa-info-circle"></i> عن النظام</a>
-            <a href="#" class="whatsapp-link mobile-cta-btn"><i class="fab fa-whatsapp"></i> احصل على نسختك الآن</a>
-        </div>
-    </div>
-    <div class="drawer-overlay" id="drawerOverlay"></div>
-
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-glow"></div>
-        <div class="container hero-content-grid">
-            <div class="hero-text-side">
-                <div class="hero-badge">
-                    <i class="fas fa-crown"></i> الإصدار الأحدث 2026 - احترافية بلا حدود
-                </div>
-                <h1>أنظمة إدارة الأعمال المتقدمة لحلول دقيقة واحترافية</h1>
-                <p>منظومة أپيكسورا المتكاملة لسرعة صناعة قرارك، إدارة المخازن، حسابات العملاء، ومبيعات POS بأعلى معايير الأمان، السرعة، والاعتمادية المطلقة.</p>
-                
-                <div class="hero-buttons">
-                    <a href="screenshots.html" class="btn btn-primary">
-                        <i class="fas fa-images"></i> استعرض 34 شاشة <i class="fas fa-arrow-left"></i>
-                    </a>
-                    <a href="#" class="btn btn-outline whatsapp-link">
-                        <i class="fab fa-whatsapp"></i> تواصل مع المطور
-                    </a>
-                </div>
-
-                <div class="hero-social-links">
-                    <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank" title="صفحة الفيسبوك"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com/@apexorasoftware?si=hBPKz1TIZWM-3ypt" target="_blank" title="قناة اليوتيوب"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="whatsapp-link" title="واتساب الأعمال"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-
-            <div class="hero-visual-side">
-                <div class="mockup-frame">
-                    <div class="mockup-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="mockup-title">Apexora Enterprise Suite v2026</span>
-                    </div>
-                    <div class="mockup-body">
-                        <div class="mockup-glow-effect"></div>
-                        <i class="fas fa-laptop-code mockup-main-icon"></i>
-                        <h3>واجهات عصرية متكاملة</h3>
-                        <p>مصممة بأعلى معايير هندسة البرمجيات لتوفير أداء فوري وثبات استثنائي.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Counter Section -->
-    <section class="stats-section">
-        <div class="container stats-grid">
-            <div class="stat-box">
-                <div class="stat-icon"><i class="fas fa-desktop"></i></div>
-                <h3>34+</h3>
-                <p>شاشة واجهة تفصيلية</p>
-            </div>
-            <div class="stat-box">
-                <div class="stat-icon"><i class="fas fa-bolt"></i></div>
-                <h3>100%</h3>
-                <p>سرعة وأداء فوري</p>
-            </div>
-            <div class="stat-box">
-                <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>أمان تام</h3>
-                <p>صلاحيات وحماية متقدمة</p>
-            </div>
-            <div class="stat-box">
-                <div class="stat-icon"><i class="fas fa-headset"></i></div>
-                <h3>دعم مستمر</h3>
-                <p>تحديثات وتطوير دوري</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section">
+    <section class="portal-hero-header" style="padding-top: 140px; padding-bottom: 60px;">
         <div class="container">
-            <div class="section-title">
-                <h2>لماذا تختار أنظمة Apexora؟</h2>
-                <p>مميزات تصميمية وبرمجية تضمن لك إدارة منشأتك باحترافية تامة ودون أي تعقيد</p>
+            <div class="badge-pill">
+                <i class="fas fa-crown"></i> الإصدار الأحدث 2026 - احترافية بلا حدود
             </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="icon-box"><i class="fas fa-rocket"></i></div>
-                    <h3>سرعة فائقة وأداء استثنائي</h3>
-                    <p>منصة برمجية محملة للمتاجر مع أضخم قواعد البيانات وضمان استجابة لحظية.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-box"><i class="fas fa-lock"></i></div>
-                    <h3>أمان صارم وصلاحيات دقيقة</h3>
-                    <p>نظام تحكم كامل في صلاحيات المستخدمين لمنع التلاعب وحماية البيانات الحساسة.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-box"><i class="fas fa-chart-line"></i></div>
-                    <h3>تقارير وتحليلات ذكية</h3>
-                    <p>دعم اتخاذ القرار برؤية شاملة ومباشرة في إدارة الأرباح والمخزون.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-box"><i class="fas fa-sync"></i></div>
-                    <h3>تحديثات مستمرة ودعم فني</h3>
-                    <p>دعم فني متواصل وتطوير مستمر يواكب متطلبات السوق والقوانين المحلية.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Live Preview Showcase Section -->
-    <section class="preview-showcase">
-        <div class="container">
-            <div class="section-title">
-                <h2>معرض شاشات النظام (34 واجهة تفصيلية)</h2>
-                <p>تعرف عن قرب على الواجهات الاحترافية المصممة بعناية لراحة المستخدم (اضغط على أي صورة لتكبيرها)</p>
-            </div>
-            
-            <div id="homePreviewGrid" class="home-preview-grid">
-                <!-- تعبئة ديناميكية -->
-            </div>
-
-            <div class="center-btn-box" style="text-align: center; margin-top: 50px;">
-                <a href="screenshots.html" class="btn btn-primary">
-                    <i class="fas fa-th-large"></i> عرض جميع الـ 34 شاشة بالتفصيل <i class="fas fa-arrow-left"></i>
+            <h1 style="font-size: 2.5rem; margin-bottom: 15px;">منظومة Apexora المتكاملة لإدارة المبيعات والمخازن</h1>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 30px;">
+                حلول برمجية هندسية فائقة الأمان والسرعة لإدارة السوبرماركت، محلات التجميل، والأدوات الصحية والسباكة، مع دعم كامل للباركود والفواتير الحرارية والربط الشبكي.
+            </p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="screenshots.html" class="btn-cta-nav" style="padding: 12px 28px; font-size: 1rem; border-radius: 10px;">
+                    <i class="fas fa-images"></i> استعرض معرض الشاشات والتوثيق (34 شاشة)
+                </a>
+                <a href="https://wa.me/201100107585" target="_blank" class="view-mode-btn" style="padding: 12px 24px; border-radius: 10px; background: rgba(37, 211, 102, 0.1); color: #25d366; border-color: #25d366;">
+                    <i class="fab fa-whatsapp"></i> تواصل مع المطور عبر الواتساب
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About System Section -->
-    <section id="about" class="about-section">
-        <div class="container about-container">
-            <div class="about-text">
-                <h2>منظومة متكاملة تلبي احتياجات عملك</h2>
-                <p>تم تصميم أنظمة <strong>Apexora</strong> لتناسب المتاجر، الشركات، المستودعات، والعيادات الطبية. نعتمد على بنية برمجية صلبة تضمن استقرار العمل، سهولة تسجيل المبيعات، ومتابعة حركة الأصناف لحظة بلحظة.</p>
-                <ul class="about-list">
-                    <li><i class="fas fa-check-circle"></i> واجهات مستخدم مريحة للعين ومدروسة بعناية لتوفير الوقت.</li>
-                    <li><i class="fas fa-check-circle"></i> دعم كامل لطباعة الفواتير وملصقات الباركود بمقاسات مختلفة.</li>
-                    <li><i class="fas fa-check-circle"></i> نسخ احتياطي واستعادة سريعة لحماية بياناتك من أي طارئ.</li>
-                </ul>
-            </div>
-            <div class="about-card-box">
-                <div class="highlight-box">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>تطوير هندسي فائق</h3>
-                    <p>مصممة بخبرة هندسية دقيقة لتلائم كافة أنشطة الأعمال التجارية بكفاءة مطلقة.</p>
-                </div>
-            </div>
+    <!-- Preview Showcase Grid Section -->
+    <main class="container" style="padding-bottom: 80px;">
+        <div class="docs-title">
+            <h2>أبرز واجهات المنظومة</h2>
+            <p style="color: var(--text-muted);">عينة سريعة من شاشات النظام التفصيلية</p>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container contact-box">
-            <h2>جاهز لنقل أعمالك لمستوى احترافي جديد؟</h2>
-            <p>تواصل مباشرة مع المطور للحصول على نسختك الخاصة والاستفسار عن كافة تفاصيل النظام.</p>
-            
-            <div class="contact-social-buttons">
-                <a href="#" class="btn btn-whatsapp whatsapp-link">
-                    <i class="fab fa-whatsapp"></i> واتساب الأعمال
-                </a>
-                <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank" class="btn btn-facebook">
-                    <i class="fab fa-facebook-f"></i> صفحة الفيسبوك
-                </a>
-                <a href="https://youtube.com/@apexorasoftware?si=hBPKz1TIZWM-3ypt" target="_blank" class="btn btn-youtube">
-                    <i class="fab fa-youtube"></i> قناة اليوتيوب
-                </a>
-            </div>
+        <div id="homeScreenshotsGrid" class="screenshots-grid">
+            <!-- Injected via JS -->
         </div>
-    </section>
 
-    <!-- Image Lightbox Modal (نافذة عرض وتكبير الصور) -->
-    <div class="image-lightbox-modal" id="imageLightbox">
-        <div class="lightbox-content-wrapper">
-            <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
-            <img id="lightboxImg" src="" alt="Zoomed Screenshot">
-            <div class="lightbox-caption" id="lightboxCaption">عنوان الصورة</div>
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="screenshots.html" class="btn-cta-nav" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px; font-size: 1rem;">
+                <i class="fas fa-arrow-left"></i> عرض جميع الـ 34 شاشة بالشرح والمدخلات
+            </a>
         </div>
-    </div>
+    </main>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="#" class="floating-whatsapp whatsapp-link" title="تواصل عبر الواتساب">
+    <!-- Floating WhatsApp Link -->
+    <a href="https://wa.me/201100107585" target="_blank" class="floating-whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Footer Section -->
-    <main-footer class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-info">
-                <h3>Apexora Software</h3>
-                <p>الأنظمة الأفضل لإدارة الأعمال التجارية، الطبية، والمتاجر باحترافية تامة.</p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/share/1E2gPgjMKP/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com/@apexorasoftware?si=hBPKz1TIZWM-3ypt" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="whatsapp-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>روابط سريعة</h4>
-                <a href="index.html">الرئيسية</a>
-                <a href="#features">المميزات</a>
-                <a href="screenshots.html">الشاشات</a>
-                <a href="#contact">التواصل</a>
-            </div>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2026 Apexora Software - جميع الحقوق محفوظة للمطور محمد ناصر</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Apexora Software. جميع الحقوق محفوظة للمطور محمد.</p>
-        </div>
-    </main-footer>
+    </footer>
 
-    <!-- Data JS & Home Script with Lightbox Support -->
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="image-lightbox-modal">
+        <div class="lightbox-content-wrapper">
+            <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
+            <img id="lightboxImg" src="" alt="Screenshot">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // قائمة الموبايل الجانبية
-            const menuToggle = document.getElementById('menuToggle');
-            const closeDrawer = document.getElementById('closeDrawer');
-            const mobileDrawer = document.getElementById('mobileDrawer');
-            const drawerOverlay = document.getElementById('drawerOverlay');
+            if (typeof systemData === 'undefined') return;
 
-            function toggleDrawer() {
-                mobileDrawer.classList.toggle('open');
-                drawerOverlay.classList.toggle('active');
+            const homeGrid = document.getElementById('homeScreenshotsGrid');
+            if (homeGrid && systemData.screenshots) {
+                const featured = systemData.screenshots.slice(0, 6);
+                homeGrid.innerHTML = featured.map(item => `
+                    <div class="screenshot-card">
+                        <div class="img-wrapper" onclick="openLightbox('${item.fileName}', '${item.title}', '${item.description}')">
+                            <img src="${item.fileName}" alt="${item.title}" loading="lazy">
+                            <div class="zoom-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category-tag">${item.categoryLabel || item.category.toUpperCase()}</span>
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                            <button class="btn-card-action" onclick="openLightbox('${item.fileName}', '${item.title}', '${item.description}')">
+                                <i class="fas fa-expand"></i> معاينة وتفاصيل الشاشة
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
             }
 
-            if(menuToggle) menuToggle.addEventListener('click', toggleDrawer);
-            if(closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
-            if(drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+            // Modal Logic
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const modalCaption = document.getElementById('lightboxCaption');
+            const closeBtn = document.getElementById('lightboxClose');
 
-            document.querySelectorAll('.drawer-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileDrawer.classList.remove('open');
-                    drawerOverlay.classList.remove('active');
-                });
-            });
-
-            // روابط الواتساب الآمنة
-            const phone = "201100107585";
-            const message = "السلام عليكم، أرغب في الاستفسار عن أنظمة Apexora المتكاملة لإدارة الأعمال وطلب تفاصيل أكثر";
-            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-            document.querySelectorAll('.whatsapp-link').forEach(el => {
-                el.setAttribute('href', whatsappUrl);
-                el.setAttribute('target', '_blank');
-            });
-
-            // تعبئة الشاشات في الهوم
-            if (typeof systemData !== 'undefined') {
-                const previewGrid = document.getElementById('homePreviewGrid');
-                if (previewGrid && systemData.screenshots) {
-                    const topScreenshots = systemData.screenshots.slice(0, 4);
-                    topScreenshots.forEach(item => {
-                        const card = document.createElement('div');
-                        card.className = 'screenshot-card';
-                        card.innerHTML = `
-                            <div class="img-wrapper" onclick="openLightbox('${item.fileName}', '${item.title}')">
-                                <img src="${item.fileName}" alt="${item.title}" loading="lazy">
-                                <div class="zoom-overlay-icon"><i class="fas fa-search-plus"></i></div>
-                            </div>
-                            <div class="screenshot-info">
-                                <span class="tag-category">${item.category.toUpperCase()}</span>
-                                <h3>${item.title}</h3>
-                                <p>${item.description}</p>
-                            </div>
-                        `;
-                        previewGrid.appendChild(card);
-                    });
-                }
-            }
-
-            // Lightbox Logic (برمجية تكبير الصور)
-            const lightbox = document.getElementById('imageLightbox');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const lightboxClose = document.getElementById('lightboxClose');
-
-            window.openLightbox = function(imgSrc, captionText) {
-                if(lightbox && lightboxImg) {
-                    lightboxImg.src = imgSrc;
-                    lightboxCaption.textContent = captionText || "شاشة من النظام";
-                    lightbox.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // منع خلفية الصفحة من السحب
+            window.openLightbox = function(src, title, desc) {
+                if (modal && modalImg) {
+                    modalImg.src = src;
+                    modalCaption.innerHTML = `<h3 style="margin-bottom:5px; color:#fff;">${title}</h3><p style="color:var(--text-muted); font-size:0.9rem;">${desc}</p>`;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 }
             };
 
-            function closeLightboxFunc() {
-                if(lightbox) {
-                    lightbox.classList.remove('active');
+            function closeModal() {
+                if (modal) {
+                    modal.classList.remove('active');
                     document.body.style.overflow = 'auto';
                 }
             }
 
-            if(lightboxClose) lightboxClose.addEventListener('click', closeLightboxFunc);
-            if(lightbox) {
-                lightbox.addEventListener('click', (e) => {
-                    if(e.target === lightbox) closeLightboxFunc();
-                });
-            }
-            document.addEventListener('keydown', (e) => {
-                if(e.key === 'Escape') closeLightboxFunc();
-            });
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
         });
     </script>
 </body>
