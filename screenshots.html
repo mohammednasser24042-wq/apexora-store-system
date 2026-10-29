@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <!-- Main Header -->
+    <!-- Main Header with Theme Switcher -->
     <header class="main-header">
         <div class="container nav-container">
             <div class="logo-box">
@@ -28,11 +28,14 @@
                 <a href="screenshots.html" class="active">معرض الشاشات والتوثيق</a>
                 <a href="#networkDocs">الربط الشبكي</a>
                 <a href="#faqSection">الأسئلة الشائعة</a>
+                
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle-btn" id="themeToggleBtn" title="تغيير المظهر (داكن / أبيض)">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+
                 <a href="https://wa.me/201100107585" target="_blank" class="btn-cta-nav"><i class="fab fa-whatsapp"></i> تواصل مع المطور</a>
             </nav>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
 
@@ -40,10 +43,44 @@
     <section class="portal-hero-header">
         <div class="container">
             <div class="badge-pill">
-                <i class="fas fa-layer-group"></i> الدليل التوثيقي والمرئي الشامل
+                <i class="fas fa-layer-group"></i> الدليل التوثيقي والمرئي الشامل 2026
             </div>
             <h1>استكشف شاشات ووحدات برنامج Apexora</h1>
             <p>انقر على أي شاشة لمشاهدة شرحها التفصيلي خطوة بخطوة، مع الحقول، الاختصارات، ونصائح الاستخدام للسوبرماركت ومحلات التجميل والسباكة.</p>
+        </div>
+    </section>
+
+    <!-- Interactive Live Stats Counter Bar -->
+    <section class="container">
+        <div class="stats-counter-bar">
+            <div class="stat-pill-card">
+                <div class="stat-pill-icon"><i class="fas fa-desktop"></i></div>
+                <div class="stat-pill-info">
+                    <h4>34+</h4>
+                    <p>واجهة تفصيلية</p>
+                </div>
+            </div>
+            <div class="stat-pill-card">
+                <div class="stat-pill-icon"><i class="fas fa-network-wired"></i></div>
+                <div class="stat-pill-info">
+                    <h4>LAN Ready</h4>
+                    <p>ربط شبكي متكامل</p>
+                </div>
+            </div>
+            <div class="stat-pill-card">
+                <div class="stat-pill-icon"><i class="fas fa-shield-halved"></i></div>
+                <div class="stat-pill-info">
+                    <h4>Split DB</h4>
+                    <p>فصل قاعدة البيانات</p>
+                </div>
+            </div>
+            <div class="stat-pill-card">
+                <div class="stat-pill-icon"><i class="fas fa-bolt"></i></div>
+                <div class="stat-pill-info">
+                    <h4>100%</h4>
+                    <p>استجابة فورية</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -51,7 +88,6 @@
     <main class="container">
         <!-- View Mode & Filter Controls -->
         <div class="controls-card">
-            <!-- Mode Selector Buttons -->
             <div class="view-mode-selector">
                 <button class="view-mode-btn active" id="btnSmartMode">
                     <i class="fas fa-desktop"></i> المعاينة التوضيحية الذكية
@@ -61,7 +97,6 @@
                 </button>
             </div>
 
-            <!-- Categories & Search Filters -->
             <div class="filters-row">
                 <div class="category-pills" id="categoryContainer">
                     <button class="filter-btn active" data-filter="all">جميع الشاشات (<span id="totalCount">34</span>)</button>
@@ -79,53 +114,45 @@
             </div>
         </div>
 
-        <!-- Screenshots Grid Container -->
+        <!-- Screenshots Grid -->
         <div id="screenshotsGrid" class="screenshots-grid">
-            <!-- Data injected dynamically via JS -->
+            <!-- Dynamic Injection -->
         </div>
 
         <!-- Documentation: Network & Split Database Guide -->
         <section class="docs-section" id="networkDocs">
             <div class="network-box">
                 <div class="network-header">
-                    <div class="network-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
+                    <div class="network-icon"><i class="fas fa-network-wired"></i></div>
                     <div>
-                        <h3 id="networkTitle" style="color: #fff; font-size: 1.2rem;">توصيل الشبكة والربط المركزي</h3>
-                        <p id="networkArch" style="color: var(--accent-color); font-size: 0.88rem; font-weight: 700;"></p>
+                        <h3 id="networkTitle" style="color: var(--text-color); font-size: 1.25rem; font-weight: 900;">توصيل الشبكة والربط المركزي</h3>
+                        <p id="networkArch" style="color: var(--accent-color); font-size: 0.88rem; font-weight: 800;"></p>
                     </div>
                 </div>
-                <p id="networkDesc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;"></p>
-                
-                <div id="networkSteps" class="steps-list">
-                    <!-- Steps injected dynamically -->
-                </div>
+                <p id="networkDesc" style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 15px; font-weight: 600;"></p>
+                <div id="networkSteps" class="steps-list"></div>
             </div>
         </section>
 
         <!-- FAQ Section -->
         <section class="faq-section" id="faqSection">
-            <div class="docs-title">
-                <h2>الأسئلة الشائعة والدعم الفني</h2>
-                <p style="color: var(--text-muted);">إجابات تفصيلية لأهم التساؤلات الفنية حول حماية البيانات والأمان</p>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2rem; color: var(--text-color); font-weight: 900; margin-bottom: 8px;">الأسئلة الشائعة والدعم الفني</h2>
+                <p style="color: var(--text-muted); font-weight: 600;">إجابات تفصيلية لأهم التساؤلات الفنية حول حماية البيانات والأمان</p>
             </div>
-
-            <div id="faqGrid" class="faq-grid">
-                <!-- FAQs injected dynamically -->
-            </div>
+            <div id="faqGrid" class="faq-grid"></div>
         </section>
     </main>
 
     <!-- Floating WhatsApp Link -->
-    <a href="https://wa.me/201100107585?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20Apexora" target="_blank" class="floating-whatsapp">
+    <a href="https://wa.me/201100107585" target="_blank" class="floating-whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
-            <p>© 2026 Apexora Software - جميع الحقوق محفوظة للمطور</p>
+            <p>© 2026 Apexora Software - جميع الحقوق محفوظة للمطور محمد ناصر</p>
         </div>
     </footer>
 
@@ -144,15 +171,43 @@
         document.addEventListener("DOMContentLoaded", () => {
             if (typeof systemData === 'undefined') return;
 
+            // --- Theme Switcher Logic ---
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const themeIcon = document.getElementById('themeIcon');
+            
+            // Restore Theme from localStorage
+            const savedTheme = localStorage.getItem('apexora_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('apexora_theme', newTheme);
+                    updateThemeIcon(newTheme);
+                });
+            }
+
+            function updateThemeIcon(theme) {
+                if (!themeIcon) return;
+                if (theme === 'dark') {
+                    themeIcon.className = 'fas fa-moon';
+                } else {
+                    themeIcon.className = 'fas fa-sun';
+                }
+            }
+
+            // --- Screenshots Render Logic ---
             const grid = document.getElementById('screenshotsGrid');
             const searchInput = document.getElementById('searchInput');
             const btnSmartMode = document.getElementById('btnSmartMode');
             const btnRawMode = document.getElementById('btnRawMode');
             
             let currentFilter = 'all';
-            let currentViewMode = 'smart'; // 'smart' or 'raw'
+            let currentViewMode = 'smart';
 
-            // Render Screenshots
             function renderScreenshots() {
                 if (!grid) return;
                 grid.innerHTML = '';
@@ -160,12 +215,10 @@
                 let items = systemData.screenshots;
                 const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
 
-                // Filter by Category
                 if (currentFilter !== 'all') {
                     items = items.filter(item => item.category === currentFilter);
                 }
 
-                // Filter by Search Query
                 if (query !== '') {
                     items = items.filter(item => 
                         item.title.toLowerCase().includes(query) || 
@@ -175,7 +228,7 @@
                 }
 
                 if (items.length === 0) {
-                    grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: var(--text-muted);">عذراً، لم يتم العثور على أي شاشات تطابق البحث.</div>`;
+                    grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 50px; color: var(--text-muted); font-weight:700;">عذراً، لم يتم العثور على أي شاشات تطابق البحث.</div>`;
                     return;
                 }
 
@@ -218,7 +271,7 @@
                 });
             }
 
-            // Mode Switching Events
+            // Mode Switching
             if (btnSmartMode && btnRawMode) {
                 btnSmartMode.addEventListener('click', () => {
                     btnSmartMode.classList.add('active');
@@ -235,7 +288,7 @@
                 });
             }
 
-            // Category Filter Events
+            // Category Filters
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -245,12 +298,9 @@
                 });
             });
 
-            // Search Event
-            if (searchInput) {
-                searchInput.addEventListener('input', renderScreenshots);
-            }
+            if (searchInput) searchInput.addEventListener('input', renderScreenshots);
 
-            // Render Network Documentation
+            // Network Docs
             if (systemData.networkGuide) {
                 const net = systemData.networkGuide;
                 if(document.getElementById('networkTitle')) document.getElementById('networkTitle').innerText = net.title;
@@ -262,13 +312,13 @@
                     stepsContainer.innerHTML = net.steps.map(s => `
                         <div class="step-item">
                             <span class="step-number">${s.id}</span>
-                            <span style="color: var(--text-color); font-size: 0.92rem;">${s.text}</span>
+                            <span style="color: var(--text-color); font-size: 0.95rem; font-weight: 700;">${s.text}</span>
                         </div>
                     `).join('');
                 }
             }
 
-            // Render FAQs
+            // FAQs
             const faqGrid = document.getElementById('faqGrid');
             if (faqGrid && systemData.faqs) {
                 faqGrid.innerHTML = systemData.faqs.map(f => `
@@ -298,7 +348,7 @@
             window.openLightbox = function(src, title, desc) {
                 if (modal && modalImg) {
                     modalImg.src = src;
-                    modalCaption.innerHTML = `<h3 style="margin-bottom:5px; color:#fff;">${title}</h3><p style="color:var(--text-muted); font-size:0.9rem;">${desc}</p>`;
+                    modalCaption.innerHTML = `<h3 style="margin-bottom:6px; color:var(--text-color); font-size:1.2rem; font-weight:900;">${title}</h3><p style="color:var(--text-muted); font-size:0.95rem; font-weight:600;">${desc}</p>`;
                     modal.classList.add('active');
                     document.body.style.overflow = 'hidden';
                 }
@@ -315,7 +365,6 @@
             if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
             document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-            // Initial Render
             renderScreenshots();
         });
     </script>
